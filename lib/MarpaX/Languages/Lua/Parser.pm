@@ -5,6 +5,7 @@ use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 use open     qw(:std :utf8); # Undeclared streams in UTF-8.
 
+use Data::Dumper::Concise; # For Dumper();
 use Data::Section::Simple 'get_data_section';
 
 use Log::Handler;
@@ -113,6 +114,51 @@ sub BUILD
 
 } # End of BUILD.
 
+# ------------------------------------------------
+
+sub decode_result
+{
+	my($self, $result) = @_;
+	my(@worklist) = $result;
+
+	my($obj);
+	my($ref_type);
+	my(@stack);
+
+	do
+	{
+		$obj      = shift @worklist;
+		$ref_type = ref $obj;
+
+		if ($ref_type eq 'ARRAY')
+		{
+			unshift @worklist, @$obj;
+		}
+		elsif ($ref_type eq 'HASH')
+		{
+			push @stack, {%$obj};
+		}
+		elsif ($ref_type eq 'REF')
+		{
+			$obj = $$obj;
+
+			unshift @worklist, $obj;
+		}
+		elsif ($ref_type)
+		{
+			die "Unsupported object type $ref_type\n";
+		}
+		else
+		{
+			push @stack, $obj;
+		}
+
+	} while (@worklist);
+
+	return [@stack];
+
+} # End of decode_result.
+
 # --------------------------------------------------
 
 sub log
@@ -208,6 +254,9 @@ sub process
 		$pos = $self -> recce -> resume($pos);
 	}
 
+	# Warning: Don't use if (my($ambiguous_status) = $self -> recce -> ambiguous),
+	# since then the 'if' always returns true.
+
 	if (my $ambiguous_status = $self -> recce -> ambiguous)
 	{
 		die "The Lua source is ambiguous: $ambiguous_status. \n";
@@ -222,8 +271,10 @@ sub process
 sub run
 {
 	my($self, %args) = @_;
+	my($value)       = $self -> process($args{input_file_name} || $self -> input_file_name);
+	$value           = $self -> decode_result($value);
 
-	$self -> process($args{input_file_name} || $self -> input_file_name);
+	$self -> log('debug', "Value:\n" . join("\n", map{defined($_) ? $_ : "'undef'"} @$value) . "\n");
 
 	# Return 0 for success and 1 for failure.
 
