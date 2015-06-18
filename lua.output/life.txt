@@ -30,7 +30,7 @@ explist
 exp
 String
 double quoted string
-"\xA5"
+"¥"
 stat item
 stat
 varlist
@@ -42,7 +42,7 @@ explist
 exp
 String
 double quoted string
-"\xFE"
+"þ"
 stat item
 stat
 varlist
