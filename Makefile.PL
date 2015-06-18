@@ -32,8 +32,8 @@ my(%params) =
 	PREREQ_PM =>
 	{
 		'Data::Section::Simple' => 0.07,
-		'File::Basename' => 2.82,
 		'File::Spec' => 3.40,
+		'File::Temp' => 0.2304,
 		'Getopt::Long' => 2.41,
 		'Log::Handler' => 0.84,
 		'Marpa::R2' => 3.000000,
