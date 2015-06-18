@@ -50,7 +50,7 @@ $class -> new
 	},
 	requires =>
 	{
-		'Data::Section::Simple' => 0.05,
+		'Data::Section::Simple' => 0.07,
 		'File::Basename' => 2.82,
 		'File::Spec' => 3.40,
 		'Getopt::Long' => 2.41,
@@ -59,10 +59,10 @@ $class -> new
 		'Moo' => 2.000001,
 		'open' => 0,
 		'Path::Tiny' => 0.068,
+		'perl' => 0,
 		'Pod::Usage' => 1.63,
 		'strict' => 0,
 		'Types::Standard' => 1.000005,
-		'utf8' => 0,
 		'warnings' => 0,
 	},
 	resources =>

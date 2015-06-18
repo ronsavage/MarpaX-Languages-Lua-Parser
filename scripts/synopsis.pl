@@ -3,15 +3,16 @@
 use strict;
 use warnings;
 
-use MarpaX::Languages::SVG::Parser;
+use MarpaX::Languages::Lua::Parser;
 
 # ---------------------------------
 
 my(%option) =
 (
-	input_file_name => 'data/ellipse.01.svg',
+	input_file_name => 'lua.sources/bisect.lua',
+	maxlevel        =>'debug',
 );
-my($parser) = MarpaX::Languages::SVG::Parser -> new(%option);
+my($parser) = MarpaX::Languages::Lua::Parser -> new(%option);
 my($result) = $parser -> run;
 
 die "Parse failed\n" if ($result == 1);

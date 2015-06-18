@@ -5,7 +5,6 @@ use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 use open     qw(:std :utf8); # Undeclared streams in UTF-8.
 
-use Data::Dumper::Concise; # For Dumper();
 use Data::Section::Simple 'get_data_section';
 
 use Log::Handler;
@@ -66,6 +65,14 @@ has minlevel =>
 	required => 0,
 );
 
+has output_file_name =>
+(
+	default  => sub{return ''},
+	is       => 'rw',
+	isa      => Str,
+	required => 1,
+);
+
 has recce =>
 (
 	default  => sub{return ''},
@@ -97,7 +104,6 @@ sub BUILD
 		);
 	}
 
-	$self -> log(debug => 'Input file: ' . $self -> input_file_name);
 	$self -> input_text([path($self -> input_file_name) -> lines_utf8]);
 	$self -> grammar
 	(
@@ -270,11 +276,12 @@ sub process
 
 sub run
 {
-	my($self, %args) = @_;
-	my($value)       = $self -> process($args{input_file_name} || $self -> input_file_name);
-	$value           = $self -> decode_result($value);
+	my($self, %args)      = @_;
+	my($value)            = $self -> process($args{input_file_name} || $self -> input_file_name);
+	$value                = $self -> decode_result($value);
+	my($output_file_name) = $self -> output_file_name;
 
-	$self -> log('debug', "Value:\n" . join("\n", map{defined($_) ? $_ : "'undef'"} @$value) . "\n");
+	path($output_file_name) -> spew_utf8(map{"$_\n"} @$value) if ($output_file_name);
 
 	# Return 0 for success and 1 for failure.
 

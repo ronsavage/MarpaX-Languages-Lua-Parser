@@ -1,0 +1,656 @@
+chunk
+stat list
+stat item
+stat
+keyword local
+local
+namelist
+Name
+level
+optional namelist initialization
+=
+explist
+exp
+Number
+0
+stat item
+stat
+keyword local
+local
+keyword function
+function
+Name
+hook
+funcbody
+(
+optional parlist
+namelist
+Name
+event
+)
+block
+chunk
+stat list
+stat item
+stat
+keyword local
+local
+namelist
+Name
+t
+optional namelist initialization
+=
+explist
+exp
+exp
+var
+prefixexp
+var
+Name
+debug
+.
+Name
+getinfo
+args
+(
+optional explist
+explist
+exp
+Number
+3
+)
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+io
+.
+Name
+write
+args
+(
+optional explist
+explist
+exp
+var
+Name
+level
+exp
+String
+double quoted string
+" >>> "
+exp
+exp
+var
+prefixexp
+var
+Name
+string
+.
+Name
+rep
+args
+(
+optional explist
+explist
+exp
+String
+double quoted string
+" "
+exp
+var
+Name
+level
+)
+)
+stat item
+stat
+keyword if
+if
+exp
+exp
+exp
+var
+Name
+t
+~=
+exp
+keyword nil
+nil
+keyword and
+and
+exp
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+currentline
+>=
+exp
+Number
+0
+keyword then
+then
+block
+chunk
+stat list
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+io
+.
+Name
+write
+args
+(
+optional explist
+explist
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+short_src
+exp
+String
+double quoted string
+":"
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+currentline
+exp
+String
+double quoted string
+" "
+)
+optional laststat
+elseif sequence
+optional else block
+keyword end
+end
+stat item
+stat
+varlist
+var
+Name
+t
+=
+explist
+exp
+exp
+var
+prefixexp
+var
+Name
+debug
+.
+Name
+getinfo
+args
+(
+optional explist
+explist
+exp
+Number
+2
+)
+stat item
+stat
+keyword if
+if
+exp
+exp
+var
+Name
+event
+==
+exp
+String
+double quoted string
+"call"
+keyword then
+then
+block
+chunk
+stat list
+stat item
+stat
+varlist
+var
+Name
+level
+=
+explist
+exp
+exp
+var
+Name
+level
++
+exp
+Number
+1
+optional laststat
+elseif sequence
+optional else block
+keyword else
+else
+block
+chunk
+stat list
+stat item
+stat
+varlist
+var
+Name
+level
+=
+explist
+exp
+exp
+var
+Name
+level
+-
+exp
+Number
+1
+stat item
+stat
+keyword if
+if
+exp
+exp
+var
+Name
+level
+<
+exp
+Number
+0
+keyword then
+then
+block
+chunk
+stat list
+stat item
+stat
+varlist
+var
+Name
+level
+=
+explist
+exp
+Number
+0
+optional laststat
+elseif sequence
+optional else block
+keyword end
+end
+optional laststat
+keyword end
+end
+stat item
+stat
+keyword if
+if
+exp
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+what
+==
+exp
+String
+double quoted string
+"main"
+keyword then
+then
+block
+chunk
+stat list
+stat item
+stat
+keyword if
+if
+exp
+exp
+var
+Name
+event
+==
+exp
+String
+double quoted string
+"call"
+keyword then
+then
+block
+chunk
+stat list
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+io
+.
+Name
+write
+args
+(
+optional explist
+explist
+exp
+String
+double quoted string
+"begin "
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+short_src
+)
+optional laststat
+elseif sequence
+optional else block
+keyword else
+else
+block
+chunk
+stat list
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+io
+.
+Name
+write
+args
+(
+optional explist
+explist
+exp
+String
+double quoted string
+"end "
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+short_src
+)
+optional laststat
+keyword end
+end
+optional laststat
+elseif sequence
+elseif sequence
+elseif block
+keyword elseif
+elseif
+exp
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+what
+==
+exp
+String
+double quoted string
+"Lua"
+keyword then
+then
+block
+chunk
+stat list
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+io
+.
+Name
+write
+args
+(
+optional explist
+explist
+exp
+var
+Name
+event
+exp
+String
+double quoted string
+" "
+exp
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+name
+keyword or
+or
+exp
+String
+double quoted string
+"(Lua)"
+exp
+String
+double quoted string
+" <"
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+linedefined
+exp
+String
+double quoted string
+":"
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+short_src
+exp
+String
+double quoted string
+">"
+)
+optional laststat
+optional else block
+keyword else
+else
+block
+chunk
+stat list
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+io
+.
+Name
+write
+args
+(
+optional explist
+explist
+exp
+var
+Name
+event
+exp
+String
+double quoted string
+" "
+exp
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+name
+keyword or
+or
+exp
+String
+double quoted string
+"(C)"
+exp
+String
+double quoted string
+" ["
+exp
+var
+prefixexp
+var
+Name
+t
+.
+Name
+what
+exp
+String
+double quoted string
+"] "
+)
+optional laststat
+keyword end
+end
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+io
+.
+Name
+write
+args
+(
+optional explist
+explist
+exp
+String
+double quoted string
+"\n"
+)
+optional laststat
+keyword end
+end
+stat item
+stat
+functioncall
+prefixexp
+var
+prefixexp
+var
+Name
+debug
+.
+Name
+sethook
+args
+(
+optional explist
+explist
+exp
+var
+Name
+hook
+exp
+String
+double quoted string
+"cr"
+)
+stat item
+stat
+varlist
+var
+Name
+level
+=
+explist
+exp
+Number
+0
+optional laststat
