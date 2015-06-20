@@ -1,360 +1,360 @@
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-offset
-optional namelist initialization
-=
-explist
-exp
-Number
-0
-stat item
-stat
-keyword while
-while
-exp
-keyword true
-true
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-s
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-read
-args
-(
-optional explist
-explist
-exp
-Number
-16
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-s
-==
-exp
-keyword nil
-nil
-keyword then
-then
-block
-chunk
-stat list
 optional laststat
-laststat
-keyword return
-return
-optional explist
-elseif sequence
-optional else block
-keyword end
 end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
+keyword end
+optional laststat
+16
+Number
 exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-format
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"%08X  "
-exp
-var
-Name
++
 offset
-)
-)
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
 Name
-string
-.
-Name
-gsub
-args
-(
-optional explist
+var
+exp
+exp
 explist
-exp
-var
+=
+offset
 Name
-s
-exp
-String
+var
+varlist
+stat
+stat item
+)
+"\n"
 double quoted string
-"(.)"
+String
 exp
+)
+"."
+double quoted string
+String
+exp
+"%c"
+double quoted string
+String
+exp
+s
+Name
+var
+exp
+explist
+optional explist
+(
+args
+gsub
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+" "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+)
+)
+)
+s
+Name
+var
+exp
+explist
+optional explist
+(
+args
+len
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+-
+16
+Number
+exp
+exp
+(
+exp
+*
+3
+Number
+exp
+exp
+" "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+rep
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+end
+keyword end
+optional laststat
+)
+)
+)
+c
+Name
+var
+exp
+explist
+optional explist
+(
+args
+byte
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+"%02X "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+format
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+)
+c
+Name
+namelist
+optional parlist
+(
+funcbody
 function
 keyword function
 function
-funcbody
-(
-optional parlist
-namelist
-Name
-c
-)
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
 exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-format
-args
-(
-optional explist
-explist
-exp
-String
+"(.)"
 double quoted string
-"%02X "
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-byte
-args
-(
-optional explist
-explist
-exp
-var
-Name
-c
-)
-)
-)
-optional laststat
-keyword end
-end
-)
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-rep
-args
-(
-optional explist
-explist
-exp
 String
-double quoted string
-" "
 exp
-exp
-Number
-3
-*
-exp
-(
-exp
-exp
-Number
-16
--
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-len
-args
-(
-optional explist
-explist
-exp
-var
-Name
 s
-)
-)
-)
-)
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
 Name
-io
-.
-Name
-write
-args
-(
-optional explist
+var
+exp
 explist
-exp
-String
-double quoted string
-" "
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
+optional explist
+(
+args
 gsub
-args
-(
-optional explist
-explist
-exp
-var
 Name
-s
-exp
-String
-double quoted string
-"%c"
-exp
-String
-double quoted string
-"."
-)
-exp
-String
-double quoted string
-"\n"
-)
-stat item
+.
+string
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
 stat
-varlist
-var
-Name
+stat item
+)
+)
 offset
-=
+Name
+var
+exp
+"%08X  "
+double quoted string
+String
+exp
 explist
-exp
-exp
-var
+optional explist
+(
+args
+format
 Name
-offset
-+
+.
+string
+Name
+var
+prefixexp
+var
 exp
-Number
-16
-optional laststat
-keyword end
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
 end
+keyword end
+optional else block
+elseif sequence
+optional explist
+return
+keyword return
+laststat
 optional laststat
+stat list
+chunk
+block
+then
+keyword then
+nil
+keyword nil
+exp
+==
+s
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+16
+Number
+exp
+explist
+optional explist
+(
+args
+read
+Name
+.
+io
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+s
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+true
+keyword true
+exp
+while
+keyword while
+stat
+stat item
+0
+Number
+exp
+explist
+=
+optional namelist initialization
+offset
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk

@@ -1,32 +1,32 @@
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"Hello world, from "
-exp
-var
-Name
-_VERSION
-exp
-String
-double quoted string
-"!\n"
-)
 optional laststat
+)
+"!\n"
+double quoted string
+String
+exp
+_VERSION
+Name
+var
+exp
+"Hello world, from "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk

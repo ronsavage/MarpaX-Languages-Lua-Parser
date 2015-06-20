@@ -1,296 +1,296 @@
-chunk
-stat list
-stat item
-stat
-keyword for
-for
-Name
-c0
-=
-exp
-Number
--20
-,
-exp
-exp
-Number
-50
--
-exp
-Number
-1
-,
-exp
-Number
-10
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"C "
-)
-stat item
-stat
-keyword for
-for
-Name
-c
-=
-exp
-var
-Name
-c0
-,
-exp
-exp
-exp
-var
-Name
-c0
-+
-exp
-Number
-10
--
-exp
-Number
-1
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-format
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"%3.0f "
-exp
-var
-Name
-c
-)
-)
 optional laststat
-keyword end
 end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"\n"
-)
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"F "
-)
-stat item
-stat
-keyword for
-for
-Name
-c
-=
-exp
-var
-Name
-c0
-,
-exp
-exp
-exp
-var
-Name
-c0
-+
-exp
-Number
-10
--
-exp
-Number
-1
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-f
-=
-explist
-exp
-exp
-exp
-(
-exp
-exp
-Number
-9
-/
-exp
-Number
-5
-)
-*
-exp
-var
-Name
-c
-+
-exp
-Number
-32
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-format
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"%3.0f "
-exp
-var
-Name
-f
-)
-)
+keyword end
 optional laststat
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
+)
 "\n\n"
-)
-optional laststat
-keyword end
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
 end
+keyword end
 optional laststat
+)
+)
+f
+Name
+var
+exp
+"%3.0f "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+format
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+32
+Number
+exp
++
+c
+Name
+var
+exp
+*
+)
+5
+Number
+exp
+/
+9
+Number
+exp
+exp
+(
+exp
+exp
+exp
+explist
+=
+f
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+1
+Number
+exp
+-
+10
+Number
+exp
++
+c0
+Name
+var
+exp
+exp
+exp
+,
+c0
+Name
+var
+exp
+=
+c
+Name
+for
+keyword for
+stat
+stat item
+)
+"F "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+"\n"
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+optional laststat
+)
+)
+c
+Name
+var
+exp
+"%3.0f "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+format
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+1
+Number
+exp
+-
+10
+Number
+exp
++
+c0
+Name
+var
+exp
+exp
+exp
+,
+c0
+Name
+var
+exp
+=
+c
+Name
+for
+keyword for
+stat
+stat item
+)
+"C "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+10
+Number
+exp
+,
+1
+Number
+exp
+-
+50
+Number
+exp
+exp
+,
+-20
+Number
+exp
+=
+c0
+Name
+for
+keyword for
+stat
+stat item
+stat list
+chunk

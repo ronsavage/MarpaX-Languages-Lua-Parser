@@ -1,594 +1,594 @@
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-delta
-=
-explist
-exp
-Number
-1e-6
-stat item
-stat
-keyword function
-function
-funcname
-dotted name
-Name
-bisect
-optional colon name element
-funcbody
-(
-optional parlist
-namelist
-Name
-f
-Name
-a
-Name
-b
-Name
-fa
-Name
-fb
+optional laststat
 )
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-c
-optional namelist initialization
-=
-explist
-exp
-exp
-(
-exp
-exp
-var
-Name
-a
-+
-exp
-var
-Name
-b
-)
-/
-exp
-Number
 2
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-var
-Name
-n
-exp
-String
-double quoted string
-" c="
-exp
-var
-Name
-c
-exp
-String
-double quoted string
-" a="
-exp
-var
-Name
-a
-exp
-String
-double quoted string
-" b="
-exp
-var
-Name
-b
-exp
-String
-double quoted string
-"\n"
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-exp
-exp
-var
-Name
-c
-==
-exp
-var
-Name
-a
-keyword or
-or
-exp
-exp
-var
-Name
-c
-==
-exp
-var
-Name
-b
-keyword or
-or
-exp
-exp
-exp
-var
-prefixexp
-var
-Name
-math
-.
-Name
-abs
-args
-(
-optional explist
-explist
-exp
-exp
-var
-Name
-a
--
-exp
-var
-Name
-b
-)
-<
-exp
-var
-Name
-delta
-keyword then
-then
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-var
-Name
-c
-exp
-exp
-var
-Name
-b
--
-exp
-var
-Name
-a
-elseif sequence
-optional else block
-keyword end
-end
-stat item
-stat
-varlist
-var
-Name
-n
-=
-explist
-exp
-exp
-var
-Name
-n
-+
-exp
 Number
+exp
 1
-stat item
-stat
-keyword local
-local
-namelist
-Name
-fc
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-Name
-f
-args
-(
-optional explist
-explist
-exp
-var
-Name
-c
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-exp
-var
-Name
-fa
-*
-exp
-var
-Name
-fc
-<
-exp
 Number
-0
-keyword then
-then
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
 exp
-exp
-var
-Name
-bisect
-args
-(
-optional explist
-explist
-exp
-var
-Name
 f
-exp
-var
 Name
-a
-exp
 var
-Name
-c
 exp
-var
-Name
-fa
-exp
-var
-Name
-fc
-)
-elseif sequence
-optional else block
-keyword else
-else
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
-optional explist
 explist
-exp
-exp
-var
-Name
-bisect
-args
+optional explist
 (
-optional explist
-explist
-exp
-var
-Name
-f
-exp
-var
-Name
-c
-exp
-var
-Name
-b
-exp
-var
-Name
-fc
-exp
-var
-Name
-fb
-)
-keyword end
-end
-optional laststat
-keyword end
-end
-stat item
-stat
-keyword function
-function
-funcname
-dotted name
-Name
+args
 solve
-optional colon name element
-funcbody
-(
-optional parlist
-namelist
 Name
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+1
+Number
+exp
+-
+x
+Name
+var
+exp
+-
+x
+Name
+var
+exp
+*
+x
+Name
+var
+exp
+*
+x
+Name
+var
+exp
+exp
+exp
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+)
+x
+Name
+namelist
+optional parlist
+(
+funcbody
+optional colon name element
 f
 Name
-a
-Name
-b
+dotted name
+funcname
+function
+keyword function
+stat
+stat item
+end
+keyword end
+optional laststat
 )
-block
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-n
-=
-explist
-exp
-Number
-0
-stat item
-stat
-keyword local
-local
-namelist
-Name
+)
+)
 z
 Name
+var
+exp
+explist
+optional explist
+(
+args
+f
+Name
+var
+exp
+exp
 e
-optional namelist initialization
-=
-explist
-exp
-exp
-var
 Name
-bisect
-args
-(
-optional explist
-explist
-exp
 var
-Name
-f
 exp
+z
+Name
 var
-Name
-a
 exp
+n
+Name
 var
-Name
-b
 exp
-exp
-var
-Name
-f
-args
-(
-optional explist
-explist
-exp
-var
-Name
-a
-)
-exp
-exp
-var
-Name
-f
-args
-(
-optional explist
-explist
-exp
-var
-Name
-b
-)
-)
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-format
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
 "after %d steps, root is %.17g with error %.1e, f=%.1e\n"
+double quoted string
+String
 exp
-var
-Name
-n
-exp
-var
-Name
-z
-exp
-var
-Name
-e
-exp
-exp
-var
-Name
-f
+explist
+optional explist
+(
 args
-(
-optional explist
-explist
-exp
+format
+Name
+.
+string
+Name
 var
-Name
-z
-)
-)
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-keyword function
-function
-funcname
-dotted name
-Name
-f
-optional colon name element
-funcbody
-(
-optional parlist
-namelist
-Name
-x
-)
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-exp
-exp
-exp
-var
-Name
-x
-*
-exp
-var
-Name
-x
-*
-exp
-var
-Name
-x
--
-exp
-var
-Name
-x
--
-exp
-Number
-1
-keyword end
-end
-stat item
-stat
-functioncall
 prefixexp
 var
-Name
-solve
-args
-(
-optional explist
-explist
 exp
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
 var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+)
+b
+Name
+var
+exp
+explist
+optional explist
+(
+args
+f
+Name
+var
+exp
+exp
+)
+a
+Name
+var
+exp
+explist
+optional explist
+(
+args
+f
+Name
+var
+exp
+exp
+b
+Name
+var
+exp
+a
+Name
+var
+exp
+f
+Name
+var
+exp
+explist
+optional explist
+(
+args
+bisect
+Name
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+e
+Name
+z
+Name
+namelist
+local
+keyword local
+stat
+stat item
+0
+Number
+exp
+explist
+=
+n
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk
+block
+)
+b
+Name
+a
 Name
 f
-exp
-Number
-1
-exp
-Number
-2
-)
+Name
+namelist
+optional parlist
+(
+funcbody
+optional colon name element
+solve
+Name
+dotted name
+funcname
+function
+keyword function
+stat
+stat item
+end
+keyword end
 optional laststat
+end
+keyword end
+)
+fb
+Name
+var
+exp
+fc
+Name
+var
+exp
+b
+Name
+var
+exp
+c
+Name
+var
+exp
+f
+Name
+var
+exp
+explist
+optional explist
+(
+args
+bisect
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+else
+keyword else
+optional else block
+elseif sequence
+)
+fc
+Name
+var
+exp
+fa
+Name
+var
+exp
+c
+Name
+var
+exp
+a
+Name
+var
+exp
+f
+Name
+var
+exp
+explist
+optional explist
+(
+args
+bisect
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+then
+keyword then
+0
+Number
+exp
+<
+fc
+Name
+var
+exp
+*
+fa
+Name
+var
+exp
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+c
+Name
+var
+exp
+explist
+optional explist
+(
+args
+f
+Name
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+fc
+Name
+namelist
+local
+keyword local
+stat
+stat item
+1
+Number
+exp
++
+n
+Name
+var
+exp
+exp
+explist
+=
+n
+Name
+var
+varlist
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
+a
+Name
+var
+exp
+-
+b
+Name
+var
+exp
+exp
+c
+Name
+var
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+then
+keyword then
+delta
+Name
+var
+exp
+<
+)
+b
+Name
+var
+exp
+-
+a
+Name
+var
+exp
+exp
+explist
+optional explist
+(
+args
+abs
+Name
+.
+math
+Name
+var
+prefixexp
+var
+exp
+exp
+exp
+or
+keyword or
+b
+Name
+var
+exp
+==
+c
+Name
+var
+exp
+exp
+or
+keyword or
+a
+Name
+var
+exp
+==
+c
+Name
+var
+exp
+exp
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+"\n"
+double quoted string
+String
+exp
+b
+Name
+var
+exp
+" b="
+double quoted string
+String
+exp
+a
+Name
+var
+exp
+" a="
+double quoted string
+String
+exp
+c
+Name
+var
+exp
+" c="
+double quoted string
+String
+exp
+n
+Name
+var
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+2
+Number
+exp
+/
+)
+b
+Name
+var
+exp
++
+a
+Name
+var
+exp
+exp
+(
+exp
+exp
+explist
+=
+optional namelist initialization
+c
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+)
+fb
+Name
+fa
+Name
+b
+Name
+a
+Name
+f
+Name
+namelist
+optional parlist
+(
+funcbody
+optional colon name element
+bisect
+Name
+dotted name
+funcname
+function
+keyword function
+stat
+stat item
+1e-6
+Number
+exp
+explist
+=
+delta
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk

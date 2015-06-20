@@ -1,226 +1,226 @@
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-A
-optional namelist initialization
-stat item
-stat
-keyword while
-while
-exp
-Number
-1
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-l
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-read
-args
-(
-optional explist
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-l
-==
-exp
-keyword nil
-nil
-keyword then
-then
-block
-chunk
-stat list
 optional laststat
-laststat
-keyword break
-break
-elseif sequence
-optional else block
-keyword end
-end
-stat item
-stat
-keyword local
-local
-namelist
-Name
-_
-Name
-_
-Name
-a
-Name
-b
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-find
-args
-(
-optional explist
-explist
-exp
-var
-Name
-l
-exp
-String
-single quoted string
-'"?([_%w]+)"?%s*(.*)$'
 )
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-a
-~=
-exp
-var
-Name
-A
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-A
-=
-explist
-exp
-var
-Name
-a
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
 "\n"
-exp
-var
-Name
-a
-exp
-String
 double quoted string
-":"
-)
-optional laststat
-elseif sequence
-optional else block
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
+String
+exp
 explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+optional laststat
+)
+b
+Name
+var
 exp
-String
-double quoted string
 " "
-exp
-var
-Name
-b
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
 double quoted string
-"\n"
-)
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
 optional laststat
+)
+":"
+double quoted string
+String
+exp
+a
+Name
+var
+exp
+"\n"
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+a
+Name
+var
+exp
+explist
+=
+A
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+A
+Name
+var
+exp
+~=
+a
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+'"?([_%w]+)"?%s*(.*)$'
+single quoted string
+String
+exp
+l
+Name
+var
+exp
+explist
+optional explist
+(
+args
+find
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+b
+Name
+a
+Name
+_
+Name
+_
+Name
+namelist
+local
+keyword local
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
+break
+keyword break
+laststat
+optional laststat
+stat list
+chunk
+block
+then
+keyword then
+nil
+keyword nil
+exp
+==
+l
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+optional explist
+(
+args
+read
+Name
+.
+io
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+l
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+1
+Number
+exp
+while
+keyword while
+stat
+stat item
+optional namelist initialization
+A
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk

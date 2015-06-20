@@ -1,656 +1,656 @@
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-level
-optional namelist initialization
-=
-explist
-exp
-Number
+optional laststat
 0
-stat item
-stat
-keyword local
-local
-keyword function
-function
-Name
-hook
-funcbody
-(
-optional parlist
-namelist
-Name
-event
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-t
-optional namelist initialization
+Number
+exp
+explist
 =
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-debug
-.
-Name
-getinfo
-args
-(
-optional explist
-explist
-exp
-Number
-3
-)
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-var
-Name
 level
-exp
-String
-double quoted string
-" >>> "
-exp
-exp
-var
-prefixexp
-var
 Name
-string
-.
-Name
-rep
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-" "
-exp
 var
-Name
-level
-)
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-exp
-var
-Name
-t
-~=
-exp
-keyword nil
-nil
-keyword and
-and
-exp
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-currentline
->=
-exp
-Number
-0
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-short_src
-exp
-String
-double quoted string
-":"
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-currentline
-exp
-String
-double quoted string
-" "
-)
-optional laststat
-elseif sequence
-optional else block
-keyword end
-end
-stat item
-stat
 varlist
-var
-Name
-t
-=
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-debug
-.
-Name
-getinfo
-args
-(
-optional explist
-explist
-exp
-Number
-2
+stat
+stat item
 )
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-event
-==
-exp
-String
-double quoted string
-"call"
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-level
-=
-explist
-exp
-exp
-var
-Name
-level
-+
-exp
-Number
-1
-optional laststat
-elseif sequence
-optional else block
-keyword else
-else
-block
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-level
-=
-explist
-exp
-exp
-var
-Name
-level
--
-exp
-Number
-1
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-level
-<
-exp
-Number
-0
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-level
-=
-explist
-exp
-Number
-0
-optional laststat
-elseif sequence
-optional else block
-keyword end
-end
-optional laststat
-keyword end
-end
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-what
-==
-exp
-String
-double quoted string
-"main"
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-event
-==
-exp
-String
-double quoted string
-"call"
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"begin "
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-short_src
-)
-optional laststat
-elseif sequence
-optional else block
-keyword else
-else
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"end "
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-short_src
-)
-optional laststat
-keyword end
-end
-optional laststat
-elseif sequence
-elseif sequence
-elseif block
-keyword elseif
-elseif
-exp
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-what
-==
-exp
-String
-double quoted string
-"Lua"
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-var
-Name
-event
-exp
-String
-double quoted string
-" "
-exp
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-name
-keyword or
-or
-exp
-String
-double quoted string
-"(Lua)"
-exp
-String
-double quoted string
-" <"
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-linedefined
-exp
-String
-double quoted string
-":"
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-short_src
-exp
-String
-double quoted string
-">"
-)
-optional laststat
-optional else block
-keyword else
-else
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-var
-Name
-event
-exp
-String
-double quoted string
-" "
-exp
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-name
-keyword or
-or
-exp
-String
-double quoted string
-"(C)"
-exp
-String
-double quoted string
-" ["
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-what
-exp
-String
-double quoted string
-"] "
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"\n"
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-debug
-.
-Name
-sethook
-args
-(
-optional explist
-explist
-exp
-var
-Name
-hook
-exp
-String
-double quoted string
 "cr"
-)
-stat item
-stat
-varlist
-var
-Name
-level
-=
-explist
+double quoted string
+String
 exp
-Number
-0
+hook
+Name
+var
+exp
+explist
+optional explist
+(
+args
+sethook
+Name
+.
+debug
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
 optional laststat
+)
+"\n"
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+optional laststat
+)
+"] "
+double quoted string
+String
+exp
+what
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+" ["
+double quoted string
+String
+exp
+"(C)"
+double quoted string
+String
+exp
+or
+keyword or
+name
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+exp
+" "
+double quoted string
+String
+exp
+event
+Name
+var
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+else
+keyword else
+optional else block
+optional laststat
+)
+">"
+double quoted string
+String
+exp
+short_src
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+":"
+double quoted string
+String
+exp
+linedefined
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+" <"
+double quoted string
+String
+exp
+"(Lua)"
+double quoted string
+String
+exp
+or
+keyword or
+name
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+exp
+" "
+double quoted string
+String
+exp
+event
+Name
+var
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+"Lua"
+double quoted string
+String
+exp
+==
+what
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+exp
+elseif
+keyword elseif
+elseif block
+elseif sequence
+elseif sequence
+optional laststat
+end
+keyword end
+optional laststat
+)
+short_src
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+"end "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+else
+keyword else
+optional else block
+elseif sequence
+optional laststat
+)
+short_src
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+"begin "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+"call"
+double quoted string
+String
+exp
+==
+event
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+"main"
+double quoted string
+String
+exp
+==
+what
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+end
+keyword end
+optional laststat
+end
+keyword end
+optional else block
+elseif sequence
+optional laststat
+0
+Number
+exp
+explist
+=
+level
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+0
+Number
+exp
+<
+level
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+1
+Number
+exp
+-
+level
+Name
+var
+exp
+exp
+explist
+=
+level
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk
+block
+else
+keyword else
+optional else block
+elseif sequence
+optional laststat
+1
+Number
+exp
++
+level
+Name
+var
+exp
+exp
+explist
+=
+level
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+"call"
+double quoted string
+String
+exp
+==
+event
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+2
+Number
+exp
+explist
+optional explist
+(
+args
+getinfo
+Name
+.
+debug
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+=
+t
+Name
+var
+varlist
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
+optional laststat
+)
+" "
+double quoted string
+String
+exp
+currentline
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+":"
+double quoted string
+String
+exp
+short_src
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+0
+Number
+exp
+>=
+currentline
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+exp
+and
+keyword and
+nil
+keyword nil
+exp
+~=
+t
+Name
+var
+exp
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+)
+level
+Name
+var
+exp
+" "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+rep
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+" >>> "
+double quoted string
+String
+exp
+level
+Name
+var
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+3
+Number
+exp
+explist
+optional explist
+(
+args
+getinfo
+Name
+.
+debug
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+t
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+)
+event
+Name
+namelist
+optional parlist
+(
+funcbody
+hook
+Name
+function
+keyword function
+local
+keyword local
+stat
+stat item
+0
+Number
+exp
+explist
+=
+optional namelist initialization
+level
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk

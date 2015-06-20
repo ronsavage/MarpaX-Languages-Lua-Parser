@@ -1,420 +1,420 @@
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-Y
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-g
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-a
-optional namelist initialization
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-f
-)
-block
-chunk
-stat list
 optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
-Name
-f
-args
-(
-optional explist
-explist
-exp
-var
-Name
-f
-)
-keyword end
 end
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
-Name
-a
-args
-(
-optional explist
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-f
-)
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
-Name
-g
-args
-(
-optional explist
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-x
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-c
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-Name
-f
-args
-(
-optional explist
-explist
-exp
-var
-Name
-f
-)
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
-Name
-c
-args
-(
-optional explist
-explist
-exp
-var
-Name
-x
-)
 keyword end
-end
-)
-keyword end
-end
-)
-keyword end
-end
-stat item
-stat
-varlist
-var
-Name
-F
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-f
-)
-block
-chunk
-stat list
 optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
+)
 n
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
 Name
-n
-==
+var
 exp
-Number
-0
-keyword then
-then
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
-optional explist
 explist
-exp
-Number
-1
-elseif sequence
-optional else block
-keyword else
-else
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
 optional explist
-explist
-exp
-exp
-var
-Name
-n
-*
-exp
-exp
-var
-Name
-f
-args
 (
-optional explist
-explist
-exp
-exp
-var
-Name
-n
--
-exp
-Number
-1
-)
-keyword end
-end
-optional laststat
-keyword end
-end
-keyword end
-end
-stat item
-stat
-varlist
-var
-Name
-factorial
-=
-explist
-exp
-exp
-var
-Name
-Y
 args
-(
-optional explist
-explist
-exp
-var
-Name
-F
-)
-stat item
-stat
-keyword function
-function
-funcname
-dotted name
-Name
 test
-optional colon name element
-funcbody
-(
-optional parlist
-namelist
 Name
-x
-)
-block
-chunk
-stat list
-stat item
-stat
+var
+prefixexp
 functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-var
-Name
-x
-exp
-String
-double quoted string
-"! = "
-exp
-exp
-var
-Name
-factorial
-args
-(
-optional explist
-explist
-exp
-var
-Name
-x
-)
-exp
-String
-double quoted string
-"\n"
-)
-optional laststat
-keyword end
-end
-stat item
 stat
-keyword for
-for
-Name
-n
-=
-exp
-Number
-0
-,
-exp
-Number
-16
-keyword do
+stat item
+stat list
+chunk
+block
 do
-block
-chunk
-stat list
-stat item
+keyword do
+16
+Number
+exp
+,
+0
+Number
+exp
+=
+n
+Name
+for
+keyword for
 stat
-functioncall
+stat item
+end
+keyword end
+optional laststat
+)
+"\n"
+double quoted string
+String
+exp
+)
+x
+Name
+var
+exp
+explist
+optional explist
+(
+args
+factorial
+Name
+var
+exp
+exp
+"! = "
+double quoted string
+String
+exp
+x
+Name
+var
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
 prefixexp
 var
-Name
-test
-args
-(
-optional explist
-explist
-exp
-var
-Name
-n
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
 )
-optional laststat
+x
+Name
+namelist
+optional parlist
+(
+funcbody
+optional colon name element
+test
+Name
+dotted name
+funcname
+function
+keyword function
+stat
+stat item
+)
+F
+Name
+var
+exp
+explist
+optional explist
+(
+args
+Y
+Name
+var
+exp
+exp
+explist
+=
+factorial
+Name
+var
+varlist
+stat
+stat item
+end
 keyword end
 end
+keyword end
 optional laststat
+end
+keyword end
+)
+1
+Number
+exp
+-
+n
+Name
+var
+exp
+exp
+explist
+optional explist
+(
+args
+f
+Name
+var
+exp
+exp
+*
+n
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+else
+keyword else
+optional else block
+elseif sequence
+1
+Number
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+then
+keyword then
+0
+Number
+exp
+==
+n
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+stat list
+chunk
+block
+)
+n
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+)
+f
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+=
+F
+Name
+var
+varlist
+stat
+stat item
+end
+keyword end
+)
+end
+keyword end
+)
+end
+keyword end
+)
+x
+Name
+var
+exp
+explist
+optional explist
+(
+args
+c
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+)
+f
+Name
+var
+exp
+explist
+optional explist
+(
+args
+f
+Name
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+c
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+)
+x
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+optional explist
+(
+args
+g
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+)
+f
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+optional explist
+(
+args
+a
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+end
+keyword end
+)
+f
+Name
+var
+exp
+explist
+optional explist
+(
+args
+f
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+)
+f
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+=
+optional namelist initialization
+a
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+)
+g
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+=
+Y
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk

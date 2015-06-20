@@ -1,550 +1,550 @@
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-getinfo
-Name
-error
-Name
-rawset
-Name
-rawget
-optional namelist initialization
-=
-explist
-exp
-var
-prefixexp
-var
-Name
-debug
-.
-Name
-getinfo
-exp
-var
-Name
-error
-exp
-var
-Name
-rawset
-exp
-var
-Name
-rawget
-stat item
-stat
-keyword local
-local
-namelist
-Name
-mt
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-Name
-getmetatable
-args
-(
-optional explist
-explist
-exp
-var
-Name
-_G
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-mt
-==
-exp
-keyword nil
-nil
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-varlist
-var
-Name
-mt
-=
-explist
-exp
-tableconstructor
-{
-}
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-setmetatable
-args
-(
-optional explist
-explist
-exp
-var
-Name
-_G
-exp
-var
-Name
-mt
-)
 optional laststat
-elseif sequence
-optional else block
-keyword end
 end
-stat item
-stat
-varlist
-var
-prefixexp
-var
-Name
-mt
-.
-Name
-__declared
-=
-explist
-exp
-tableconstructor
-{
-}
-stat item
-stat
-keyword local
-local
-keyword function
-function
-Name
-what
-funcbody
-(
-optional parlist
+keyword end
 )
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
+n
 Name
-d
-optional namelist initialization
-=
-explist
-exp
-exp
 var
+exp
+t
 Name
-getinfo
-args
-(
+var
+exp
+explist
 optional explist
+(
+args
+rawget
+Name
+var
+exp
+exp
 explist
-exp
-Number
-3
-exp
-String
-double quoted string
-"S"
-)
-optional laststat
-laststat
-keyword return
+optional explist
 return
-optional explist
-explist
-exp
-exp
-exp
-var
-Name
-d
-keyword and
-and
-exp
-var
-prefixexp
-var
-Name
-d
-.
-Name
-what
-keyword or
-or
-exp
-String
-double quoted string
-"C"
-keyword end
+keyword return
+laststat
+optional laststat
 end
-stat item
-stat
-varlist
-var
-prefixexp
-var
-Name
-mt
-.
-Name
-__newindex
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-t
-Name
-n
-Name
-v
+keyword end
+optional else block
+elseif sequence
+optional laststat
 )
-block
-chunk
-stat list
-stat item
-stat
-keyword if
-if
-exp
-keyword not
-not
-exp
-var
-prefixexp
-var
-prefixexp
-var
-Name
-mt
-.
-Name
-__declared
-[
-exp
-var
-Name
-n
-]
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-w
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-Name
-what
-args
-(
-optional explist
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-exp
-var
-Name
-w
-~=
-exp
-String
-double quoted string
-"main"
-keyword and
-and
-exp
-exp
-var
-Name
-w
-~=
-exp
-String
-double quoted string
-"C"
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-error
-args
-(
-optional explist
-explist
-exp
-exp
-String
-double quoted string
-"assign to undeclared variable '"
-..
-exp
-exp
-var
-Name
-n
-..
-exp
-String
-double quoted string
-"'"
-exp
-Number
 2
-)
-optional laststat
-elseif sequence
-optional else block
-keyword end
-end
-stat item
-stat
-varlist
-var
-prefixexp
-var
-prefixexp
-var
-Name
-mt
-.
-Name
-__declared
-[
+Number
 exp
-var
-Name
-n
-]
-=
-explist
-exp
-keyword true
-true
-optional laststat
-elseif sequence
-optional else block
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-rawset
-args
-(
-optional explist
-explist
-exp
-var
-Name
-t
-exp
-var
-Name
-n
-exp
-var
-Name
-v
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-varlist
-var
-prefixexp
-var
-Name
-mt
-.
-Name
-__index
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-t
-Name
-n
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword if
-if
-exp
-exp
-keyword not
-not
-exp
-var
-prefixexp
-var
-prefixexp
-var
-Name
-mt
-.
-Name
-__declared
-[
-exp
-var
-Name
-n
-]
-keyword and
-and
-exp
-exp
-exp
-var
-Name
-what
-args
-(
-optional explist
-)
-~=
-exp
-String
-double quoted string
-"C"
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-error
-args
-(
-optional explist
-explist
-exp
-exp
-String
-double quoted string
-"variable '"
-..
-exp
-exp
-var
-Name
-n
-..
-exp
-String
-double quoted string
 "' is not declared"
+double quoted string
+String
 exp
-Number
-2
-)
-optional laststat
-elseif sequence
-optional else block
-keyword end
-end
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
+..
+n
 Name
-rawget
-args
-(
-optional explist
-explist
-exp
 var
+exp
+exp
+..
+"variable '"
+double quoted string
+String
+exp
+exp
+explist
+optional explist
+(
+args
+error
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+"C"
+double quoted string
+String
+exp
+~=
+)
+optional explist
+(
+args
+what
+Name
+var
+exp
+exp
+exp
+and
+keyword and
+]
+n
+Name
+var
+exp
+[
+__declared
+Name
+.
+mt
+Name
+var
+prefixexp
+var
+prefixexp
+var
+exp
+not
+keyword not
+exp
+exp
+if
+keyword if
+stat
+stat item
+stat list
+chunk
+block
+)
+n
 Name
 t
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
 exp
+explist
+=
+__index
+Name
+.
+mt
+Name
 var
+prefixexp
+var
+varlist
+stat
+stat item
+end
+keyword end
+optional laststat
+)
+v
+Name
+var
+exp
+n
+Name
+var
+exp
+t
+Name
+var
+exp
+explist
+optional explist
+(
+args
+rawset
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
+optional laststat
+true
+keyword true
+exp
+explist
+=
+]
+n
+Name
+var
+exp
+[
+__declared
+Name
+.
+mt
+Name
+var
+prefixexp
+var
+prefixexp
+var
+varlist
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
+optional laststat
+)
+2
+Number
+exp
+"'"
+double quoted string
+String
+exp
+..
+n
+Name
+var
+exp
+exp
+..
+"assign to undeclared variable '"
+double quoted string
+String
+exp
+exp
+explist
+optional explist
+(
+args
+error
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+"C"
+double quoted string
+String
+exp
+~=
+w
+Name
+var
+exp
+exp
+and
+keyword and
+"main"
+double quoted string
+String
+exp
+~=
+w
+Name
+var
+exp
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+optional explist
+(
+args
+what
+Name
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+w
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+]
+n
+Name
+var
+exp
+[
+__declared
+Name
+.
+mt
+Name
+var
+prefixexp
+var
+prefixexp
+var
+exp
+not
+keyword not
+exp
+if
+keyword if
+stat
+stat item
+stat list
+chunk
+block
+)
+v
 Name
 n
-)
-keyword end
+Name
+t
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+=
+__newindex
+Name
+.
+mt
+Name
+var
+prefixexp
+var
+varlist
+stat
+stat item
 end
+keyword end
+"C"
+double quoted string
+String
+exp
+or
+keyword or
+what
+Name
+.
+d
+Name
+var
+prefixexp
+var
+exp
+and
+keyword and
+d
+Name
+var
+exp
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
 optional laststat
+)
+"S"
+double quoted string
+String
+exp
+3
+Number
+exp
+explist
+optional explist
+(
+args
+getinfo
+Name
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+d
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+)
+optional parlist
+(
+funcbody
+what
+Name
+function
+keyword function
+local
+keyword local
+stat
+stat item
+}
+{
+tableconstructor
+exp
+explist
+=
+__declared
+Name
+.
+mt
+Name
+var
+prefixexp
+var
+varlist
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
+optional laststat
+)
+mt
+Name
+var
+exp
+_G
+Name
+var
+exp
+explist
+optional explist
+(
+args
+setmetatable
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+}
+{
+tableconstructor
+exp
+explist
+=
+mt
+Name
+var
+varlist
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+nil
+keyword nil
+exp
+==
+mt
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+_G
+Name
+var
+exp
+explist
+optional explist
+(
+args
+getmetatable
+Name
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+mt
+Name
+namelist
+local
+keyword local
+stat
+stat item
+rawget
+Name
+var
+exp
+rawset
+Name
+var
+exp
+error
+Name
+var
+exp
+getinfo
+Name
+.
+debug
+Name
+var
+prefixexp
+var
+exp
+explist
+=
+optional namelist initialization
+rawget
+Name
+rawset
+Name
+error
+Name
+getinfo
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk

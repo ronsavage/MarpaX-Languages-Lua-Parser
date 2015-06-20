@@ -1,595 +1,595 @@
-chunk
-stat list
-stat item
-stat
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-_tostring
-optional namelist initialization
-=
-explist
-exp
-var
-Name
-tostring
-stat item
-stat
-keyword local
-local
-namelist
-Name
-tostring
-optional namelist initialization
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-a
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword if
-if
-exp
-exp
-exp
-var
-Name
-type
-args
-(
-optional explist
-explist
-exp
-var
-Name
-a
-)
-==
-exp
-String
-double quoted string
-"string"
-keyword then
-then
-block
-chunk
-stat list
 optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-format
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-"%q"
-exp
-var
-Name
-a
 )
-elseif sequence
-optional else block
-keyword else
-else
-block
-chunk
-stat list
-optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
-Name
-_tostring
-args
-(
-optional explist
-explist
-exp
-var
-Name
-a
-)
-keyword end
-end
-optional laststat
-keyword end
-end
-stat item
-stat
-keyword local
-local
-namelist
-Name
-log
-optional namelist initialization
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-name
-Name
-old
-Name
-new
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-t
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-debug
-.
-Name
-getinfo
-args
-(
-optional explist
-explist
-exp
-Number
-3
-exp
-String
-double quoted string
-"Sl"
-)
-stat item
-stat
-keyword local
-local
-namelist
-Name
-line
-optional namelist initialization
-=
-explist
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-currentline
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-var
-prefixexp
-var
-Name
-t
-.
-Name
-short_src
-)
-stat item
-stat
-keyword if
-if
-exp
-exp
-var
-Name
-line
->=
-exp
-Number
-0
-keyword then
-then
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-":"
-exp
-var
-Name
-line
-)
-optional laststat
-elseif sequence
-optional else block
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-String
-double quoted string
-": "
-exp
-var
-Name
-name
-exp
-String
-double quoted string
-" is now "
-exp
-exp
-var
-Name
-tostring
-args
-(
-optional explist
-explist
-exp
-var
-Name
-new
-)
-exp
-String
-double quoted string
-" (was "
-exp
-exp
-var
-Name
-tostring
-args
-(
-optional explist
-explist
-exp
-var
-Name
-old
-)
-exp
-String
-double quoted string
-")"
-exp
-String
-double quoted string
-"\n"
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-keyword local
-local
-namelist
-Name
-g
-optional namelist initialization
-=
-explist
-exp
-tableconstructor
-{
-}
-stat item
-stat
-keyword local
-local
-namelist
-Name
-set
-optional namelist initialization
-=
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-namelist
-Name
-t
-Name
-name
-Name
-value
-)
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-log
-args
-(
-optional explist
-explist
-exp
-var
-Name
-name
-exp
-var
-prefixexp
-var
-Name
-g
-[
-exp
-var
-Name
-name
-]
-exp
-var
-Name
-value
-)
-stat item
-stat
-varlist
-var
-prefixexp
-var
-Name
-g
-[
-exp
-var
-Name
-name
-]
-=
-explist
-exp
-var
-Name
-value
-optional laststat
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-setmetatable
-args
-(
-optional explist
-explist
-exp
-exp
-var
-Name
-getfenv
-args
-(
-optional explist
-)
-exp
-tableconstructor
-{
-fieldlist
-field
-Name
-__index
-=
-exp
-var
-Name
-g
-field
-Name
-__newindex
-=
-exp
-var
-Name
-set
-}
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-varlist
-var
-Name
-a
-=
-explist
-exp
-Number
-1
-stat item
-stat
-varlist
-var
-Name
-b
-=
-explist
-exp
-Number
-2
-stat item
-stat
-varlist
-var
-Name
-a
-=
-explist
-exp
-Number
-10
-stat item
-stat
-varlist
-var
-Name
-b
-=
-explist
-exp
-Number
-20
-stat item
-stat
-varlist
-var
-Name
-b
-=
-explist
-exp
-keyword nil
-nil
-stat item
-stat
-varlist
-var
-Name
-b
-=
-explist
-exp
-Number
-200
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-print
-args
-(
-optional explist
-explist
-exp
-var
-Name
-a
-exp
-var
-Name
-b
-exp
-var
-Name
 c
-)
+Name
+var
+exp
+b
+Name
+var
+exp
+a
+Name
+var
+exp
+explist
+optional explist
+(
+args
+print
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+200
+Number
+exp
+explist
+=
+b
+Name
+var
+varlist
+stat
+stat item
+nil
+keyword nil
+exp
+explist
+=
+b
+Name
+var
+varlist
+stat
+stat item
+20
+Number
+exp
+explist
+=
+b
+Name
+var
+varlist
+stat
+stat item
+10
+Number
+exp
+explist
+=
+a
+Name
+var
+varlist
+stat
+stat item
+2
+Number
+exp
+explist
+=
+b
+Name
+var
+varlist
+stat
+stat item
+1
+Number
+exp
+explist
+=
+a
+Name
+var
+varlist
+stat
+stat item
+end
+keyword end
 optional laststat
+)
+}
+set
+Name
+var
+exp
+=
+__newindex
+Name
+field
+g
+Name
+var
+exp
+=
+__index
+Name
+field
+fieldlist
+{
+tableconstructor
+exp
+)
+optional explist
+(
+args
+getfenv
+Name
+var
+exp
+exp
+explist
+optional explist
+(
+args
+setmetatable
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+optional laststat
+value
+Name
+var
+exp
+explist
+=
+]
+name
+Name
+var
+exp
+[
+g
+Name
+var
+prefixexp
+var
+varlist
+stat
+stat item
+)
+value
+Name
+var
+exp
+]
+name
+Name
+var
+exp
+[
+g
+Name
+var
+prefixexp
+var
+exp
+name
+Name
+var
+exp
+explist
+optional explist
+(
+args
+log
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+)
+value
+Name
+name
+Name
+t
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+=
+optional namelist initialization
+set
+Name
+namelist
+local
+keyword local
+stat
+stat item
+}
+{
+tableconstructor
+exp
+explist
+=
+optional namelist initialization
+g
+Name
+namelist
+local
+keyword local
+stat
+stat item
+end
+keyword end
+optional laststat
+)
+"\n"
+double quoted string
+String
+exp
+")"
+double quoted string
+String
+exp
+)
+old
+Name
+var
+exp
+explist
+optional explist
+(
+args
+tostring
+Name
+var
+exp
+exp
+" (was "
+double quoted string
+String
+exp
+)
+new
+Name
+var
+exp
+explist
+optional explist
+(
+args
+tostring
+Name
+var
+exp
+exp
+" is now "
+double quoted string
+String
+exp
+name
+Name
+var
+exp
+": "
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
+optional else block
+elseif sequence
+optional laststat
+)
+line
+Name
+var
+exp
+":"
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+then
+keyword then
+0
+Number
+exp
+>=
+line
+Name
+var
+exp
+exp
+if
+keyword if
+stat
+stat item
+)
+short_src
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+currentline
+Name
+.
+t
+Name
+var
+prefixexp
+var
+exp
+explist
+=
+optional namelist initialization
+line
+Name
+namelist
+local
+keyword local
+stat
+stat item
+)
+"Sl"
+double quoted string
+String
+exp
+3
+Number
+exp
+explist
+optional explist
+(
+args
+getinfo
+Name
+.
+debug
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+t
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+)
+new
+Name
+old
+Name
+name
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+=
+optional namelist initialization
+log
+Name
+namelist
+local
+keyword local
+stat
+stat item
+end
+keyword end
+optional laststat
+end
+keyword end
+)
+a
+Name
+var
+exp
+explist
+optional explist
+(
+args
+_tostring
+Name
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+else
+keyword else
+optional else block
+elseif sequence
+)
+a
+Name
+var
+exp
+"%q"
+double quoted string
+String
+exp
+explist
+optional explist
+(
+args
+format
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+then
+keyword then
+"string"
+double quoted string
+String
+exp
+==
+)
+a
+Name
+var
+exp
+explist
+optional explist
+(
+args
+type
+Name
+var
+exp
+exp
+exp
+if
+keyword if
+stat
+stat item
+stat list
+chunk
+block
+)
+a
+Name
+namelist
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+=
+optional namelist initialization
+tostring
+Name
+namelist
+local
+keyword local
+stat
+stat item
+tostring
+Name
+var
+exp
+explist
+=
+optional namelist initialization
+_tostring
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+stat
+stat item
+stat list
+chunk

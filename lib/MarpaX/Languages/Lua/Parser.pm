@@ -138,15 +138,22 @@ sub decode_result
 
 		if ($ref_type eq 'ARRAY')
 		{
-			unshift @worklist, @$obj;
+			for (@$obj)
+			{
+				unshift @worklist, (! defined($_) ? '' : $_);
+			}
 		}
 		elsif ($ref_type eq 'HASH')
 		{
+			# Hopefully, we can get away with not checking for undef here,
+			# because we're outputting to @stack, not @worklist.
+
 			push @stack, {%$obj};
 		}
 		elsif ($ref_type eq 'REF')
 		{
 			$obj = $$obj;
+			$obj = '' if (! defined($obj) );
 
 			unshift @worklist, $obj;
 		}
@@ -156,6 +163,8 @@ sub decode_result
 		}
 		else
 		{
+			# See comment above about not checking for undef.
+
 			push @stack, $obj;
 		}
 

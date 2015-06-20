@@ -32,11 +32,9 @@ sub process
 		output_file_name => "$output_file_name",
 	);
 
-	isa_ok($parser, 'MarpaX::Languages::Lua::Parser', 'new() returned correct object type');
-
 	$parser -> run;
 
-	is_deeply([path($expected_file_name) -> lines_utf8], [path($output_file_name) -> lines_utf8], "$file_name: Output file matches expected file");
+	is_deeply([path($expected_file_name) -> lines_utf8], [path($output_file_name) -> lines_utf8], "$file_name: OK");
 
 } # End of process.
 

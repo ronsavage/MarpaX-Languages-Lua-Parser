@@ -1,197 +1,197 @@
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-f
-optional namelist initialization
-=
-explist
+optional laststat
+1
+Number
 exp
-function
-keyword function
-function
-funcbody
+explist
+=
+y
+Name
+var
+varlist
+stat
+stat item
+2
+Number
+exp
+explist
+=
+x
+Name
+var
+varlist
+stat
+stat item
+)
+3
+Number
+exp
+"x"
+double quoted string
+String
+exp
+g
+Name
+var
+exp
+explist
+optional explist
 (
-optional parlist
+args
+rawset
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+g
+Name
+var
+exp
+1
+Number
+exp
+explist
+optional explist
+(
+args
+setfenv
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+}
+f
+Name
+var
+exp
+=
+__newindex
+Name
+field
+G
+Name
+var
+exp
+=
+__index
+Name
+field
+fieldlist
+{
+tableconstructor
+exp
+g
+Name
+var
+exp
+explist
+optional explist
+(
+args
+setmetatable
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+)
+optional explist
+(
+args
+getfenv
+Name
+var
+exp
+exp
+explist
+=
+optional namelist initialization
+G
+Name
 namelist
+local
+keyword local
+stat
+stat item
+}
+{
+tableconstructor
+exp
+explist
+=
+optional namelist initialization
+g
+Name
+namelist
+local
+keyword local
+stat
+stat item
+end
+keyword end
+optional laststat
+)
+2
+Number
+exp
+"'"
+double quoted string
+String
+exp
+..
+i
+Name
+var
+exp
+exp
+..
+"cannot redefine global variable `"
+double quoted string
+String
+exp
+exp
+explist
+optional explist
+(
+args
+error
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+)
+i
 Name
 t
 Name
-i
-)
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-error
-args
-(
-optional explist
-explist
-exp
-exp
-String
-double quoted string
-"cannot redefine global variable `"
-..
-exp
-exp
-var
-Name
-i
-..
-exp
-String
-double quoted string
-"'"
-exp
-Number
-2
-)
-optional laststat
-keyword end
-end
-stat item
-stat
-keyword local
-local
 namelist
-Name
-g
-optional namelist initialization
-=
-explist
-exp
-tableconstructor
-{
-}
-stat item
-stat
-keyword local
-local
-namelist
-Name
-G
-optional namelist initialization
-=
-explist
-exp
-exp
-var
-Name
-getfenv
-args
+optional parlist
 (
-optional explist
-)
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-setmetatable
-args
-(
-optional explist
+funcbody
+function
+keyword function
+function
+exp
 explist
-exp
-var
-Name
-g
-exp
-tableconstructor
-{
-fieldlist
-field
-Name
-__index
 =
-exp
-var
-Name
-G
-field
-Name
-__newindex
-=
-exp
-var
-Name
+optional namelist initialization
 f
-}
-)
-stat item
+Name
+namelist
+local
+keyword local
 stat
-functioncall
-prefixexp
-var
-Name
-setfenv
-args
-(
-optional explist
-explist
-exp
-Number
-1
-exp
-var
-Name
-g
-)
 stat item
-stat
-functioncall
-prefixexp
-var
-Name
-rawset
-args
-(
-optional explist
-explist
-exp
-var
-Name
-g
-exp
-String
-double quoted string
-"x"
-exp
-Number
-3
-)
-stat item
-stat
-varlist
-var
-Name
-x
-=
-explist
-exp
-Number
-2
-stat item
-stat
-varlist
-var
-Name
-y
-=
-explist
-exp
-Number
-1
-optional laststat
+stat list
+chunk

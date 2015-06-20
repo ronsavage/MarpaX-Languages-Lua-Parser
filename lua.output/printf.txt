@@ -1,112 +1,112 @@
-chunk
-stat list
-stat item
-stat
-keyword function
-function
-funcname
-dotted name
-Name
-printf
-optional colon name element
-funcbody
-(
-optional parlist
-...
-)
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-io
-.
-Name
-write
-args
-(
-optional explist
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-string
-.
-Name
-format
-args
-(
-optional explist
-explist
-exp
-...
-)
-)
 optional laststat
-keyword end
-end
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-printf
-args
-(
+)
+)
 optional explist
-explist
-exp
-String
-double quoted string
-"Hello %s from %s on %s\n"
-exp
-exp
-exp
-var
-prefixexp
-var
-Name
-os
-.
-Name
-getenv
+(
 args
-String
-double quoted string
-"USER"
-keyword or
-or
-exp
-String
-double quoted string
-"there"
-exp
-var
-Name
-_VERSION
-exp
-exp
-var
-prefixexp
-var
-Name
-os
-.
-Name
 date
+Name
+.
+os
+Name
+var
+prefixexp
+var
+exp
+exp
+_VERSION
+Name
+var
+exp
+"there"
+double quoted string
+String
+exp
+or
+keyword or
+"USER"
+double quoted string
+String
 args
-(
+getenv
+Name
+.
+os
+Name
+var
+prefixexp
+var
+exp
+exp
+exp
+"Hello %s from %s on %s\n"
+double quoted string
+String
+exp
+explist
 optional explist
-)
-)
+(
+args
+printf
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+end
+keyword end
 optional laststat
+)
+)
+...
+exp
+explist
+optional explist
+(
+args
+format
+Name
+.
+string
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+optional explist
+(
+args
+write
+Name
+.
+io
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+)
+...
+optional parlist
+(
+funcbody
+optional colon name element
+printf
+Name
+dotted name
+funcname
+function
+keyword function
+stat
+stat item
+stat list
+chunk

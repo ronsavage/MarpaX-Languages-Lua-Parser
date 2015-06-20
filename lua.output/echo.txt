@@ -1,69 +1,69 @@
-chunk
-stat list
-stat item
-stat
-keyword for
-for
-Name
-i
-=
-exp
-Number
-0
-,
-exp
-exp
-var
-prefixexp
-var
-Name
-table
-.
-Name
-getn
-args
-(
-optional explist
-explist
-exp
-var
-Name
-arg
-)
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
-print
-args
-(
-optional explist
-explist
-exp
-var
-Name
-i
-exp
-var
-prefixexp
-var
-Name
-arg
-[
-exp
-var
-Name
-i
-]
-)
 optional laststat
-keyword end
 end
+keyword end
 optional laststat
+)
+]
+i
+Name
+var
+exp
+[
+arg
+Name
+var
+prefixexp
+var
+exp
+i
+Name
+var
+exp
+explist
+optional explist
+(
+args
+print
+Name
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+)
+arg
+Name
+var
+exp
+explist
+optional explist
+(
+args
+getn
+Name
+.
+table
+Name
+var
+prefixexp
+var
+exp
+exp
+,
+0
+Number
+exp
+=
+i
+Name
+for
+keyword for
+stat
+stat item
+stat list
+chunk

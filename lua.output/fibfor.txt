@@ -1,192 +1,192 @@
-chunk
-stat list
-stat item
-stat
-keyword function
-function
-funcname
-dotted name
-Name
-generatefib
-optional colon name element
-funcbody
-(
-optional parlist
-namelist
-Name
-n
-)
-block
-chunk
-stat list
 optional laststat
-laststat
-keyword return
-return
-optional explist
-explist
-exp
-exp
-var
-prefixexp
-var
-Name
-coroutine
-.
-Name
-wrap
-args
-(
-optional explist
-explist
-exp
-function
-keyword function
-function
-funcbody
-(
-optional parlist
-)
-block
-chunk
-stat list
-stat item
-stat
-keyword local
-local
-namelist
-Name
-a
-Name
-b
-optional namelist initialization
-=
-explist
-exp
-Number
-1
-exp
-Number
-1
-stat item
-stat
-keyword while
-while
-exp
-exp
-var
-Name
-a
-<=
-exp
-var
-Name
-n
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-prefixexp
-var
-Name
-coroutine
-.
-Name
-yield
-args
-(
-optional explist
-explist
-exp
-var
-Name
-a
-)
-stat item
-stat
-varlist
-var
-Name
-a
-var
-Name
-b
-=
-explist
-exp
-var
-Name
-b
-exp
-exp
-var
-Name
-a
-+
-exp
-var
-Name
-b
+end
+keyword end
 optional laststat
-keyword end
-end
-optional laststat
-keyword end
-end
 )
-keyword end
-end
-stat item
-stat
-keyword for
-for
-namelist
-Name
 i
-keyword in
-in
-explist
-exp
-exp
-var
 Name
-generatefib
-args
-(
+var
+exp
+explist
 optional explist
-explist
-exp
-Number
-1000
-)
-keyword do
-do
-block
-chunk
-stat list
-stat item
-stat
-functioncall
-prefixexp
-var
-Name
+(
+args
 print
-args
-(
-optional explist
-explist
-exp
-var
 Name
-i
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
 )
-optional laststat
-keyword end
+1000
+Number
+exp
+explist
+optional explist
+(
+args
+generatefib
+Name
+var
+exp
+exp
+explist
+in
+keyword in
+i
+Name
+namelist
+for
+keyword for
+stat
+stat item
 end
+keyword end
+)
+end
+keyword end
 optional laststat
+end
+keyword end
+optional laststat
+b
+Name
+var
+exp
++
+a
+Name
+var
+exp
+exp
+b
+Name
+var
+exp
+explist
+=
+b
+Name
+var
+a
+Name
+var
+varlist
+stat
+stat item
+)
+a
+Name
+var
+exp
+explist
+optional explist
+(
+args
+yield
+Name
+.
+coroutine
+Name
+var
+prefixexp
+var
+prefixexp
+functioncall
+stat
+stat item
+stat list
+chunk
+block
+do
+keyword do
+n
+Name
+var
+exp
+<=
+a
+Name
+var
+exp
+exp
+while
+keyword while
+stat
+stat item
+1
+Number
+exp
+1
+Number
+exp
+explist
+=
+optional namelist initialization
+b
+Name
+a
+Name
+namelist
+local
+keyword local
+stat
+stat item
+stat list
+chunk
+block
+)
+optional parlist
+(
+funcbody
+function
+keyword function
+function
+exp
+explist
+optional explist
+(
+args
+wrap
+Name
+.
+coroutine
+Name
+var
+prefixexp
+var
+exp
+exp
+explist
+optional explist
+return
+keyword return
+laststat
+optional laststat
+stat list
+chunk
+block
+)
+n
+Name
+namelist
+optional parlist
+(
+funcbody
+optional colon name element
+generatefib
+Name
+dotted name
+funcname
+function
+keyword function
+stat
+stat item
+stat list
+chunk
