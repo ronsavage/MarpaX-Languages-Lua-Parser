@@ -1,6 +1,6 @@
-README file for MarpaX::Languages::SVG::Parser.
+README file for MarpaX::Languages::Lua::Parser.
 
-See also: CHANGES and Changelog.ini.
+See also: Changes and Changelog.ini.
 
 Warning: WinZip 8.1 and 9.0 both contain an 'accidental' bug which stops
 them recognizing POSIX-style directory structures in valid tar files.
@@ -9,8 +9,8 @@ ftp://ftp.info-zip.org/pub/infozip/
 
 1 Installing from a Unix-like distro
 ------------------------------------
-shell>gunzip MarpaX-Languages-SVG-Parser-1.02.tgz
-shell>tar mxvf MarpaX-Languages-SVG-Parser-1.02.tar
+shell>gunzip MarpaX-Languages-Lua-Parser-1.00.tgz
+shell>tar mxvf MarpaX-Languages-Lua-Parser-1.00.tar
 
 On Unix-like systems, assuming you have installed Module::Build V 0.25+:
 
@@ -43,7 +43,7 @@ Run Parser.pm through your favourite pod2html translator.
 
 2 Installing from an ActiveState distro
 ---------------------------------------
-shell>unzip MarpaX-Languages-SVG-Parser-1.02.zip
-shell>ppm install --location=. MarpaX-Languages-SVG-Parser
-shell>del MarpaX-Languages-SVG-Parser-1.02.ppd
-shell>del PPM-MarpaX-Languages-SVG-Parser-1.02.tar.gz
+shell>unzip MarpaX-Languages-Lua-Parser-1.00.zip
+shell>ppm install --location=. MarpaX-Languages-Lua-Parser
+shell>del MarpaX-Languages-Lua-Parser-1.00.ppd
+shell>del PPM-MarpaX-Languages-Lua-Parser-1.00.tar.gz

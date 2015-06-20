@@ -7,17 +7,9 @@ use MarpaX::Languages::Lua::Parser;
 
 # ---------------------------------
 
-my(%option) =
-(
-	input_file_name => 'lua.sources/bisect.lua',
-	maxlevel        =>'debug',
-);
-my($parser) = MarpaX::Languages::Lua::Parser -> new(%option);
-my($result) = $parser -> run;
+my($input_file_name) = shift || die "Usage: $0 a_lua_source_file_name\n";
+my($parser)          = MarpaX::Languages::Lua::Parser -> new(input_file_name => $input_file_name);
 
-die "Parse failed\n" if ($result == 1);
+$parser -> run;
 
-for my $item (@{$parser -> items -> print})
-{
-	print sprintf "%-16s  %-16s  %s\n", $$item{type}, $$item{name}, $$item{value};
-}
+print map{"$_\n"} @{$parser -> output_tokens};

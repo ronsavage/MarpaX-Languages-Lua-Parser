@@ -45,7 +45,7 @@ $class -> new
 	{
 		resources =>
 		{
-		'repository' => 'https://github.com/ronsavage/MarpaX-Languages-Lua-Parser',
+			'repository' => 'https://github.com/ronsavage/MarpaX-Languages-Lua-Parser',
 		},
 	},
 	requires =>

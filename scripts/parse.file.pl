@@ -52,7 +52,7 @@ parser.file.pl [options]
 	-input_file_name aLuaFileName
 	-maxlevel aString
 	-minlevel aString
-	-output_file_name aCSVFileName
+	-output_file_name aTextFileName
 
 All switches can be reduced to a single letter.
 
@@ -70,7 +70,7 @@ Print help and exit.
 
 The name of an Lua file to process.
 
-See data/*.svg for some samples.
+See lua.sources/*.lua for some samples.
 
 This option is mandatory.
 
@@ -81,6 +81,10 @@ Default: ''.
 This option affects Log::Handler.
 
 See the Log::handler docs.
+
+By default, nothing is printed. If you use $self -> log(debug => 'Finished') then
+nothing will appear until you use new(maxlevel => 'debug'), or use -maxlevel debug
+on the command line.
 
 Default: 'notice'.
 
@@ -94,11 +98,13 @@ Default: 'error'.
 
 No lower levels are used.
 
-=item o -output_file_name aCSVFileName
+=item o -output_file_name aTextFileName
 
-The name of a CSV file to write, of parsed tokens.
+The name of a text file to write, of parsed tokens.
 
 By default, nothing is written.
+
+See lua.output/*.txt for some samples.
 
 Default: ''.
 
