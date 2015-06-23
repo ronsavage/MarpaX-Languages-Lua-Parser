@@ -15,7 +15,11 @@ use Moo;
 
 use Path::Tiny; # For path().
 
-use Types::Standard qw/Any ArrayRef Str/;
+use Set::Array;
+
+use Tree::DAG_Node;
+
+use Types::Standard qw/Any ArrayRef Int Object Str/;
 
 has grammar =>
 (
@@ -89,6 +93,30 @@ has recce =>
 	required => 0,
 );
 
+has root =>
+(
+	default  => sub{return ''},
+	is       => 'rw',
+	isa      => Any,
+	required => 0,
+);
+
+has stack =>
+(
+	default   => sub{return Set::Array -> new},
+	is        => 'rw',
+	isa       => Object,
+	required => 0,
+);
+
+has uid =>
+(
+	default  => sub{return 0},
+	is       => 'rw',
+	isa      => Int,
+	required => 0,
+);
+
 our $VERSION = '1.00';
 
 # ------------------------------------------------
@@ -124,9 +152,35 @@ sub BUILD
 			grammar => $self -> grammar,
 		})
 	);
-
+	$self -> root
+	(
+		Tree::DAG_Node -> new
+		({
+			attributes => {uid => $self -> uid, value => ''},
+			name       => 'Root',
+		})
+	);
 
 } # End of BUILD.
+
+# ------------------------------------------------
+
+sub _add_daughter
+{
+	my($self, $name, $value) = @_;
+	my($attributes)     = {};
+	$$attributes{uid}   = $self -> uid($self -> uid + 1);
+	$$attributes{value} = $name;
+	my($node)          = Tree::DAG_Node -> new({name => $name, attributes => $attributes});
+	my($tos)           = $self -> stack -> length - 1;
+
+	die "Stack is empty\n" if ($tos < 0);
+
+	${$self -> stack}[$tos] -> add_daughter($node);
+
+	return $node;
+
+} # End of _add_daughter.
 
 # ------------------------------------------------
 
@@ -156,6 +210,17 @@ sub decode_result
 			# Hopefully, we can get away with not checking for undef here,
 			# because we're outputting to @stack, not @worklist.
 
+			$self -> stack -> push($self -> root);
+
+			my($node);
+
+			for my $key (sort %$obj)
+			{
+				$self -> _add_daughter($key, $$obj{$key});
+			}
+
+			$self -> stack -> pop;
+
 			push @stack, {%$obj};
 		}
 		elsif ($ref_type eq 'REF')
@@ -172,6 +237,10 @@ sub decode_result
 		else
 		{
 			# See comment above about not checking for undef.
+
+			$self -> stack -> push($self -> root);
+			$self -> _add_daughter($obj, $obj);
+			$self -> stack -> pop;
 
 			push @stack, $obj;
 		}
@@ -298,9 +367,11 @@ sub run
 	$value                = $self -> decode_result($value);
 	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
 
-	path($output_file_name) -> spew_utf8(map{"$_\n"} @$value) if ($output_file_name);
+	print map("$_\n", @{$self -> root ->tree2string});
 
-	$self -> output_tokens($value);
+#	path($output_file_name) -> spew_utf8(map{"$_\n"} @$value) if ($output_file_name);
+#
+#	$self -> output_tokens($value);
 
 	# Return 0 for success and 1 for failure.
 
