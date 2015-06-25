@@ -248,9 +248,11 @@ sub render
 			verbose    => 0,
 		);
 
-	my($string) = $renderer -> render($$value);
+	my($full_tree) = $renderer -> render($$value);
 
-	$self -> log(debug => join('', map{"$_\n"} @$string) );
+	$self -> log(debug => join('', map{"$_\n"} @$full_tree) );
+
+	my($slim_tree) = [];
 
 	my($attributes);
 	my($name);
@@ -274,7 +276,7 @@ sub render
 
 			if ($type eq 'SCALAR')
 			{
-				$self -> log(info => ' ' x $$opt{_depth} . $name);
+				push @$slim_tree, (' ' x $$opt{_depth} . $name);
 			}
 
 			return 1; # Keep walking.
@@ -282,23 +284,23 @@ sub render
 		_depth => 0,
 	});
 
+	return $slim_tree;
+
 } # End of render.
 
 # ------------------------------------------------
 
 sub run
 {
-	my($self, %args) = @_;
-	my($file_name)   = $args{input_file_name} || $self -> input_file_name;
-	my($value)       = $self -> process($file_name);
+	my($self, %args)      = @_;
+	my($file_name)        = $args{input_file_name} || $self -> input_file_name;
+	my($value)            = $self -> process($file_name);
+	my($slim_tree)        = $self -> render($file_name, $value);
+	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
 
-	$self -> render($file_name, $value);
+	path($output_file_name) -> spew_utf8(map{"$_\n"} @$slim_tree) if ($output_file_name);
 
-#	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
-#
-#	path($output_file_name) -> spew_utf8(map{"$_\n"} @$value) if ($output_file_name);
-#
-#	$self -> output_tokens($value);
+	#$self -> output_tokens($value);
 
 	# Return 0 for success and 1 for failure.
 
