@@ -5,6 +5,8 @@ use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 use open     qw(:std :utf8); # Undeclared streams in UTF-8.
 
+use Data::RenderAsTree;
+
 use Data::Section::Simple 'get_data_section';
 
 use Log::Handler;
@@ -14,10 +16,6 @@ use Marpa::R2;
 use Moo;
 
 use Path::Tiny; # For path().
-
-use Set::Array;
-
-use Tree::DAG_Node;
 
 use Types::Standard qw/Any ArrayRef Int Object Str/;
 
@@ -93,30 +91,6 @@ has recce =>
 	required => 0,
 );
 
-has root =>
-(
-	default  => sub{return ''},
-	is       => 'rw',
-	isa      => Any,
-	required => 0,
-);
-
-has stack =>
-(
-	default   => sub{return Set::Array -> new},
-	is        => 'rw',
-	isa       => Object,
-	required => 0,
-);
-
-has uid =>
-(
-	default  => sub{return 0},
-	is       => 'rw',
-	isa      => Int,
-	required => 0,
-);
-
 our $VERSION = '1.00';
 
 # ------------------------------------------------
@@ -152,104 +126,8 @@ sub BUILD
 			grammar => $self -> grammar,
 		})
 	);
-	$self -> root
-	(
-		Tree::DAG_Node -> new
-		({
-			attributes => {uid => $self -> uid, value => ''},
-			name       => 'Root',
-		})
-	);
 
 } # End of BUILD.
-
-# ------------------------------------------------
-
-sub _add_daughter
-{
-	my($self, $name, $value) = @_;
-	my($attributes)     = {};
-	$$attributes{uid}   = $self -> uid($self -> uid + 1);
-	$$attributes{value} = $name;
-	my($node)          = Tree::DAG_Node -> new({name => $name, attributes => $attributes});
-	my($tos)           = $self -> stack -> length - 1;
-
-	die "Stack is empty\n" if ($tos < 0);
-
-	${$self -> stack}[$tos] -> add_daughter($node);
-
-	return $node;
-
-} # End of _add_daughter.
-
-# ------------------------------------------------
-
-sub decode_result
-{
-	my($self, $result) = @_;
-	my(@worklist) = $result;
-
-	my($obj);
-	my($ref_type);
-	my(@stack);
-
-	do
-	{
-		$obj      = shift @worklist;
-		$ref_type = ref $obj;
-
-		if ($ref_type eq 'ARRAY')
-		{
-			for (@$obj)
-			{
-				unshift @worklist, (! defined($_) ? '' : $_);
-			}
-		}
-		elsif ($ref_type eq 'HASH')
-		{
-			# Hopefully, we can get away with not checking for undef here,
-			# because we're outputting to @stack, not @worklist.
-
-			$self -> stack -> push($self -> root);
-
-			my($node);
-
-			for my $key (sort %$obj)
-			{
-				$self -> _add_daughter($key, $$obj{$key});
-			}
-
-			$self -> stack -> pop;
-
-			push @stack, {%$obj};
-		}
-		elsif ($ref_type eq 'REF')
-		{
-			$obj = $$obj;
-			$obj = '' if (! defined($obj) );
-
-			unshift @worklist, $obj;
-		}
-		elsif ($ref_type)
-		{
-			die "Unsupported object type $ref_type\n";
-		}
-		else
-		{
-			# See comment above about not checking for undef.
-
-			$self -> stack -> push($self -> root);
-			$self -> _add_daughter($obj, $obj);
-			$self -> stack -> pop;
-
-			push @stack, $obj;
-		}
-
-	} while (@worklist);
-
-	return [@stack];
-
-} # End of decode_result.
 
 # --------------------------------------------------
 
@@ -362,12 +240,19 @@ sub process
 
 sub run
 {
-	my($self, %args)      = @_;
-	my($value)            = $self -> process($args{input_file_name} || $self -> input_file_name);
-	$value                = $self -> decode_result($value);
-	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
+	my($self, %args) = @_;
+	my($file_name)   = $args{input_file_name} || $self -> input_file_name;
+	my($value)       = $self -> process($file_name);
+	my($renderer)    = Data::RenderAsTree -> new
+		(
+			attributes => 0,
+			title      => $file_name,
+			verbose    => 0,
+		);
 
-	print map("$_\n", @{$self -> root ->tree2string});
+	print map{"$_\n"} @{$renderer -> render($$value)};
+
+	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
 
 #	path($output_file_name) -> spew_utf8(map{"$_\n"} @$value) if ($output_file_name);
 #
