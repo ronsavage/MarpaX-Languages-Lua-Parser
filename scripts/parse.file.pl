@@ -19,6 +19,7 @@ my(%option);
 if ($option_parser -> getoptions
 (
 	\%option,
+	'attributes=i',
 	'help',
 	'input_file_name=s',
 	'maxlevel=s',
@@ -48,6 +49,7 @@ parse.file.pl - Parsing any Lua source code file
 parser.file.pl [options]
 
 	Options:
+	-attributes Boolean
 	-help
 	-input_file_name aLuaFileName
 	-maxlevel aString
@@ -61,6 +63,27 @@ Exit value: 0.
 =head1 OPTIONS
 
 =over 4
+
+=item o -attributes Boolean
+
+Specify whether or not to include tree node attributes when logging the tree output by
+decoding the value returned by L<Marpa::R2::Scanless::R>.
+
+Values:
+
+=over 4
+
+=item o 0
+
+Do not include attributes.
+
+=item o 1
+
+Include attributes.
+
+=back
+
+Default: 0.
 
 =item o -help
 

@@ -17,7 +17,15 @@ use Moo;
 
 use Path::Tiny; # For path().
 
-use Types::Standard qw/Any ArrayRef Int Object Str/;
+use Types::Standard qw/Any ArrayRef Bool Str/;
+
+has attributes =>
+(
+	default  => sub{return 0},
+	is       => 'rw',
+	isa      => Bool,
+	required => 0,
+);
 
 has grammar =>
 (
@@ -91,6 +99,22 @@ has recce =>
 	required => 0,
 );
 
+has renderer =>
+(
+	default  => sub{return ''},
+	is       => 'rw',
+	isa      => Any,
+	required => 0,
+);
+
+has value =>
+(
+	default  => sub{return ''},
+	is       => 'rw',
+	isa      => Any,
+	required => 0,
+);
+
 our $VERSION = '1.00';
 
 # ------------------------------------------------
@@ -125,6 +149,10 @@ sub BUILD
 		({
 			grammar => $self -> grammar,
 		})
+	);
+	$self -> renderer
+	(
+		Data::RenderAsTree -> new()
 	);
 
 } # End of BUILD.
@@ -240,25 +268,15 @@ sub process
 
 sub render
 {
-	my($self, $file_name, $value) = @_;
-	my($renderer) = Data::RenderAsTree -> new
-		(
-			attributes => 0,
-			title      => $file_name,
-			verbose    => 0,
-		);
-
-	my($full_tree) = $renderer -> render($$value);
-
-	$self -> log(debug => join('', map{"$_\n"} @$full_tree) );
-
-	my($slim_tree) = [];
+	my($self)      = @_;
+	my($slim_list) = [];
 
 	my($attributes);
 	my($name);
+	my($s);
 	my($type);
 
-	$renderer -> root -> walk_down
+	$self -> renderer -> root -> walk_down
 	({
 		callback => sub
 		{
@@ -269,14 +287,16 @@ sub render
 			return 1 if ($node -> is_root);
 
 			$name       = $node -> name;
-			$name       =~ s/^\s*\d+ = (.+)/$1/;
-			$name       =~ s/ \[[A-Z]+\s\d+\]//;
+			$name       =~ s/^\s*\d+\s=\s(.+)/$1/;
+			$name       =~ s/\s\[[A-Z]+\s\d+\]//;
 			$attributes = $node -> attributes;
 			$type       = $$attributes{type};
 
 			if ($type eq 'SCALAR')
 			{
-				push @$slim_tree, (' ' x $$opt{_depth} . $name);
+				push @$slim_list, $name;
+
+				$self -> log(info => ' ' x $$opt{_depth} . $name);
 			}
 
 			return 1; # Keep walking.
@@ -284,7 +304,7 @@ sub render
 		_depth => 0,
 	});
 
-	return $slim_tree;
+	$self -> output_tokens($slim_list);
 
 } # End of render.
 
@@ -292,15 +312,17 @@ sub render
 
 sub run
 {
-	my($self, %args)      = @_;
-	my($file_name)        = $args{input_file_name} || $self -> input_file_name;
-	my($value)            = $self -> process($file_name);
-	my($slim_tree)        = $self -> render($file_name, $value);
-	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
+	my($self, %args) = @_;
+	my($file_name)   = $args{input_file_name} || $self -> input_file_name;
 
-	path($output_file_name) -> spew_utf8(map{"$_\n"} @$slim_tree) if ($output_file_name);
+	$self -> value($self -> process($file_name) );
+	$self -> renderer -> render(${$self -> value});
+	$self -> log(debug => $_) for @{$self -> renderer -> root -> tree2string({no_attributes => 1 - $self -> attributes})};
+	$self -> render;
 
-	#$self -> output_tokens($value);
+#	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
+#
+#	path($output_file_name) -> spew_utf8(map{"$_\n"} @$slim_tree) if ($output_file_name);
 
 	# Return 0 for success and 1 for failure.
 
