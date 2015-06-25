@@ -236,6 +236,54 @@ sub process
 
 } # End of process.
 
+# --------------------------------------------------
+
+sub render
+{
+	my($self, $file_name, $value) = @_;
+	my($renderer) = Data::RenderAsTree -> new
+		(
+			attributes => 0,
+			title      => $file_name,
+			verbose    => 0,
+		);
+
+	my($string) = $renderer -> render($$value);
+
+	$self -> log(debug => join('', map{"$_\n"} @$string) );
+
+	my($attributes);
+	my($name);
+	my($type);
+
+	$renderer -> root -> walk_down
+	({
+		callback => sub
+		{
+			my($node, $opt) = @_;
+
+			# Ignore the root, and keep walking.
+
+			return 1 if ($node -> is_root);
+
+			$name       = $node -> name;
+			$name       =~ s/^\s*\d+ = (.+)/$1/;
+			$name       =~ s/ \[[A-Z]+\s\d+\]//;
+			$attributes = $node -> attributes;
+			$type       = $$attributes{type};
+
+			if ($type eq 'SCALAR')
+			{
+				$self -> log(info => ' ' x $$opt{_depth} . $name);
+			}
+
+			return 1; # Keep walking.
+		},
+		_depth => 0,
+	});
+
+} # End of render.
+
 # ------------------------------------------------
 
 sub run
@@ -243,17 +291,11 @@ sub run
 	my($self, %args) = @_;
 	my($file_name)   = $args{input_file_name} || $self -> input_file_name;
 	my($value)       = $self -> process($file_name);
-	my($renderer)    = Data::RenderAsTree -> new
-		(
-			attributes => 0,
-			title      => $file_name,
-			verbose    => 0,
-		);
 
-	print map{"$_\n"} @{$renderer -> render($$value)};
+	$self -> render($file_name, $value);
 
-	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
-
+#	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
+#
 #	path($output_file_name) -> spew_utf8(map{"$_\n"} @$value) if ($output_file_name);
 #
 #	$self -> output_tokens($value);
