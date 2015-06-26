@@ -17,7 +17,7 @@ use Moo;
 
 use Path::Tiny; # For path().
 
-use Types::Standard qw/Any ArrayRef Bool Str/;
+use Types::Standard qw/Any ArrayRef HashRef Bool Str/;
 
 has attributes =>
 (
@@ -113,6 +113,21 @@ has value =>
 	is       => 'rw',
 	isa      => Any,
 	required => 0,
+);
+
+has keywords =>
+(
+    default  => sub{return {
+                    map { $_ => 1 } qw{
+                        and       break     do        else      elseif
+                        end       false     for       function  if
+                        in        local     nil       not       or
+                        repeat    return    then      true      until     while
+                    }
+                }},
+    is       => 'ro',
+    isa      => Any,
+    required => 0,
 );
 
 our $VERSION = '1.00';
