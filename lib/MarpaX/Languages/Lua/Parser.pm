@@ -787,47 +787,26 @@ lexeme default = latm => 1 action => [name,values]
 <field> ::= <Name> '=' <exp>
 <field> ::= <exp>
 
-:lexeme ~ <keyword and> priority => 1
 <keyword and> ~ 'and'
-:lexeme ~ <keyword break> priority => 1
 <keyword break> ~ 'break'
-:lexeme ~ <keyword do> priority => 1
 <keyword do> ~ 'do'
-:lexeme ~ <keyword else> priority => 1
 <keyword else> ~ 'else'
-:lexeme ~ <keyword elseif> priority => 1
 <keyword elseif> ~ 'elseif'
-:lexeme ~ <keyword end> priority => 1
 <keyword end> ~ 'end'
-:lexeme ~ <keyword false> priority => 1
 <keyword false> ~ 'false'
-:lexeme ~ <keyword for> priority => 1
 <keyword for> ~ 'for'
-:lexeme ~ <keyword function> priority => 1
 <keyword function> ~ 'function'
-:lexeme ~ <keyword if> priority => 1
 <keyword if> ~ 'if'
-:lexeme ~ <keyword in> priority => 1
 <keyword in> ~ 'in'
-:lexeme ~ <keyword local> priority => 1
 <keyword local> ~ 'local'
-:lexeme ~ <keyword nil> priority => 1
 <keyword nil> ~ 'nil'
-:lexeme ~ <keyword not> priority => 1
 <keyword not> ~ 'not'
-:lexeme ~ <keyword or> priority => 1
 <keyword or> ~ 'or'
-:lexeme ~ <keyword repeat> priority => 1
 <keyword repeat> ~ 'repeat'
-:lexeme ~ <keyword return> priority => 1
 <keyword return> ~ 'return'
-:lexeme ~ <keyword then> priority => 1
 <keyword then> ~ 'then'
-:lexeme ~ <keyword true> priority => 1
 <keyword true> ~ 'true'
-:lexeme ~ <keyword until> priority => 1
 <keyword until> ~ 'until'
-:lexeme ~ <keyword while> priority => 1
 <keyword while> ~ 'while'
 
 # multiline comments are discarded.  The lexer only looks for
