@@ -258,6 +258,32 @@ sub process
 				next EVENT;
 			}
 
+            if ($name eq 'Name')
+            {
+                # This is an event to check if a keyword is used as an identifier
+                # and die if it is.
+
+                my($start, $length) = $self -> recce -> pause_span;
+                my($line,  $column) = $self -> recce -> line_column($start);
+                my($literal)        = $self -> recce -> literal($start, $length);
+
+                if ( exists $self -> keywords -> { $literal } )
+                {
+                    $self -> recce -> lexeme_read(qq{keyword $literal}, $start, $length)
+                        // do {
+                                die $self->input_file_name .
+                                    qq{:$line:$column: keyword '$literal' used as <name>} };
+                }
+                else
+                {
+                    $self -> recce -> lexeme_read('Name', $start, $length);
+                }
+
+                $pos = $self -> recce -> pos();
+
+                next EVENT;
+            }
+
 			die "Unexpected event '$name'\n";
 
 		}
@@ -829,6 +855,7 @@ whitespace ~ [\s]+
 # and we enforce that, so all letters must be a-z or A-Z
 
 <Name> ~ <identifier start char> <optional identifier chars>
+:lexeme ~ Name pause => before event => 'Name'
 <identifier start char> ~ [a-zA-Z_]
 <optional identifier chars> ~ <identifier char>*
 <identifier char> ~ [a-zA-Z0-9_]
