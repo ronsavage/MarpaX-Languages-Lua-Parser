@@ -1,563 +1,1532 @@
-optional laststat
-)
-fib
-Name
-var
-exp
-"cached"
-double quoted string
-String
-exp
-explist
-optional explist
-(
-args
-test
-Name
-var
-prefixexp
-functioncall
-stat
-stat item
-)
-fib
-Name
-var
-exp
-explist
-optional explist
-(
-args
-cache
-Name
-var
-exp
-exp
-explist
-=
-fib
-Name
-var
-varlist
-stat
-stat item
-)
-fib
-Name
-var
-exp
-"plain"
-double quoted string
-String
-exp
-explist
-optional explist
-(
-args
-test
-Name
-var
-prefixexp
-functioncall
-stat
-stat item
-)
-"evals"
-double quoted string
-String
-exp
-"time"
-double quoted string
-String
-exp
-"value"
-double quoted string
-String
-exp
-"n"
-double quoted string
-String
-exp
-""
-double quoted string
-String
-exp
-explist
-optional explist
-(
-args
-print
-Name
-var
-prefixexp
-functioncall
-stat
-stat item
-)
-n
-Name
-var
-exp
-explist
-optional explist
-(
-args
-tonumber
-Name
-var
-exp
-exp
-explist
-=
-n
-Name
-var
-varlist
-stat
-stat item
-24
-Number
-exp
-or
-keyword or
-]
-1
-Number
-exp
-[
-arg
-Name
-var
-prefixexp
-var
-exp
-exp
-explist
-=
-n
-Name
-var
-varlist
-stat
-stat item
-end
-keyword end
-optional laststat
-)
-N
-Name
-var
-exp
-t
-Name
-var
-exp
-v
-Name
-var
-exp
-n
-Name
-var
-exp
-s
-Name
-var
-exp
-explist
-optional explist
-(
-args
-print
-Name
-var
-prefixexp
-functioncall
-stat
-stat item
-c
-Name
-var
-exp
--
-)
-optional explist
-(
-args
-clock
-Name
-.
-os
-Name
-var
-prefixexp
-var
-exp
-exp
-exp
-explist
-=
-optional namelist initialization
-t
-Name
-namelist
-local
-keyword local
-stat
-stat item
-)
-n
-Name
-var
-exp
-explist
-optional explist
-(
-args
-f
-Name
-var
-exp
-exp
-explist
-=
-optional namelist initialization
-v
-Name
-namelist
-local
-keyword local
-stat
-stat item
-)
-optional explist
-(
-args
-clock
-Name
-.
-os
-Name
-var
-prefixexp
-var
-exp
-exp
-explist
-=
-optional namelist initialization
-c
-Name
-namelist
-local
-keyword local
-stat
-stat item
-0
-Number
-exp
-explist
-=
-N
-Name
-var
-varlist
-stat
-stat item
-stat list
-chunk
-block
-)
-f
-Name
-s
-Name
-namelist
-optional parlist
-(
-funcbody
-optional colon name element
-test
-Name
-dotted name
-funcname
-function
-keyword function
-stat
-stat item
-end
-keyword end
-end
-keyword end
-y
-Name
-var
-exp
-explist
-optional explist
-return
-keyword return
-laststat
-optional laststat
-end
-keyword end
-optional else block
-elseif sequence
-optional laststat
-y
-Name
-var
-exp
-explist
-=
-]
-x
-Name
-var
-exp
-[
-c
-Name
-var
-prefixexp
-var
-varlist
-stat
-stat item
-)
-x
-Name
-var
-exp
-explist
-optional explist
-(
-args
-f
-Name
-var
-exp
-exp
-explist
-=
-y
-Name
-var
-varlist
-stat
-stat item
-stat list
-chunk
-block
-then
-keyword then
-y
-Name
-var
-exp
-not
-keyword not
-exp
-if
-keyword if
-stat
-stat item
-]
-x
-Name
-var
-exp
-[
-c
-Name
-var
-prefixexp
-var
-exp
-explist
-=
-optional namelist initialization
-y
-Name
-namelist
-local
-keyword local
-stat
-stat item
-stat list
-chunk
-block
-)
-x
-Name
-namelist
-optional parlist
-(
-funcbody
-function
-keyword function
-function
-exp
-explist
-optional explist
-return
-keyword return
-laststat
-optional laststat
-}
-{
-tableconstructor
-exp
-explist
-=
-optional namelist initialization
-c
-Name
-namelist
-local
-keyword local
-stat
-stat item
-stat list
-chunk
-block
-)
-f
-Name
-namelist
-optional parlist
-(
-funcbody
-optional colon name element
-cache
-Name
-dotted name
-funcname
-function
-keyword function
-stat
-stat item
-end
-keyword end
-optional laststat
-end
-keyword end
-)
-2
-Number
-exp
--
-n
-Name
-var
-exp
-exp
-explist
-optional explist
-(
-args
-fib
-Name
-var
-exp
-exp
-+
-)
-1
-Number
-exp
--
-n
-Name
-var
-exp
-exp
-explist
-optional explist
-(
-args
-fib
-Name
-var
-exp
-exp
-exp
-explist
-optional explist
-return
-keyword return
-laststat
-optional laststat
-stat list
-chunk
-block
-else
-keyword else
-optional else block
-elseif sequence
-n
-Name
-var
-exp
-explist
-optional explist
-return
-keyword return
-laststat
-optional laststat
-stat list
-chunk
-block
-then
-keyword then
-2
-Number
-exp
-<
-n
-Name
-var
-exp
-exp
-if
-keyword if
-stat
-stat item
-1
-Number
-exp
-+
-N
-Name
-var
-exp
-exp
-explist
-=
-N
-Name
-var
-varlist
-stat
-stat item
-stat list
-chunk
-block
-)
-n
-Name
-namelist
-optional parlist
-(
-funcbody
-optional colon name element
-fib
-Name
-dotted name
-funcname
-function
-keyword function
-stat
-stat item
-stat list
-chunk
+Root
+    |--- 0 = [] [ARRAY 1]
+         |--- 0 = chunk [SCALAR 2]
+         |--- 1 = [] [ARRAY 3]
+         |    |--- 0 = stat list [SCALAR 4]
+         |    |--- 1 = [] [ARRAY 5]
+         |    |    |--- 0 = stat item [SCALAR 6]
+         |    |    |--- 1 = [] [ARRAY 7]
+         |    |         |--- 0 = stat [SCALAR 8]
+         |    |         |--- 1 = [] [ARRAY 9]
+         |    |         |    |--- 0 = keyword function [SCALAR 10]
+         |    |         |    |--- 1 = function [SCALAR 11]
+         |    |         |--- 2 = [] [ARRAY 12]
+         |    |         |    |--- 0 = funcname [SCALAR 13]
+         |    |         |    |--- 1 = [] [ARRAY 14]
+         |    |         |    |    |--- 0 = dotted name [SCALAR 15]
+         |    |         |    |    |--- 1 = [] [ARRAY 16]
+         |    |         |    |         |--- 0 = Name [SCALAR 17]
+         |    |         |    |         |--- 1 = fib [SCALAR 18]
+         |    |         |    |--- 2 = [] [ARRAY 19]
+         |    |         |         |--- 0 = optional colon name element [SCALAR 20]
+         |    |         |--- 3 = [] [ARRAY 21]
+         |    |              |--- 0 = funcbody [SCALAR 22]
+         |    |              |--- 1 = ( [SCALAR 23]
+         |    |              |--- 2 = [] [ARRAY 24]
+         |    |              |    |--- 0 = optional parlist [SCALAR 25]
+         |    |              |    |--- 1 = [] [ARRAY 26]
+         |    |              |         |--- 0 = namelist [SCALAR 27]
+         |    |              |         |--- 1 = [] [ARRAY 28]
+         |    |              |              |--- 0 = Name [SCALAR 29]
+         |    |              |              |--- 1 = n [SCALAR 30]
+         |    |              |--- 3 = ) [SCALAR 31]
+         |    |              |--- 4 = [] [ARRAY 32]
+         |    |              |    |--- 0 = block [SCALAR 33]
+         |    |              |    |--- 1 = [] [ARRAY 34]
+         |    |              |         |--- 0 = chunk [SCALAR 35]
+         |    |              |         |--- 1 = [] [ARRAY 36]
+         |    |              |         |    |--- 0 = stat list [SCALAR 37]
+         |    |              |         |    |--- 1 = [] [ARRAY 38]
+         |    |              |         |    |    |--- 0 = stat item [SCALAR 39]
+         |    |              |         |    |    |--- 1 = [] [ARRAY 40]
+         |    |              |         |    |         |--- 0 = stat [SCALAR 41]
+         |    |              |         |    |         |--- 1 = [] [ARRAY 42]
+         |    |              |         |    |         |    |--- 0 = varlist [SCALAR 43]
+         |    |              |         |    |         |    |--- 1 = [] [ARRAY 44]
+         |    |              |         |    |         |         |--- 0 = var [SCALAR 45]
+         |    |              |         |    |         |         |--- 1 = [] [ARRAY 46]
+         |    |              |         |    |         |              |--- 0 = Name [SCALAR 47]
+         |    |              |         |    |         |              |--- 1 = N [SCALAR 48]
+         |    |              |         |    |         |--- 2 = = [SCALAR 49]
+         |    |              |         |    |         |--- 3 = [] [ARRAY 50]
+         |    |              |         |    |              |--- 0 = explist [SCALAR 51]
+         |    |              |         |    |              |--- 1 = [] [ARRAY 52]
+         |    |              |         |    |                   |--- 0 = exp [SCALAR 53]
+         |    |              |         |    |                   |--- 1 = [] [ARRAY 54]
+         |    |              |         |    |                   |    |--- 0 = exp [SCALAR 55]
+         |    |              |         |    |                   |    |--- 1 = [] [ARRAY 56]
+         |    |              |         |    |                   |         |--- 0 = var [SCALAR 57]
+         |    |              |         |    |                   |         |--- 1 = [] [ARRAY 58]
+         |    |              |         |    |                   |              |--- 0 = Name [SCALAR 59]
+         |    |              |         |    |                   |              |--- 1 = N [SCALAR 60]
+         |    |              |         |    |                   |--- 2 = + [SCALAR 61]
+         |    |              |         |    |                   |--- 3 = [] [ARRAY 62]
+         |    |              |         |    |                        |--- 0 = exp [SCALAR 63]
+         |    |              |         |    |                        |--- 1 = [] [ARRAY 64]
+         |    |              |         |    |                             |--- 0 = Number [SCALAR 65]
+         |    |              |         |    |                             |--- 1 = 1 [SCALAR 66]
+         |    |              |         |    |--- 2 = [] [ARRAY 67]
+         |    |              |         |         |--- 0 = stat item [SCALAR 68]
+         |    |              |         |         |--- 1 = [] [ARRAY 69]
+         |    |              |         |              |--- 0 = stat [SCALAR 70]
+         |    |              |         |              |--- 1 = [] [ARRAY 71]
+         |    |              |         |              |    |--- 0 = keyword if [SCALAR 72]
+         |    |              |         |              |    |--- 1 = if [SCALAR 73]
+         |    |              |         |              |--- 2 = [] [ARRAY 74]
+         |    |              |         |              |    |--- 0 = exp [SCALAR 75]
+         |    |              |         |              |    |--- 1 = [] [ARRAY 76]
+         |    |              |         |              |    |    |--- 0 = exp [SCALAR 77]
+         |    |              |         |              |    |    |--- 1 = [] [ARRAY 78]
+         |    |              |         |              |    |         |--- 0 = var [SCALAR 79]
+         |    |              |         |              |    |         |--- 1 = [] [ARRAY 80]
+         |    |              |         |              |    |              |--- 0 = Name [SCALAR 81]
+         |    |              |         |              |    |              |--- 1 = n [SCALAR 82]
+         |    |              |         |              |    |--- 2 = < [SCALAR 83]
+         |    |              |         |              |    |--- 3 = [] [ARRAY 84]
+         |    |              |         |              |         |--- 0 = exp [SCALAR 85]
+         |    |              |         |              |         |--- 1 = [] [ARRAY 86]
+         |    |              |         |              |              |--- 0 = Number [SCALAR 87]
+         |    |              |         |              |              |--- 1 = 2 [SCALAR 88]
+         |    |              |         |              |--- 3 = [] [ARRAY 89]
+         |    |              |         |              |    |--- 0 = keyword then [SCALAR 90]
+         |    |              |         |              |    |--- 1 = then [SCALAR 91]
+         |    |              |         |              |--- 4 = [] [ARRAY 92]
+         |    |              |         |              |    |--- 0 = block [SCALAR 93]
+         |    |              |         |              |    |--- 1 = [] [ARRAY 94]
+         |    |              |         |              |         |--- 0 = chunk [SCALAR 95]
+         |    |              |         |              |         |--- 1 = [] [ARRAY 96]
+         |    |              |         |              |         |    |--- 0 = stat list [SCALAR 97]
+         |    |              |         |              |         |--- 2 = [] [ARRAY 98]
+         |    |              |         |              |              |--- 0 = optional laststat [SCALAR 99]
+         |    |              |         |              |              |--- 1 = [] [ARRAY 100]
+         |    |              |         |              |                   |--- 0 = laststat [SCALAR 101]
+         |    |              |         |              |                   |--- 1 = [] [ARRAY 102]
+         |    |              |         |              |                   |    |--- 0 = keyword return [SCALAR 103]
+         |    |              |         |              |                   |    |--- 1 = return [SCALAR 104]
+         |    |              |         |              |                   |--- 2 = [] [ARRAY 105]
+         |    |              |         |              |                        |--- 0 = optional explist [SCALAR 106]
+         |    |              |         |              |                        |--- 1 = [] [ARRAY 107]
+         |    |              |         |              |                             |--- 0 = explist [SCALAR 108]
+         |    |              |         |              |                             |--- 1 = [] [ARRAY 109]
+         |    |              |         |              |                                  |--- 0 = exp [SCALAR 110]
+         |    |              |         |              |                                  |--- 1 = [] [ARRAY 111]
+         |    |              |         |              |                                       |--- 0 = var [SCALAR 112]
+         |    |              |         |              |                                       |--- 1 = [] [ARRAY 113]
+         |    |              |         |              |                                            |--- 0 = Name [SCALAR 114]
+         |    |              |         |              |                                            |--- 1 = n [SCALAR 115]
+         |    |              |         |              |--- 5 = [] [ARRAY 116]
+         |    |              |         |              |    |--- 0 = elseif sequence [SCALAR 117]
+         |    |              |         |              |--- 6 = [] [ARRAY 118]
+         |    |              |         |              |    |--- 0 = optional else block [SCALAR 119]
+         |    |              |         |              |    |--- 1 = [] [ARRAY 120]
+         |    |              |         |              |    |    |--- 0 = keyword else [SCALAR 121]
+         |    |              |         |              |    |    |--- 1 = else [SCALAR 122]
+         |    |              |         |              |    |--- 2 = [] [ARRAY 123]
+         |    |              |         |              |         |--- 0 = block [SCALAR 124]
+         |    |              |         |              |         |--- 1 = [] [ARRAY 125]
+         |    |              |         |              |              |--- 0 = chunk [SCALAR 126]
+         |    |              |         |              |              |--- 1 = [] [ARRAY 127]
+         |    |              |         |              |              |    |--- 0 = stat list [SCALAR 128]
+         |    |              |         |              |              |--- 2 = [] [ARRAY 129]
+         |    |              |         |              |                   |--- 0 = optional laststat [SCALAR 130]
+         |    |              |         |              |                   |--- 1 = [] [ARRAY 131]
+         |    |              |         |              |                        |--- 0 = laststat [SCALAR 132]
+         |    |              |         |              |                        |--- 1 = [] [ARRAY 133]
+         |    |              |         |              |                        |    |--- 0 = keyword return [SCALAR 134]
+         |    |              |         |              |                        |    |--- 1 = return [SCALAR 135]
+         |    |              |         |              |                        |--- 2 = [] [ARRAY 136]
+         |    |              |         |              |                             |--- 0 = optional explist [SCALAR 137]
+         |    |              |         |              |                             |--- 1 = [] [ARRAY 138]
+         |    |              |         |              |                                  |--- 0 = explist [SCALAR 139]
+         |    |              |         |              |                                  |--- 1 = [] [ARRAY 140]
+         |    |              |         |              |                                       |--- 0 = exp [SCALAR 141]
+         |    |              |         |              |                                       |--- 1 = [] [ARRAY 142]
+         |    |              |         |              |                                       |    |--- 0 = exp [SCALAR 143]
+         |    |              |         |              |                                       |    |--- 1 = [] [ARRAY 144]
+         |    |              |         |              |                                       |    |    |--- 0 = exp [SCALAR 145]
+         |    |              |         |              |                                       |    |    |--- 1 = [] [ARRAY 146]
+         |    |              |         |              |                                       |    |         |--- 0 = var [SCALAR 147]
+         |    |              |         |              |                                       |    |         |--- 1 = [] [ARRAY 148]
+         |    |              |         |              |                                       |    |              |--- 0 = Name [SCALAR 149]
+         |    |              |         |              |                                       |    |              |--- 1 = fib [SCALAR 150]
+         |    |              |         |              |                                       |    |--- 2 = [] [ARRAY 151]
+         |    |              |         |              |                                       |         |--- 0 = args [SCALAR 152]
+         |    |              |         |              |                                       |         |--- 1 = ( [SCALAR 153]
+         |    |              |         |              |                                       |         |--- 2 = [] [ARRAY 154]
+         |    |              |         |              |                                       |         |    |--- 0 = optional explist [SCALAR 155]
+         |    |              |         |              |                                       |         |    |--- 1 = [] [ARRAY 156]
+         |    |              |         |              |                                       |         |         |--- 0 = explist [SCALAR 157]
+         |    |              |         |              |                                       |         |         |--- 1 = [] [ARRAY 158]
+         |    |              |         |              |                                       |         |              |--- 0 = exp [SCALAR 159]
+         |    |              |         |              |                                       |         |              |--- 1 = [] [ARRAY 160]
+         |    |              |         |              |                                       |         |              |    |--- 0 = exp [SCALAR 161]
+         |    |              |         |              |                                       |         |              |    |--- 1 = [] [ARRAY 162]
+         |    |              |         |              |                                       |         |              |         |--- 0 = var [SCALAR 163]
+         |    |              |         |              |                                       |         |              |         |--- 1 = [] [ARRAY 164]
+         |    |              |         |              |                                       |         |              |              |--- 0 = Name [SCALAR 165]
+         |    |              |         |              |                                       |         |              |              |--- 1 = n [SCALAR 166]
+         |    |              |         |              |                                       |         |              |--- 2 = - [SCALAR 167]
+         |    |              |         |              |                                       |         |              |--- 3 = [] [ARRAY 168]
+         |    |              |         |              |                                       |         |                   |--- 0 = exp [SCALAR 169]
+         |    |              |         |              |                                       |         |                   |--- 1 = [] [ARRAY 170]
+         |    |              |         |              |                                       |         |                        |--- 0 = Number [SCALAR 171]
+         |    |              |         |              |                                       |         |                        |--- 1 = 1 [SCALAR 172]
+         |    |              |         |              |                                       |         |--- 3 = ) [SCALAR 173]
+         |    |              |         |              |                                       |--- 2 = + [SCALAR 174]
+         |    |              |         |              |                                       |--- 3 = [] [ARRAY 175]
+         |    |              |         |              |                                            |--- 0 = exp [SCALAR 176]
+         |    |              |         |              |                                            |--- 1 = [] [ARRAY 177]
+         |    |              |         |              |                                            |    |--- 0 = exp [SCALAR 178]
+         |    |              |         |              |                                            |    |--- 1 = [] [ARRAY 179]
+         |    |              |         |              |                                            |         |--- 0 = var [SCALAR 180]
+         |    |              |         |              |                                            |         |--- 1 = [] [ARRAY 181]
+         |    |              |         |              |                                            |              |--- 0 = Name [SCALAR 182]
+         |    |              |         |              |                                            |              |--- 1 = fib [SCALAR 183]
+         |    |              |         |              |                                            |--- 2 = [] [ARRAY 184]
+         |    |              |         |              |                                                 |--- 0 = args [SCALAR 185]
+         |    |              |         |              |                                                 |--- 1 = ( [SCALAR 186]
+         |    |              |         |              |                                                 |--- 2 = [] [ARRAY 187]
+         |    |              |         |              |                                                 |    |--- 0 = optional explist [SCALAR 188]
+         |    |              |         |              |                                                 |    |--- 1 = [] [ARRAY 189]
+         |    |              |         |              |                                                 |         |--- 0 = explist [SCALAR 190]
+         |    |              |         |              |                                                 |         |--- 1 = [] [ARRAY 191]
+         |    |              |         |              |                                                 |              |--- 0 = exp [SCALAR 192]
+         |    |              |         |              |                                                 |              |--- 1 = [] [ARRAY 193]
+         |    |              |         |              |                                                 |              |    |--- 0 = exp [SCALAR 194]
+         |    |              |         |              |                                                 |              |    |--- 1 = [] [ARRAY 195]
+         |    |              |         |              |                                                 |              |         |--- 0 = var [SCALAR 196]
+         |    |              |         |              |                                                 |              |         |--- 1 = [] [ARRAY 197]
+         |    |              |         |              |                                                 |              |              |--- 0 = Name [SCALAR 198]
+         |    |              |         |              |                                                 |              |              |--- 1 = n [SCALAR 199]
+         |    |              |         |              |                                                 |              |--- 2 = - [SCALAR 200]
+         |    |              |         |              |                                                 |              |--- 3 = [] [ARRAY 201]
+         |    |              |         |              |                                                 |                   |--- 0 = exp [SCALAR 202]
+         |    |              |         |              |                                                 |                   |--- 1 = [] [ARRAY 203]
+         |    |              |         |              |                                                 |                        |--- 0 = Number [SCALAR 204]
+         |    |              |         |              |                                                 |                        |--- 1 = 2 [SCALAR 205]
+         |    |              |         |              |                                                 |--- 3 = ) [SCALAR 206]
+         |    |              |         |              |--- 7 = [] [ARRAY 207]
+         |    |              |         |                   |--- 0 = keyword end [SCALAR 208]
+         |    |              |         |                   |--- 1 = end [SCALAR 209]
+         |    |              |         |--- 2 = [] [ARRAY 210]
+         |    |              |              |--- 0 = optional laststat [SCALAR 211]
+         |    |              |--- 5 = [] [ARRAY 212]
+         |    |                   |--- 0 = keyword end [SCALAR 213]
+         |    |                   |--- 1 = end [SCALAR 214]
+         |    |--- 2 = [] [ARRAY 215]
+         |    |    |--- 0 = stat item [SCALAR 216]
+         |    |    |--- 1 = [] [ARRAY 217]
+         |    |         |--- 0 = stat [SCALAR 218]
+         |    |         |--- 1 = [] [ARRAY 219]
+         |    |         |    |--- 0 = keyword function [SCALAR 220]
+         |    |         |    |--- 1 = function [SCALAR 221]
+         |    |         |--- 2 = [] [ARRAY 222]
+         |    |         |    |--- 0 = funcname [SCALAR 223]
+         |    |         |    |--- 1 = [] [ARRAY 224]
+         |    |         |    |    |--- 0 = dotted name [SCALAR 225]
+         |    |         |    |    |--- 1 = [] [ARRAY 226]
+         |    |         |    |         |--- 0 = Name [SCALAR 227]
+         |    |         |    |         |--- 1 = cache [SCALAR 228]
+         |    |         |    |--- 2 = [] [ARRAY 229]
+         |    |         |         |--- 0 = optional colon name element [SCALAR 230]
+         |    |         |--- 3 = [] [ARRAY 231]
+         |    |              |--- 0 = funcbody [SCALAR 232]
+         |    |              |--- 1 = ( [SCALAR 233]
+         |    |              |--- 2 = [] [ARRAY 234]
+         |    |              |    |--- 0 = optional parlist [SCALAR 235]
+         |    |              |    |--- 1 = [] [ARRAY 236]
+         |    |              |         |--- 0 = namelist [SCALAR 237]
+         |    |              |         |--- 1 = [] [ARRAY 238]
+         |    |              |              |--- 0 = Name [SCALAR 239]
+         |    |              |              |--- 1 = f [SCALAR 240]
+         |    |              |--- 3 = ) [SCALAR 241]
+         |    |              |--- 4 = [] [ARRAY 242]
+         |    |              |    |--- 0 = block [SCALAR 243]
+         |    |              |    |--- 1 = [] [ARRAY 244]
+         |    |              |         |--- 0 = chunk [SCALAR 245]
+         |    |              |         |--- 1 = [] [ARRAY 246]
+         |    |              |         |    |--- 0 = stat list [SCALAR 247]
+         |    |              |         |    |--- 1 = [] [ARRAY 248]
+         |    |              |         |         |--- 0 = stat item [SCALAR 249]
+         |    |              |         |         |--- 1 = [] [ARRAY 250]
+         |    |              |         |              |--- 0 = stat [SCALAR 251]
+         |    |              |         |              |--- 1 = [] [ARRAY 252]
+         |    |              |         |              |    |--- 0 = keyword local [SCALAR 253]
+         |    |              |         |              |    |--- 1 = local [SCALAR 254]
+         |    |              |         |              |--- 2 = [] [ARRAY 255]
+         |    |              |         |              |    |--- 0 = namelist [SCALAR 256]
+         |    |              |         |              |    |--- 1 = [] [ARRAY 257]
+         |    |              |         |              |         |--- 0 = Name [SCALAR 258]
+         |    |              |         |              |         |--- 1 = c [SCALAR 259]
+         |    |              |         |              |--- 3 = [] [ARRAY 260]
+         |    |              |         |                   |--- 0 = optional namelist initialization [SCALAR 261]
+         |    |              |         |                   |--- 1 = = [SCALAR 262]
+         |    |              |         |                   |--- 2 = [] [ARRAY 263]
+         |    |              |         |                        |--- 0 = explist [SCALAR 264]
+         |    |              |         |                        |--- 1 = [] [ARRAY 265]
+         |    |              |         |                             |--- 0 = exp [SCALAR 266]
+         |    |              |         |                             |--- 1 = [] [ARRAY 267]
+         |    |              |         |                                  |--- 0 = tableconstructor [SCALAR 268]
+         |    |              |         |                                  |--- 1 = { [SCALAR 269]
+         |    |              |         |                                  |--- 2 = } [SCALAR 270]
+         |    |              |         |--- 2 = [] [ARRAY 271]
+         |    |              |              |--- 0 = optional laststat [SCALAR 272]
+         |    |              |              |--- 1 = [] [ARRAY 273]
+         |    |              |                   |--- 0 = laststat [SCALAR 274]
+         |    |              |                   |--- 1 = [] [ARRAY 275]
+         |    |              |                   |    |--- 0 = keyword return [SCALAR 276]
+         |    |              |                   |    |--- 1 = return [SCALAR 277]
+         |    |              |                   |--- 2 = [] [ARRAY 278]
+         |    |              |                        |--- 0 = optional explist [SCALAR 279]
+         |    |              |                        |--- 1 = [] [ARRAY 280]
+         |    |              |                             |--- 0 = explist [SCALAR 281]
+         |    |              |                             |--- 1 = [] [ARRAY 282]
+         |    |              |                                  |--- 0 = exp [SCALAR 283]
+         |    |              |                                  |--- 1 = [] [ARRAY 284]
+         |    |              |                                       |--- 0 = function [SCALAR 285]
+         |    |              |                                       |--- 1 = [] [ARRAY 286]
+         |    |              |                                       |    |--- 0 = keyword function [SCALAR 287]
+         |    |              |                                       |    |--- 1 = function [SCALAR 288]
+         |    |              |                                       |--- 2 = [] [ARRAY 289]
+         |    |              |                                            |--- 0 = funcbody [SCALAR 290]
+         |    |              |                                            |--- 1 = ( [SCALAR 291]
+         |    |              |                                            |--- 2 = [] [ARRAY 292]
+         |    |              |                                            |    |--- 0 = optional parlist [SCALAR 293]
+         |    |              |                                            |    |--- 1 = [] [ARRAY 294]
+         |    |              |                                            |         |--- 0 = namelist [SCALAR 295]
+         |    |              |                                            |         |--- 1 = [] [ARRAY 296]
+         |    |              |                                            |              |--- 0 = Name [SCALAR 297]
+         |    |              |                                            |              |--- 1 = x [SCALAR 298]
+         |    |              |                                            |--- 3 = ) [SCALAR 299]
+         |    |              |                                            |--- 4 = [] [ARRAY 300]
+         |    |              |                                            |    |--- 0 = block [SCALAR 301]
+         |    |              |                                            |    |--- 1 = [] [ARRAY 302]
+         |    |              |                                            |         |--- 0 = chunk [SCALAR 303]
+         |    |              |                                            |         |--- 1 = [] [ARRAY 304]
+         |    |              |                                            |         |    |--- 0 = stat list [SCALAR 305]
+         |    |              |                                            |         |    |--- 1 = [] [ARRAY 306]
+         |    |              |                                            |         |    |    |--- 0 = stat item [SCALAR 307]
+         |    |              |                                            |         |    |    |--- 1 = [] [ARRAY 308]
+         |    |              |                                            |         |    |         |--- 0 = stat [SCALAR 309]
+         |    |              |                                            |         |    |         |--- 1 = [] [ARRAY 310]
+         |    |              |                                            |         |    |         |    |--- 0 = keyword local [SCALAR 311]
+         |    |              |                                            |         |    |         |    |--- 1 = local [SCALAR 312]
+         |    |              |                                            |         |    |         |--- 2 = [] [ARRAY 313]
+         |    |              |                                            |         |    |         |    |--- 0 = namelist [SCALAR 314]
+         |    |              |                                            |         |    |         |    |--- 1 = [] [ARRAY 315]
+         |    |              |                                            |         |    |         |         |--- 0 = Name [SCALAR 316]
+         |    |              |                                            |         |    |         |         |--- 1 = y [SCALAR 317]
+         |    |              |                                            |         |    |         |--- 3 = [] [ARRAY 318]
+         |    |              |                                            |         |    |              |--- 0 = optional namelist initialization [SCALAR 319]
+         |    |              |                                            |         |    |              |--- 1 = = [SCALAR 320]
+         |    |              |                                            |         |    |              |--- 2 = [] [ARRAY 321]
+         |    |              |                                            |         |    |                   |--- 0 = explist [SCALAR 322]
+         |    |              |                                            |         |    |                   |--- 1 = [] [ARRAY 323]
+         |    |              |                                            |         |    |                        |--- 0 = exp [SCALAR 324]
+         |    |              |                                            |         |    |                        |--- 1 = [] [ARRAY 325]
+         |    |              |                                            |         |    |                             |--- 0 = var [SCALAR 326]
+         |    |              |                                            |         |    |                             |--- 1 = [] [ARRAY 327]
+         |    |              |                                            |         |    |                             |    |--- 0 = prefixexp [SCALAR 328]
+         |    |              |                                            |         |    |                             |    |--- 1 = [] [ARRAY 329]
+         |    |              |                                            |         |    |                             |         |--- 0 = var [SCALAR 330]
+         |    |              |                                            |         |    |                             |         |--- 1 = [] [ARRAY 331]
+         |    |              |                                            |         |    |                             |              |--- 0 = Name [SCALAR 332]
+         |    |              |                                            |         |    |                             |              |--- 1 = c [SCALAR 333]
+         |    |              |                                            |         |    |                             |--- 2 = [ [SCALAR 334]
+         |    |              |                                            |         |    |                             |--- 3 = [] [ARRAY 335]
+         |    |              |                                            |         |    |                             |    |--- 0 = exp [SCALAR 336]
+         |    |              |                                            |         |    |                             |    |--- 1 = [] [ARRAY 337]
+         |    |              |                                            |         |    |                             |         |--- 0 = var [SCALAR 338]
+         |    |              |                                            |         |    |                             |         |--- 1 = [] [ARRAY 339]
+         |    |              |                                            |         |    |                             |              |--- 0 = Name [SCALAR 340]
+         |    |              |                                            |         |    |                             |              |--- 1 = x [SCALAR 341]
+         |    |              |                                            |         |    |                             |--- 4 = ] [SCALAR 342]
+         |    |              |                                            |         |    |--- 2 = [] [ARRAY 343]
+         |    |              |                                            |         |         |--- 0 = stat item [SCALAR 344]
+         |    |              |                                            |         |         |--- 1 = [] [ARRAY 345]
+         |    |              |                                            |         |              |--- 0 = stat [SCALAR 346]
+         |    |              |                                            |         |              |--- 1 = [] [ARRAY 347]
+         |    |              |                                            |         |              |    |--- 0 = keyword if [SCALAR 348]
+         |    |              |                                            |         |              |    |--- 1 = if [SCALAR 349]
+         |    |              |                                            |         |              |--- 2 = [] [ARRAY 350]
+         |    |              |                                            |         |              |    |--- 0 = exp [SCALAR 351]
+         |    |              |                                            |         |              |    |--- 1 = [] [ARRAY 352]
+         |    |              |                                            |         |              |    |    |--- 0 = keyword not [SCALAR 353]
+         |    |              |                                            |         |              |    |    |--- 1 = not [SCALAR 354]
+         |    |              |                                            |         |              |    |--- 2 = [] [ARRAY 355]
+         |    |              |                                            |         |              |         |--- 0 = exp [SCALAR 356]
+         |    |              |                                            |         |              |         |--- 1 = [] [ARRAY 357]
+         |    |              |                                            |         |              |              |--- 0 = var [SCALAR 358]
+         |    |              |                                            |         |              |              |--- 1 = [] [ARRAY 359]
+         |    |              |                                            |         |              |                   |--- 0 = Name [SCALAR 360]
+         |    |              |                                            |         |              |                   |--- 1 = y [SCALAR 361]
+         |    |              |                                            |         |              |--- 3 = [] [ARRAY 362]
+         |    |              |                                            |         |              |    |--- 0 = keyword then [SCALAR 363]
+         |    |              |                                            |         |              |    |--- 1 = then [SCALAR 364]
+         |    |              |                                            |         |              |--- 4 = [] [ARRAY 365]
+         |    |              |                                            |         |              |    |--- 0 = block [SCALAR 366]
+         |    |              |                                            |         |              |    |--- 1 = [] [ARRAY 367]
+         |    |              |                                            |         |              |         |--- 0 = chunk [SCALAR 368]
+         |    |              |                                            |         |              |         |--- 1 = [] [ARRAY 369]
+         |    |              |                                            |         |              |         |    |--- 0 = stat list [SCALAR 370]
+         |    |              |                                            |         |              |         |    |--- 1 = [] [ARRAY 371]
+         |    |              |                                            |         |              |         |    |    |--- 0 = stat item [SCALAR 372]
+         |    |              |                                            |         |              |         |    |    |--- 1 = [] [ARRAY 373]
+         |    |              |                                            |         |              |         |    |         |--- 0 = stat [SCALAR 374]
+         |    |              |                                            |         |              |         |    |         |--- 1 = [] [ARRAY 375]
+         |    |              |                                            |         |              |         |    |         |    |--- 0 = varlist [SCALAR 376]
+         |    |              |                                            |         |              |         |    |         |    |--- 1 = [] [ARRAY 377]
+         |    |              |                                            |         |              |         |    |         |         |--- 0 = var [SCALAR 378]
+         |    |              |                                            |         |              |         |    |         |         |--- 1 = [] [ARRAY 379]
+         |    |              |                                            |         |              |         |    |         |              |--- 0 = Name [SCALAR 380]
+         |    |              |                                            |         |              |         |    |         |              |--- 1 = y [SCALAR 381]
+         |    |              |                                            |         |              |         |    |         |--- 2 = = [SCALAR 382]
+         |    |              |                                            |         |              |         |    |         |--- 3 = [] [ARRAY 383]
+         |    |              |                                            |         |              |         |    |              |--- 0 = explist [SCALAR 384]
+         |    |              |                                            |         |              |         |    |              |--- 1 = [] [ARRAY 385]
+         |    |              |                                            |         |              |         |    |                   |--- 0 = exp [SCALAR 386]
+         |    |              |                                            |         |              |         |    |                   |--- 1 = [] [ARRAY 387]
+         |    |              |                                            |         |              |         |    |                   |    |--- 0 = exp [SCALAR 388]
+         |    |              |                                            |         |              |         |    |                   |    |--- 1 = [] [ARRAY 389]
+         |    |              |                                            |         |              |         |    |                   |         |--- 0 = var [SCALAR 390]
+         |    |              |                                            |         |              |         |    |                   |         |--- 1 = [] [ARRAY 391]
+         |    |              |                                            |         |              |         |    |                   |              |--- 0 = Name [SCALAR 392]
+         |    |              |                                            |         |              |         |    |                   |              |--- 1 = f [SCALAR 393]
+         |    |              |                                            |         |              |         |    |                   |--- 2 = [] [ARRAY 394]
+         |    |              |                                            |         |              |         |    |                        |--- 0 = args [SCALAR 395]
+         |    |              |                                            |         |              |         |    |                        |--- 1 = ( [SCALAR 396]
+         |    |              |                                            |         |              |         |    |                        |--- 2 = [] [ARRAY 397]
+         |    |              |                                            |         |              |         |    |                        |    |--- 0 = optional explist [SCALAR 398]
+         |    |              |                                            |         |              |         |    |                        |    |--- 1 = [] [ARRAY 399]
+         |    |              |                                            |         |              |         |    |                        |         |--- 0 = explist [SCALAR 400]
+         |    |              |                                            |         |              |         |    |                        |         |--- 1 = [] [ARRAY 401]
+         |    |              |                                            |         |              |         |    |                        |              |--- 0 = exp [SCALAR 402]
+         |    |              |                                            |         |              |         |    |                        |              |--- 1 = [] [ARRAY 403]
+         |    |              |                                            |         |              |         |    |                        |                   |--- 0 = var [SCALAR 404]
+         |    |              |                                            |         |              |         |    |                        |                   |--- 1 = [] [ARRAY 405]
+         |    |              |                                            |         |              |         |    |                        |                        |--- 0 = Name [SCALAR 406]
+         |    |              |                                            |         |              |         |    |                        |                        |--- 1 = x [SCALAR 407]
+         |    |              |                                            |         |              |         |    |                        |--- 3 = ) [SCALAR 408]
+         |    |              |                                            |         |              |         |    |--- 2 = [] [ARRAY 409]
+         |    |              |                                            |         |              |         |         |--- 0 = stat item [SCALAR 410]
+         |    |              |                                            |         |              |         |         |--- 1 = [] [ARRAY 411]
+         |    |              |                                            |         |              |         |              |--- 0 = stat [SCALAR 412]
+         |    |              |                                            |         |              |         |              |--- 1 = [] [ARRAY 413]
+         |    |              |                                            |         |              |         |              |    |--- 0 = varlist [SCALAR 414]
+         |    |              |                                            |         |              |         |              |    |--- 1 = [] [ARRAY 415]
+         |    |              |                                            |         |              |         |              |         |--- 0 = var [SCALAR 416]
+         |    |              |                                            |         |              |         |              |         |--- 1 = [] [ARRAY 417]
+         |    |              |                                            |         |              |         |              |         |    |--- 0 = prefixexp [SCALAR 418]
+         |    |              |                                            |         |              |         |              |         |    |--- 1 = [] [ARRAY 419]
+         |    |              |                                            |         |              |         |              |         |         |--- 0 = var [SCALAR 420]
+         |    |              |                                            |         |              |         |              |         |         |--- 1 = [] [ARRAY 421]
+         |    |              |                                            |         |              |         |              |         |              |--- 0 = Name [SCALAR 422]
+         |    |              |                                            |         |              |         |              |         |              |--- 1 = c [SCALAR 423]
+         |    |              |                                            |         |              |         |              |         |--- 2 = [ [SCALAR 424]
+         |    |              |                                            |         |              |         |              |         |--- 3 = [] [ARRAY 425]
+         |    |              |                                            |         |              |         |              |         |    |--- 0 = exp [SCALAR 426]
+         |    |              |                                            |         |              |         |              |         |    |--- 1 = [] [ARRAY 427]
+         |    |              |                                            |         |              |         |              |         |         |--- 0 = var [SCALAR 428]
+         |    |              |                                            |         |              |         |              |         |         |--- 1 = [] [ARRAY 429]
+         |    |              |                                            |         |              |         |              |         |              |--- 0 = Name [SCALAR 430]
+         |    |              |                                            |         |              |         |              |         |              |--- 1 = x [SCALAR 431]
+         |    |              |                                            |         |              |         |              |         |--- 4 = ] [SCALAR 432]
+         |    |              |                                            |         |              |         |              |--- 2 = = [SCALAR 433]
+         |    |              |                                            |         |              |         |              |--- 3 = [] [ARRAY 434]
+         |    |              |                                            |         |              |         |                   |--- 0 = explist [SCALAR 435]
+         |    |              |                                            |         |              |         |                   |--- 1 = [] [ARRAY 436]
+         |    |              |                                            |         |              |         |                        |--- 0 = exp [SCALAR 437]
+         |    |              |                                            |         |              |         |                        |--- 1 = [] [ARRAY 438]
+         |    |              |                                            |         |              |         |                             |--- 0 = var [SCALAR 439]
+         |    |              |                                            |         |              |         |                             |--- 1 = [] [ARRAY 440]
+         |    |              |                                            |         |              |         |                                  |--- 0 = Name [SCALAR 441]
+         |    |              |                                            |         |              |         |                                  |--- 1 = y [SCALAR 442]
+         |    |              |                                            |         |              |         |--- 2 = [] [ARRAY 443]
+         |    |              |                                            |         |              |              |--- 0 = optional laststat [SCALAR 444]
+         |    |              |                                            |         |              |--- 5 = [] [ARRAY 445]
+         |    |              |                                            |         |              |    |--- 0 = elseif sequence [SCALAR 446]
+         |    |              |                                            |         |              |--- 6 = [] [ARRAY 447]
+         |    |              |                                            |         |              |    |--- 0 = optional else block [SCALAR 448]
+         |    |              |                                            |         |              |--- 7 = [] [ARRAY 449]
+         |    |              |                                            |         |                   |--- 0 = keyword end [SCALAR 450]
+         |    |              |                                            |         |                   |--- 1 = end [SCALAR 451]
+         |    |              |                                            |         |--- 2 = [] [ARRAY 452]
+         |    |              |                                            |              |--- 0 = optional laststat [SCALAR 453]
+         |    |              |                                            |              |--- 1 = [] [ARRAY 454]
+         |    |              |                                            |                   |--- 0 = laststat [SCALAR 455]
+         |    |              |                                            |                   |--- 1 = [] [ARRAY 456]
+         |    |              |                                            |                   |    |--- 0 = keyword return [SCALAR 457]
+         |    |              |                                            |                   |    |--- 1 = return [SCALAR 458]
+         |    |              |                                            |                   |--- 2 = [] [ARRAY 459]
+         |    |              |                                            |                        |--- 0 = optional explist [SCALAR 460]
+         |    |              |                                            |                        |--- 1 = [] [ARRAY 461]
+         |    |              |                                            |                             |--- 0 = explist [SCALAR 462]
+         |    |              |                                            |                             |--- 1 = [] [ARRAY 463]
+         |    |              |                                            |                                  |--- 0 = exp [SCALAR 464]
+         |    |              |                                            |                                  |--- 1 = [] [ARRAY 465]
+         |    |              |                                            |                                       |--- 0 = var [SCALAR 466]
+         |    |              |                                            |                                       |--- 1 = [] [ARRAY 467]
+         |    |              |                                            |                                            |--- 0 = Name [SCALAR 468]
+         |    |              |                                            |                                            |--- 1 = y [SCALAR 469]
+         |    |              |                                            |--- 5 = [] [ARRAY 470]
+         |    |              |                                                 |--- 0 = keyword end [SCALAR 471]
+         |    |              |                                                 |--- 1 = end [SCALAR 472]
+         |    |              |--- 5 = [] [ARRAY 473]
+         |    |                   |--- 0 = keyword end [SCALAR 474]
+         |    |                   |--- 1 = end [SCALAR 475]
+         |    |--- 3 = [] [ARRAY 476]
+         |    |    |--- 0 = stat item [SCALAR 477]
+         |    |    |--- 1 = [] [ARRAY 478]
+         |    |         |--- 0 = stat [SCALAR 479]
+         |    |         |--- 1 = [] [ARRAY 480]
+         |    |         |    |--- 0 = keyword function [SCALAR 481]
+         |    |         |    |--- 1 = function [SCALAR 482]
+         |    |         |--- 2 = [] [ARRAY 483]
+         |    |         |    |--- 0 = funcname [SCALAR 484]
+         |    |         |    |--- 1 = [] [ARRAY 485]
+         |    |         |    |    |--- 0 = dotted name [SCALAR 486]
+         |    |         |    |    |--- 1 = [] [ARRAY 487]
+         |    |         |    |         |--- 0 = Name [SCALAR 488]
+         |    |         |    |         |--- 1 = test [SCALAR 489]
+         |    |         |    |--- 2 = [] [ARRAY 490]
+         |    |         |         |--- 0 = optional colon name element [SCALAR 491]
+         |    |         |--- 3 = [] [ARRAY 492]
+         |    |              |--- 0 = funcbody [SCALAR 493]
+         |    |              |--- 1 = ( [SCALAR 494]
+         |    |              |--- 2 = [] [ARRAY 495]
+         |    |              |    |--- 0 = optional parlist [SCALAR 496]
+         |    |              |    |--- 1 = [] [ARRAY 497]
+         |    |              |         |--- 0 = namelist [SCALAR 498]
+         |    |              |         |--- 1 = [] [ARRAY 499]
+         |    |              |         |    |--- 0 = Name [SCALAR 500]
+         |    |              |         |    |--- 1 = s [SCALAR 501]
+         |    |              |         |--- 2 = [] [ARRAY 502]
+         |    |              |              |--- 0 = Name [SCALAR 503]
+         |    |              |              |--- 1 = f [SCALAR 504]
+         |    |              |--- 3 = ) [SCALAR 505]
+         |    |              |--- 4 = [] [ARRAY 506]
+         |    |              |    |--- 0 = block [SCALAR 507]
+         |    |              |    |--- 1 = [] [ARRAY 508]
+         |    |              |         |--- 0 = chunk [SCALAR 509]
+         |    |              |         |--- 1 = [] [ARRAY 510]
+         |    |              |         |    |--- 0 = stat list [SCALAR 511]
+         |    |              |         |    |--- 1 = [] [ARRAY 512]
+         |    |              |         |    |    |--- 0 = stat item [SCALAR 513]
+         |    |              |         |    |    |--- 1 = [] [ARRAY 514]
+         |    |              |         |    |         |--- 0 = stat [SCALAR 515]
+         |    |              |         |    |         |--- 1 = [] [ARRAY 516]
+         |    |              |         |    |         |    |--- 0 = varlist [SCALAR 517]
+         |    |              |         |    |         |    |--- 1 = [] [ARRAY 518]
+         |    |              |         |    |         |         |--- 0 = var [SCALAR 519]
+         |    |              |         |    |         |         |--- 1 = [] [ARRAY 520]
+         |    |              |         |    |         |              |--- 0 = Name [SCALAR 521]
+         |    |              |         |    |         |              |--- 1 = N [SCALAR 522]
+         |    |              |         |    |         |--- 2 = = [SCALAR 523]
+         |    |              |         |    |         |--- 3 = [] [ARRAY 524]
+         |    |              |         |    |              |--- 0 = explist [SCALAR 525]
+         |    |              |         |    |              |--- 1 = [] [ARRAY 526]
+         |    |              |         |    |                   |--- 0 = exp [SCALAR 527]
+         |    |              |         |    |                   |--- 1 = [] [ARRAY 528]
+         |    |              |         |    |                        |--- 0 = Number [SCALAR 529]
+         |    |              |         |    |                        |--- 1 = 0 [SCALAR 530]
+         |    |              |         |    |--- 2 = [] [ARRAY 531]
+         |    |              |         |    |    |--- 0 = stat item [SCALAR 532]
+         |    |              |         |    |    |--- 1 = [] [ARRAY 533]
+         |    |              |         |    |         |--- 0 = stat [SCALAR 534]
+         |    |              |         |    |         |--- 1 = [] [ARRAY 535]
+         |    |              |         |    |         |    |--- 0 = keyword local [SCALAR 536]
+         |    |              |         |    |         |    |--- 1 = local [SCALAR 537]
+         |    |              |         |    |         |--- 2 = [] [ARRAY 538]
+         |    |              |         |    |         |    |--- 0 = namelist [SCALAR 539]
+         |    |              |         |    |         |    |--- 1 = [] [ARRAY 540]
+         |    |              |         |    |         |         |--- 0 = Name [SCALAR 541]
+         |    |              |         |    |         |         |--- 1 = c [SCALAR 542]
+         |    |              |         |    |         |--- 3 = [] [ARRAY 543]
+         |    |              |         |    |              |--- 0 = optional namelist initialization [SCALAR 544]
+         |    |              |         |    |              |--- 1 = = [SCALAR 545]
+         |    |              |         |    |              |--- 2 = [] [ARRAY 546]
+         |    |              |         |    |                   |--- 0 = explist [SCALAR 547]
+         |    |              |         |    |                   |--- 1 = [] [ARRAY 548]
+         |    |              |         |    |                        |--- 0 = exp [SCALAR 549]
+         |    |              |         |    |                        |--- 1 = [] [ARRAY 550]
+         |    |              |         |    |                        |    |--- 0 = exp [SCALAR 551]
+         |    |              |         |    |                        |    |--- 1 = [] [ARRAY 552]
+         |    |              |         |    |                        |         |--- 0 = var [SCALAR 553]
+         |    |              |         |    |                        |         |--- 1 = [] [ARRAY 554]
+         |    |              |         |    |                        |         |    |--- 0 = prefixexp [SCALAR 555]
+         |    |              |         |    |                        |         |    |--- 1 = [] [ARRAY 556]
+         |    |              |         |    |                        |         |         |--- 0 = var [SCALAR 557]
+         |    |              |         |    |                        |         |         |--- 1 = [] [ARRAY 558]
+         |    |              |         |    |                        |         |              |--- 0 = Name [SCALAR 559]
+         |    |              |         |    |                        |         |              |--- 1 = os [SCALAR 560]
+         |    |              |         |    |                        |         |--- 2 = . [SCALAR 561]
+         |    |              |         |    |                        |         |--- 3 = [] [ARRAY 562]
+         |    |              |         |    |                        |              |--- 0 = Name [SCALAR 563]
+         |    |              |         |    |                        |              |--- 1 = clock [SCALAR 564]
+         |    |              |         |    |                        |--- 2 = [] [ARRAY 565]
+         |    |              |         |    |                             |--- 0 = args [SCALAR 566]
+         |    |              |         |    |                             |--- 1 = ( [SCALAR 567]
+         |    |              |         |    |                             |--- 2 = [] [ARRAY 568]
+         |    |              |         |    |                             |    |--- 0 = optional explist [SCALAR 569]
+         |    |              |         |    |                             |--- 3 = ) [SCALAR 570]
+         |    |              |         |    |--- 3 = [] [ARRAY 571]
+         |    |              |         |    |    |--- 0 = stat item [SCALAR 572]
+         |    |              |         |    |    |--- 1 = [] [ARRAY 573]
+         |    |              |         |    |         |--- 0 = stat [SCALAR 574]
+         |    |              |         |    |         |--- 1 = [] [ARRAY 575]
+         |    |              |         |    |         |    |--- 0 = keyword local [SCALAR 576]
+         |    |              |         |    |         |    |--- 1 = local [SCALAR 577]
+         |    |              |         |    |         |--- 2 = [] [ARRAY 578]
+         |    |              |         |    |         |    |--- 0 = namelist [SCALAR 579]
+         |    |              |         |    |         |    |--- 1 = [] [ARRAY 580]
+         |    |              |         |    |         |         |--- 0 = Name [SCALAR 581]
+         |    |              |         |    |         |         |--- 1 = v [SCALAR 582]
+         |    |              |         |    |         |--- 3 = [] [ARRAY 583]
+         |    |              |         |    |              |--- 0 = optional namelist initialization [SCALAR 584]
+         |    |              |         |    |              |--- 1 = = [SCALAR 585]
+         |    |              |         |    |              |--- 2 = [] [ARRAY 586]
+         |    |              |         |    |                   |--- 0 = explist [SCALAR 587]
+         |    |              |         |    |                   |--- 1 = [] [ARRAY 588]
+         |    |              |         |    |                        |--- 0 = exp [SCALAR 589]
+         |    |              |         |    |                        |--- 1 = [] [ARRAY 590]
+         |    |              |         |    |                        |    |--- 0 = exp [SCALAR 591]
+         |    |              |         |    |                        |    |--- 1 = [] [ARRAY 592]
+         |    |              |         |    |                        |         |--- 0 = var [SCALAR 593]
+         |    |              |         |    |                        |         |--- 1 = [] [ARRAY 594]
+         |    |              |         |    |                        |              |--- 0 = Name [SCALAR 595]
+         |    |              |         |    |                        |              |--- 1 = f [SCALAR 596]
+         |    |              |         |    |                        |--- 2 = [] [ARRAY 597]
+         |    |              |         |    |                             |--- 0 = args [SCALAR 598]
+         |    |              |         |    |                             |--- 1 = ( [SCALAR 599]
+         |    |              |         |    |                             |--- 2 = [] [ARRAY 600]
+         |    |              |         |    |                             |    |--- 0 = optional explist [SCALAR 601]
+         |    |              |         |    |                             |    |--- 1 = [] [ARRAY 602]
+         |    |              |         |    |                             |         |--- 0 = explist [SCALAR 603]
+         |    |              |         |    |                             |         |--- 1 = [] [ARRAY 604]
+         |    |              |         |    |                             |              |--- 0 = exp [SCALAR 605]
+         |    |              |         |    |                             |              |--- 1 = [] [ARRAY 606]
+         |    |              |         |    |                             |                   |--- 0 = var [SCALAR 607]
+         |    |              |         |    |                             |                   |--- 1 = [] [ARRAY 608]
+         |    |              |         |    |                             |                        |--- 0 = Name [SCALAR 609]
+         |    |              |         |    |                             |                        |--- 1 = n [SCALAR 610]
+         |    |              |         |    |                             |--- 3 = ) [SCALAR 611]
+         |    |              |         |    |--- 4 = [] [ARRAY 612]
+         |    |              |         |    |    |--- 0 = stat item [SCALAR 613]
+         |    |              |         |    |    |--- 1 = [] [ARRAY 614]
+         |    |              |         |    |         |--- 0 = stat [SCALAR 615]
+         |    |              |         |    |         |--- 1 = [] [ARRAY 616]
+         |    |              |         |    |         |    |--- 0 = keyword local [SCALAR 617]
+         |    |              |         |    |         |    |--- 1 = local [SCALAR 618]
+         |    |              |         |    |         |--- 2 = [] [ARRAY 619]
+         |    |              |         |    |         |    |--- 0 = namelist [SCALAR 620]
+         |    |              |         |    |         |    |--- 1 = [] [ARRAY 621]
+         |    |              |         |    |         |         |--- 0 = Name [SCALAR 622]
+         |    |              |         |    |         |         |--- 1 = t [SCALAR 623]
+         |    |              |         |    |         |--- 3 = [] [ARRAY 624]
+         |    |              |         |    |              |--- 0 = optional namelist initialization [SCALAR 625]
+         |    |              |         |    |              |--- 1 = = [SCALAR 626]
+         |    |              |         |    |              |--- 2 = [] [ARRAY 627]
+         |    |              |         |    |                   |--- 0 = explist [SCALAR 628]
+         |    |              |         |    |                   |--- 1 = [] [ARRAY 629]
+         |    |              |         |    |                        |--- 0 = exp [SCALAR 630]
+         |    |              |         |    |                        |--- 1 = [] [ARRAY 631]
+         |    |              |         |    |                        |    |--- 0 = exp [SCALAR 632]
+         |    |              |         |    |                        |    |--- 1 = [] [ARRAY 633]
+         |    |              |         |    |                        |    |    |--- 0 = exp [SCALAR 634]
+         |    |              |         |    |                        |    |    |--- 1 = [] [ARRAY 635]
+         |    |              |         |    |                        |    |         |--- 0 = var [SCALAR 636]
+         |    |              |         |    |                        |    |         |--- 1 = [] [ARRAY 637]
+         |    |              |         |    |                        |    |         |    |--- 0 = prefixexp [SCALAR 638]
+         |    |              |         |    |                        |    |         |    |--- 1 = [] [ARRAY 639]
+         |    |              |         |    |                        |    |         |         |--- 0 = var [SCALAR 640]
+         |    |              |         |    |                        |    |         |         |--- 1 = [] [ARRAY 641]
+         |    |              |         |    |                        |    |         |              |--- 0 = Name [SCALAR 642]
+         |    |              |         |    |                        |    |         |              |--- 1 = os [SCALAR 643]
+         |    |              |         |    |                        |    |         |--- 2 = . [SCALAR 644]
+         |    |              |         |    |                        |    |         |--- 3 = [] [ARRAY 645]
+         |    |              |         |    |                        |    |              |--- 0 = Name [SCALAR 646]
+         |    |              |         |    |                        |    |              |--- 1 = clock [SCALAR 647]
+         |    |              |         |    |                        |    |--- 2 = [] [ARRAY 648]
+         |    |              |         |    |                        |         |--- 0 = args [SCALAR 649]
+         |    |              |         |    |                        |         |--- 1 = ( [SCALAR 650]
+         |    |              |         |    |                        |         |--- 2 = [] [ARRAY 651]
+         |    |              |         |    |                        |         |    |--- 0 = optional explist [SCALAR 652]
+         |    |              |         |    |                        |         |--- 3 = ) [SCALAR 653]
+         |    |              |         |    |                        |--- 2 = - [SCALAR 654]
+         |    |              |         |    |                        |--- 3 = [] [ARRAY 655]
+         |    |              |         |    |                             |--- 0 = exp [SCALAR 656]
+         |    |              |         |    |                             |--- 1 = [] [ARRAY 657]
+         |    |              |         |    |                                  |--- 0 = var [SCALAR 658]
+         |    |              |         |    |                                  |--- 1 = [] [ARRAY 659]
+         |    |              |         |    |                                       |--- 0 = Name [SCALAR 660]
+         |    |              |         |    |                                       |--- 1 = c [SCALAR 661]
+         |    |              |         |    |--- 5 = [] [ARRAY 662]
+         |    |              |         |         |--- 0 = stat item [SCALAR 663]
+         |    |              |         |         |--- 1 = [] [ARRAY 664]
+         |    |              |         |              |--- 0 = stat [SCALAR 665]
+         |    |              |         |              |--- 1 = [] [ARRAY 666]
+         |    |              |         |                   |--- 0 = functioncall [SCALAR 667]
+         |    |              |         |                   |--- 1 = [] [ARRAY 668]
+         |    |              |         |                   |    |--- 0 = prefixexp [SCALAR 669]
+         |    |              |         |                   |    |--- 1 = [] [ARRAY 670]
+         |    |              |         |                   |         |--- 0 = var [SCALAR 671]
+         |    |              |         |                   |         |--- 1 = [] [ARRAY 672]
+         |    |              |         |                   |              |--- 0 = Name [SCALAR 673]
+         |    |              |         |                   |              |--- 1 = print [SCALAR 674]
+         |    |              |         |                   |--- 2 = [] [ARRAY 675]
+         |    |              |         |                        |--- 0 = args [SCALAR 676]
+         |    |              |         |                        |--- 1 = ( [SCALAR 677]
+         |    |              |         |                        |--- 2 = [] [ARRAY 678]
+         |    |              |         |                        |    |--- 0 = optional explist [SCALAR 679]
+         |    |              |         |                        |    |--- 1 = [] [ARRAY 680]
+         |    |              |         |                        |         |--- 0 = explist [SCALAR 681]
+         |    |              |         |                        |         |--- 1 = [] [ARRAY 682]
+         |    |              |         |                        |         |    |--- 0 = exp [SCALAR 683]
+         |    |              |         |                        |         |    |--- 1 = [] [ARRAY 684]
+         |    |              |         |                        |         |         |--- 0 = var [SCALAR 685]
+         |    |              |         |                        |         |         |--- 1 = [] [ARRAY 686]
+         |    |              |         |                        |         |              |--- 0 = Name [SCALAR 687]
+         |    |              |         |                        |         |              |--- 1 = s [SCALAR 688]
+         |    |              |         |                        |         |--- 2 = [] [ARRAY 689]
+         |    |              |         |                        |         |    |--- 0 = exp [SCALAR 690]
+         |    |              |         |                        |         |    |--- 1 = [] [ARRAY 691]
+         |    |              |         |                        |         |         |--- 0 = var [SCALAR 692]
+         |    |              |         |                        |         |         |--- 1 = [] [ARRAY 693]
+         |    |              |         |                        |         |              |--- 0 = Name [SCALAR 694]
+         |    |              |         |                        |         |              |--- 1 = n [SCALAR 695]
+         |    |              |         |                        |         |--- 3 = [] [ARRAY 696]
+         |    |              |         |                        |         |    |--- 0 = exp [SCALAR 697]
+         |    |              |         |                        |         |    |--- 1 = [] [ARRAY 698]
+         |    |              |         |                        |         |         |--- 0 = var [SCALAR 699]
+         |    |              |         |                        |         |         |--- 1 = [] [ARRAY 700]
+         |    |              |         |                        |         |              |--- 0 = Name [SCALAR 701]
+         |    |              |         |                        |         |              |--- 1 = v [SCALAR 702]
+         |    |              |         |                        |         |--- 4 = [] [ARRAY 703]
+         |    |              |         |                        |         |    |--- 0 = exp [SCALAR 704]
+         |    |              |         |                        |         |    |--- 1 = [] [ARRAY 705]
+         |    |              |         |                        |         |         |--- 0 = var [SCALAR 706]
+         |    |              |         |                        |         |         |--- 1 = [] [ARRAY 707]
+         |    |              |         |                        |         |              |--- 0 = Name [SCALAR 708]
+         |    |              |         |                        |         |              |--- 1 = t [SCALAR 709]
+         |    |              |         |                        |         |--- 5 = [] [ARRAY 710]
+         |    |              |         |                        |              |--- 0 = exp [SCALAR 711]
+         |    |              |         |                        |              |--- 1 = [] [ARRAY 712]
+         |    |              |         |                        |                   |--- 0 = var [SCALAR 713]
+         |    |              |         |                        |                   |--- 1 = [] [ARRAY 714]
+         |    |              |         |                        |                        |--- 0 = Name [SCALAR 715]
+         |    |              |         |                        |                        |--- 1 = N [SCALAR 716]
+         |    |              |         |                        |--- 3 = ) [SCALAR 717]
+         |    |              |         |--- 2 = [] [ARRAY 718]
+         |    |              |              |--- 0 = optional laststat [SCALAR 719]
+         |    |              |--- 5 = [] [ARRAY 720]
+         |    |                   |--- 0 = keyword end [SCALAR 721]
+         |    |                   |--- 1 = end [SCALAR 722]
+         |    |--- 4 = [] [ARRAY 723]
+         |    |    |--- 0 = stat item [SCALAR 724]
+         |    |    |--- 1 = [] [ARRAY 725]
+         |    |         |--- 0 = stat [SCALAR 726]
+         |    |         |--- 1 = [] [ARRAY 727]
+         |    |         |    |--- 0 = varlist [SCALAR 728]
+         |    |         |    |--- 1 = [] [ARRAY 729]
+         |    |         |         |--- 0 = var [SCALAR 730]
+         |    |         |         |--- 1 = [] [ARRAY 731]
+         |    |         |              |--- 0 = Name [SCALAR 732]
+         |    |         |              |--- 1 = n [SCALAR 733]
+         |    |         |--- 2 = = [SCALAR 734]
+         |    |         |--- 3 = [] [ARRAY 735]
+         |    |              |--- 0 = explist [SCALAR 736]
+         |    |              |--- 1 = [] [ARRAY 737]
+         |    |                   |--- 0 = exp [SCALAR 738]
+         |    |                   |--- 1 = [] [ARRAY 739]
+         |    |                   |    |--- 0 = exp [SCALAR 740]
+         |    |                   |    |--- 1 = [] [ARRAY 741]
+         |    |                   |         |--- 0 = var [SCALAR 742]
+         |    |                   |         |--- 1 = [] [ARRAY 743]
+         |    |                   |         |    |--- 0 = prefixexp [SCALAR 744]
+         |    |                   |         |    |--- 1 = [] [ARRAY 745]
+         |    |                   |         |         |--- 0 = var [SCALAR 746]
+         |    |                   |         |         |--- 1 = [] [ARRAY 747]
+         |    |                   |         |              |--- 0 = Name [SCALAR 748]
+         |    |                   |         |              |--- 1 = arg [SCALAR 749]
+         |    |                   |         |--- 2 = [ [SCALAR 750]
+         |    |                   |         |--- 3 = [] [ARRAY 751]
+         |    |                   |         |    |--- 0 = exp [SCALAR 752]
+         |    |                   |         |    |--- 1 = [] [ARRAY 753]
+         |    |                   |         |         |--- 0 = Number [SCALAR 754]
+         |    |                   |         |         |--- 1 = 1 [SCALAR 755]
+         |    |                   |         |--- 4 = ] [SCALAR 756]
+         |    |                   |--- 2 = [] [ARRAY 757]
+         |    |                   |    |--- 0 = keyword or [SCALAR 758]
+         |    |                   |    |--- 1 = or [SCALAR 759]
+         |    |                   |--- 3 = [] [ARRAY 760]
+         |    |                        |--- 0 = exp [SCALAR 761]
+         |    |                        |--- 1 = [] [ARRAY 762]
+         |    |                             |--- 0 = Number [SCALAR 763]
+         |    |                             |--- 1 = 24 [SCALAR 764]
+         |    |--- 5 = [] [ARRAY 765]
+         |    |    |--- 0 = stat item [SCALAR 766]
+         |    |    |--- 1 = [] [ARRAY 767]
+         |    |         |--- 0 = stat [SCALAR 768]
+         |    |         |--- 1 = [] [ARRAY 769]
+         |    |         |    |--- 0 = varlist [SCALAR 770]
+         |    |         |    |--- 1 = [] [ARRAY 771]
+         |    |         |         |--- 0 = var [SCALAR 772]
+         |    |         |         |--- 1 = [] [ARRAY 773]
+         |    |         |              |--- 0 = Name [SCALAR 774]
+         |    |         |              |--- 1 = n [SCALAR 775]
+         |    |         |--- 2 = = [SCALAR 776]
+         |    |         |--- 3 = [] [ARRAY 777]
+         |    |              |--- 0 = explist [SCALAR 778]
+         |    |              |--- 1 = [] [ARRAY 779]
+         |    |                   |--- 0 = exp [SCALAR 780]
+         |    |                   |--- 1 = [] [ARRAY 781]
+         |    |                   |    |--- 0 = exp [SCALAR 782]
+         |    |                   |    |--- 1 = [] [ARRAY 783]
+         |    |                   |         |--- 0 = var [SCALAR 784]
+         |    |                   |         |--- 1 = [] [ARRAY 785]
+         |    |                   |              |--- 0 = Name [SCALAR 786]
+         |    |                   |              |--- 1 = tonumber [SCALAR 787]
+         |    |                   |--- 2 = [] [ARRAY 788]
+         |    |                        |--- 0 = args [SCALAR 789]
+         |    |                        |--- 1 = ( [SCALAR 790]
+         |    |                        |--- 2 = [] [ARRAY 791]
+         |    |                        |    |--- 0 = optional explist [SCALAR 792]
+         |    |                        |    |--- 1 = [] [ARRAY 793]
+         |    |                        |         |--- 0 = explist [SCALAR 794]
+         |    |                        |         |--- 1 = [] [ARRAY 795]
+         |    |                        |              |--- 0 = exp [SCALAR 796]
+         |    |                        |              |--- 1 = [] [ARRAY 797]
+         |    |                        |                   |--- 0 = var [SCALAR 798]
+         |    |                        |                   |--- 1 = [] [ARRAY 799]
+         |    |                        |                        |--- 0 = Name [SCALAR 800]
+         |    |                        |                        |--- 1 = n [SCALAR 801]
+         |    |                        |--- 3 = ) [SCALAR 802]
+         |    |--- 6 = [] [ARRAY 803]
+         |    |    |--- 0 = stat item [SCALAR 804]
+         |    |    |--- 1 = [] [ARRAY 805]
+         |    |         |--- 0 = stat [SCALAR 806]
+         |    |         |--- 1 = [] [ARRAY 807]
+         |    |              |--- 0 = functioncall [SCALAR 808]
+         |    |              |--- 1 = [] [ARRAY 809]
+         |    |              |    |--- 0 = prefixexp [SCALAR 810]
+         |    |              |    |--- 1 = [] [ARRAY 811]
+         |    |              |         |--- 0 = var [SCALAR 812]
+         |    |              |         |--- 1 = [] [ARRAY 813]
+         |    |              |              |--- 0 = Name [SCALAR 814]
+         |    |              |              |--- 1 = print [SCALAR 815]
+         |    |              |--- 2 = [] [ARRAY 816]
+         |    |                   |--- 0 = args [SCALAR 817]
+         |    |                   |--- 1 = ( [SCALAR 818]
+         |    |                   |--- 2 = [] [ARRAY 819]
+         |    |                   |    |--- 0 = optional explist [SCALAR 820]
+         |    |                   |    |--- 1 = [] [ARRAY 821]
+         |    |                   |         |--- 0 = explist [SCALAR 822]
+         |    |                   |         |--- 1 = [] [ARRAY 823]
+         |    |                   |         |    |--- 0 = exp [SCALAR 824]
+         |    |                   |         |    |--- 1 = [] [ARRAY 825]
+         |    |                   |         |         |--- 0 = String [SCALAR 826]
+         |    |                   |         |         |--- 1 = [] [ARRAY 827]
+         |    |                   |         |              |--- 0 = double quoted string [SCALAR 828]
+         |    |                   |         |              |--- 1 = "" [SCALAR 829]
+         |    |                   |         |--- 2 = [] [ARRAY 830]
+         |    |                   |         |    |--- 0 = exp [SCALAR 831]
+         |    |                   |         |    |--- 1 = [] [ARRAY 832]
+         |    |                   |         |         |--- 0 = String [SCALAR 833]
+         |    |                   |         |         |--- 1 = [] [ARRAY 834]
+         |    |                   |         |              |--- 0 = double quoted string [SCALAR 835]
+         |    |                   |         |              |--- 1 = "n" [SCALAR 836]
+         |    |                   |         |--- 3 = [] [ARRAY 837]
+         |    |                   |         |    |--- 0 = exp [SCALAR 838]
+         |    |                   |         |    |--- 1 = [] [ARRAY 839]
+         |    |                   |         |         |--- 0 = String [SCALAR 840]
+         |    |                   |         |         |--- 1 = [] [ARRAY 841]
+         |    |                   |         |              |--- 0 = double quoted string [SCALAR 842]
+         |    |                   |         |              |--- 1 = "value" [SCALAR 843]
+         |    |                   |         |--- 4 = [] [ARRAY 844]
+         |    |                   |         |    |--- 0 = exp [SCALAR 845]
+         |    |                   |         |    |--- 1 = [] [ARRAY 846]
+         |    |                   |         |         |--- 0 = String [SCALAR 847]
+         |    |                   |         |         |--- 1 = [] [ARRAY 848]
+         |    |                   |         |              |--- 0 = double quoted string [SCALAR 849]
+         |    |                   |         |              |--- 1 = "time" [SCALAR 850]
+         |    |                   |         |--- 5 = [] [ARRAY 851]
+         |    |                   |              |--- 0 = exp [SCALAR 852]
+         |    |                   |              |--- 1 = [] [ARRAY 853]
+         |    |                   |                   |--- 0 = String [SCALAR 854]
+         |    |                   |                   |--- 1 = [] [ARRAY 855]
+         |    |                   |                        |--- 0 = double quoted string [SCALAR 856]
+         |    |                   |                        |--- 1 = "evals" [SCALAR 857]
+         |    |                   |--- 3 = ) [SCALAR 858]
+         |    |--- 7 = [] [ARRAY 859]
+         |    |    |--- 0 = stat item [SCALAR 860]
+         |    |    |--- 1 = [] [ARRAY 861]
+         |    |         |--- 0 = stat [SCALAR 862]
+         |    |         |--- 1 = [] [ARRAY 863]
+         |    |              |--- 0 = functioncall [SCALAR 864]
+         |    |              |--- 1 = [] [ARRAY 865]
+         |    |              |    |--- 0 = prefixexp [SCALAR 866]
+         |    |              |    |--- 1 = [] [ARRAY 867]
+         |    |              |         |--- 0 = var [SCALAR 868]
+         |    |              |         |--- 1 = [] [ARRAY 869]
+         |    |              |              |--- 0 = Name [SCALAR 870]
+         |    |              |              |--- 1 = test [SCALAR 871]
+         |    |              |--- 2 = [] [ARRAY 872]
+         |    |                   |--- 0 = args [SCALAR 873]
+         |    |                   |--- 1 = ( [SCALAR 874]
+         |    |                   |--- 2 = [] [ARRAY 875]
+         |    |                   |    |--- 0 = optional explist [SCALAR 876]
+         |    |                   |    |--- 1 = [] [ARRAY 877]
+         |    |                   |         |--- 0 = explist [SCALAR 878]
+         |    |                   |         |--- 1 = [] [ARRAY 879]
+         |    |                   |         |    |--- 0 = exp [SCALAR 880]
+         |    |                   |         |    |--- 1 = [] [ARRAY 881]
+         |    |                   |         |         |--- 0 = String [SCALAR 882]
+         |    |                   |         |         |--- 1 = [] [ARRAY 883]
+         |    |                   |         |              |--- 0 = double quoted string [SCALAR 884]
+         |    |                   |         |              |--- 1 = "plain" [SCALAR 885]
+         |    |                   |         |--- 2 = [] [ARRAY 886]
+         |    |                   |              |--- 0 = exp [SCALAR 887]
+         |    |                   |              |--- 1 = [] [ARRAY 888]
+         |    |                   |                   |--- 0 = var [SCALAR 889]
+         |    |                   |                   |--- 1 = [] [ARRAY 890]
+         |    |                   |                        |--- 0 = Name [SCALAR 891]
+         |    |                   |                        |--- 1 = fib [SCALAR 892]
+         |    |                   |--- 3 = ) [SCALAR 893]
+         |    |--- 8 = [] [ARRAY 894]
+         |    |    |--- 0 = stat item [SCALAR 895]
+         |    |    |--- 1 = [] [ARRAY 896]
+         |    |         |--- 0 = stat [SCALAR 897]
+         |    |         |--- 1 = [] [ARRAY 898]
+         |    |         |    |--- 0 = varlist [SCALAR 899]
+         |    |         |    |--- 1 = [] [ARRAY 900]
+         |    |         |         |--- 0 = var [SCALAR 901]
+         |    |         |         |--- 1 = [] [ARRAY 902]
+         |    |         |              |--- 0 = Name [SCALAR 903]
+         |    |         |              |--- 1 = fib [SCALAR 904]
+         |    |         |--- 2 = = [SCALAR 905]
+         |    |         |--- 3 = [] [ARRAY 906]
+         |    |              |--- 0 = explist [SCALAR 907]
+         |    |              |--- 1 = [] [ARRAY 908]
+         |    |                   |--- 0 = exp [SCALAR 909]
+         |    |                   |--- 1 = [] [ARRAY 910]
+         |    |                   |    |--- 0 = exp [SCALAR 911]
+         |    |                   |    |--- 1 = [] [ARRAY 912]
+         |    |                   |         |--- 0 = var [SCALAR 913]
+         |    |                   |         |--- 1 = [] [ARRAY 914]
+         |    |                   |              |--- 0 = Name [SCALAR 915]
+         |    |                   |              |--- 1 = cache [SCALAR 916]
+         |    |                   |--- 2 = [] [ARRAY 917]
+         |    |                        |--- 0 = args [SCALAR 918]
+         |    |                        |--- 1 = ( [SCALAR 919]
+         |    |                        |--- 2 = [] [ARRAY 920]
+         |    |                        |    |--- 0 = optional explist [SCALAR 921]
+         |    |                        |    |--- 1 = [] [ARRAY 922]
+         |    |                        |         |--- 0 = explist [SCALAR 923]
+         |    |                        |         |--- 1 = [] [ARRAY 924]
+         |    |                        |              |--- 0 = exp [SCALAR 925]
+         |    |                        |              |--- 1 = [] [ARRAY 926]
+         |    |                        |                   |--- 0 = var [SCALAR 927]
+         |    |                        |                   |--- 1 = [] [ARRAY 928]
+         |    |                        |                        |--- 0 = Name [SCALAR 929]
+         |    |                        |                        |--- 1 = fib [SCALAR 930]
+         |    |                        |--- 3 = ) [SCALAR 931]
+         |    |--- 9 = [] [ARRAY 932]
+         |         |--- 0 = stat item [SCALAR 933]
+         |         |--- 1 = [] [ARRAY 934]
+         |              |--- 0 = stat [SCALAR 935]
+         |              |--- 1 = [] [ARRAY 936]
+         |                   |--- 0 = functioncall [SCALAR 937]
+         |                   |--- 1 = [] [ARRAY 938]
+         |                   |    |--- 0 = prefixexp [SCALAR 939]
+         |                   |    |--- 1 = [] [ARRAY 940]
+         |                   |         |--- 0 = var [SCALAR 941]
+         |                   |         |--- 1 = [] [ARRAY 942]
+         |                   |              |--- 0 = Name [SCALAR 943]
+         |                   |              |--- 1 = test [SCALAR 944]
+         |                   |--- 2 = [] [ARRAY 945]
+         |                        |--- 0 = args [SCALAR 946]
+         |                        |--- 1 = ( [SCALAR 947]
+         |                        |--- 2 = [] [ARRAY 948]
+         |                        |    |--- 0 = optional explist [SCALAR 949]
+         |                        |    |--- 1 = [] [ARRAY 950]
+         |                        |         |--- 0 = explist [SCALAR 951]
+         |                        |         |--- 1 = [] [ARRAY 952]
+         |                        |         |    |--- 0 = exp [SCALAR 953]
+         |                        |         |    |--- 1 = [] [ARRAY 954]
+         |                        |         |         |--- 0 = String [SCALAR 955]
+         |                        |         |         |--- 1 = [] [ARRAY 956]
+         |                        |         |              |--- 0 = double quoted string [SCALAR 957]
+         |                        |         |              |--- 1 = "cached" [SCALAR 958]
+         |                        |         |--- 2 = [] [ARRAY 959]
+         |                        |              |--- 0 = exp [SCALAR 960]
+         |                        |              |--- 1 = [] [ARRAY 961]
+         |                        |                   |--- 0 = var [SCALAR 962]
+         |                        |                   |--- 1 = [] [ARRAY 963]
+         |                        |                        |--- 0 = Name [SCALAR 964]
+         |                        |                        |--- 1 = fib [SCALAR 965]
+         |                        |--- 3 = ) [SCALAR 966]
+         |--- 2 = [] [ARRAY 967]
+              |--- 0 = optional laststat [SCALAR 968]
+  chunk
+   stat list
+    stat item
+     stat
+      keyword function
+      function
+      funcname
+       dotted name
+        Name
+        fib
+       optional colon name element
+      funcbody
+      (
+       optional parlist
+        namelist
+         Name
+         n
+      )
+       block
+        chunk
+         stat list
+          stat item
+           stat
+            varlist
+             var
+              Name
+              N
+           =
+            explist
+             exp
+              exp
+               var
+                Name
+                N
+             +
+              exp
+               Number
+               1
+          stat item
+           stat
+            keyword if
+            if
+            exp
+             exp
+              var
+               Name
+               n
+            <
+             exp
+              Number
+              2
+            keyword then
+            then
+            block
+             chunk
+              stat list
+              optional laststat
+               laststat
+                keyword return
+                return
+                optional explist
+                 explist
+                  exp
+                   var
+                    Name
+                    n
+            elseif sequence
+            optional else block
+             keyword else
+             else
+             block
+              chunk
+               stat list
+               optional laststat
+                laststat
+                 keyword return
+                 return
+                 optional explist
+                  explist
+                   exp
+                    exp
+                     exp
+                      var
+                       Name
+                       fib
+                     args
+                     (
+                      optional explist
+                       explist
+                        exp
+                         exp
+                          var
+                           Name
+                           n
+                        -
+                         exp
+                          Number
+                          1
+                     )
+                   +
+                    exp
+                     exp
+                      var
+                       Name
+                       fib
+                     args
+                     (
+                      optional explist
+                       explist
+                        exp
+                         exp
+                          var
+                           Name
+                           n
+                        -
+                         exp
+                          Number
+                          2
+                     )
+            keyword end
+            end
+         optional laststat
+       keyword end
+       end
+    stat item
+     stat
+      keyword function
+      function
+      funcname
+       dotted name
+        Name
+        cache
+       optional colon name element
+      funcbody
+      (
+       optional parlist
+        namelist
+         Name
+         f
+      )
+       block
+        chunk
+         stat list
+          stat item
+           stat
+            keyword local
+            local
+            namelist
+             Name
+             c
+            optional namelist initialization
+            =
+             explist
+              exp
+               tableconstructor
+               {
+               }
+         optional laststat
+          laststat
+           keyword return
+           return
+           optional explist
+            explist
+             exp
+              function
+               keyword function
+               function
+               funcbody
+               (
+                optional parlist
+                 namelist
+                  Name
+                  x
+               )
+                block
+                 chunk
+                  stat list
+                   stat item
+                    stat
+                     keyword local
+                     local
+                     namelist
+                      Name
+                      y
+                     optional namelist initialization
+                     =
+                      explist
+                       exp
+                        var
+                         prefixexp
+                          var
+                           Name
+                           c
+                        [
+                         exp
+                          var
+                           Name
+                           x
+                        ]
+                   stat item
+                    stat
+                     keyword if
+                     if
+                     exp
+                      keyword not
+                      not
+                      exp
+                       var
+                        Name
+                        y
+                     keyword then
+                     then
+                     block
+                      chunk
+                       stat list
+                        stat item
+                         stat
+                          varlist
+                           var
+                            Name
+                            y
+                         =
+                          explist
+                           exp
+                            exp
+                             var
+                              Name
+                              f
+                            args
+                            (
+                             optional explist
+                              explist
+                               exp
+                                var
+                                 Name
+                                 x
+                            )
+                        stat item
+                         stat
+                          varlist
+                           var
+                            prefixexp
+                             var
+                              Name
+                              c
+                           [
+                            exp
+                             var
+                              Name
+                              x
+                           ]
+                         =
+                          explist
+                           exp
+                            var
+                             Name
+                             y
+                       optional laststat
+                     elseif sequence
+                     optional else block
+                     keyword end
+                     end
+                  optional laststat
+                   laststat
+                    keyword return
+                    return
+                    optional explist
+                     explist
+                      exp
+                       var
+                        Name
+                        y
+                keyword end
+                end
+       keyword end
+       end
+    stat item
+     stat
+      keyword function
+      function
+      funcname
+       dotted name
+        Name
+        test
+       optional colon name element
+      funcbody
+      (
+       optional parlist
+        namelist
+         Name
+         s
+         Name
+         f
+      )
+       block
+        chunk
+         stat list
+          stat item
+           stat
+            varlist
+             var
+              Name
+              N
+           =
+            explist
+             exp
+              Number
+              0
+          stat item
+           stat
+            keyword local
+            local
+            namelist
+             Name
+             c
+            optional namelist initialization
+            =
+             explist
+              exp
+               exp
+                var
+                 prefixexp
+                  var
+                   Name
+                   os
+                .
+                 Name
+                 clock
+               args
+               (
+                optional explist
+               )
+          stat item
+           stat
+            keyword local
+            local
+            namelist
+             Name
+             v
+            optional namelist initialization
+            =
+             explist
+              exp
+               exp
+                var
+                 Name
+                 f
+               args
+               (
+                optional explist
+                 explist
+                  exp
+                   var
+                    Name
+                    n
+               )
+          stat item
+           stat
+            keyword local
+            local
+            namelist
+             Name
+             t
+            optional namelist initialization
+            =
+             explist
+              exp
+               exp
+                exp
+                 var
+                  prefixexp
+                   var
+                    Name
+                    os
+                 .
+                  Name
+                  clock
+                args
+                (
+                 optional explist
+                )
+              -
+               exp
+                var
+                 Name
+                 c
+          stat item
+           stat
+            functioncall
+             prefixexp
+              var
+               Name
+               print
+             args
+             (
+              optional explist
+               explist
+                exp
+                 var
+                  Name
+                  s
+                exp
+                 var
+                  Name
+                  n
+                exp
+                 var
+                  Name
+                  v
+                exp
+                 var
+                  Name
+                  t
+                exp
+                 var
+                  Name
+                  N
+             )
+         optional laststat
+       keyword end
+       end
+    stat item
+     stat
+      varlist
+       var
+        Name
+        n
+     =
+      explist
+       exp
+        exp
+         var
+          prefixexp
+           var
+            Name
+            arg
+         [
+          exp
+           Number
+           1
+         ]
+        keyword or
+        or
+        exp
+         Number
+         24
+    stat item
+     stat
+      varlist
+       var
+        Name
+        n
+     =
+      explist
+       exp
+        exp
+         var
+          Name
+          tonumber
+        args
+        (
+         optional explist
+          explist
+           exp
+            var
+             Name
+             n
+        )
+    stat item
+     stat
+      functioncall
+       prefixexp
+        var
+         Name
+         print
+       args
+       (
+        optional explist
+         explist
+          exp
+           String
+            double quoted string
+            ""
+          exp
+           String
+            double quoted string
+            "n"
+          exp
+           String
+            double quoted string
+            "value"
+          exp
+           String
+            double quoted string
+            "time"
+          exp
+           String
+            double quoted string
+            "evals"
+       )
+    stat item
+     stat
+      functioncall
+       prefixexp
+        var
+         Name
+         test
+       args
+       (
+        optional explist
+         explist
+          exp
+           String
+            double quoted string
+            "plain"
+          exp
+           var
+            Name
+            fib
+       )
+    stat item
+     stat
+      varlist
+       var
+        Name
+        fib
+     =
+      explist
+       exp
+        exp
+         var
+          Name
+          cache
+        args
+        (
+         optional explist
+          explist
+           exp
+            var
+             Name
+             fib
+        )
+    stat item
+     stat
+      functioncall
+       prefixexp
+        var
+         Name
+         test
+       args
+       (
+        optional explist
+         explist
+          exp
+           String
+            double quoted string
+            "cached"
+          exp
+           var
+            Name
+            fib
+       )
+   optional laststat

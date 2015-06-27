@@ -1,32 +1,89 @@
-optional laststat
-)
-"!\n"
-double quoted string
-String
-exp
-_VERSION
-Name
-var
-exp
-"Hello world, from "
-double quoted string
-String
-exp
-explist
-optional explist
-(
-args
-write
-Name
-.
-io
-Name
-var
-prefixexp
-var
-prefixexp
-functioncall
-stat
-stat item
-stat list
-chunk
+Root
+    |--- 0 = [] [ARRAY 1]
+         |--- 0 = chunk [SCALAR 2]
+         |--- 1 = [] [ARRAY 3]
+         |    |--- 0 = stat list [SCALAR 4]
+         |    |--- 1 = [] [ARRAY 5]
+         |         |--- 0 = stat item [SCALAR 6]
+         |         |--- 1 = [] [ARRAY 7]
+         |              |--- 0 = stat [SCALAR 8]
+         |              |--- 1 = [] [ARRAY 9]
+         |                   |--- 0 = functioncall [SCALAR 10]
+         |                   |--- 1 = [] [ARRAY 11]
+         |                   |    |--- 0 = prefixexp [SCALAR 12]
+         |                   |    |--- 1 = [] [ARRAY 13]
+         |                   |         |--- 0 = var [SCALAR 14]
+         |                   |         |--- 1 = [] [ARRAY 15]
+         |                   |         |    |--- 0 = prefixexp [SCALAR 16]
+         |                   |         |    |--- 1 = [] [ARRAY 17]
+         |                   |         |         |--- 0 = var [SCALAR 18]
+         |                   |         |         |--- 1 = [] [ARRAY 19]
+         |                   |         |              |--- 0 = Name [SCALAR 20]
+         |                   |         |              |--- 1 = io [SCALAR 21]
+         |                   |         |--- 2 = . [SCALAR 22]
+         |                   |         |--- 3 = [] [ARRAY 23]
+         |                   |              |--- 0 = Name [SCALAR 24]
+         |                   |              |--- 1 = write [SCALAR 25]
+         |                   |--- 2 = [] [ARRAY 26]
+         |                        |--- 0 = args [SCALAR 27]
+         |                        |--- 1 = ( [SCALAR 28]
+         |                        |--- 2 = [] [ARRAY 29]
+         |                        |    |--- 0 = optional explist [SCALAR 30]
+         |                        |    |--- 1 = [] [ARRAY 31]
+         |                        |         |--- 0 = explist [SCALAR 32]
+         |                        |         |--- 1 = [] [ARRAY 33]
+         |                        |         |    |--- 0 = exp [SCALAR 34]
+         |                        |         |    |--- 1 = [] [ARRAY 35]
+         |                        |         |         |--- 0 = String [SCALAR 36]
+         |                        |         |         |--- 1 = [] [ARRAY 37]
+         |                        |         |              |--- 0 = double quoted string [SCALAR 38]
+         |                        |         |              |--- 1 = "Hello world, from " [SCALAR 39]
+         |                        |         |--- 2 = [] [ARRAY 40]
+         |                        |         |    |--- 0 = exp [SCALAR 41]
+         |                        |         |    |--- 1 = [] [ARRAY 42]
+         |                        |         |         |--- 0 = var [SCALAR 43]
+         |                        |         |         |--- 1 = [] [ARRAY 44]
+         |                        |         |              |--- 0 = Name [SCALAR 45]
+         |                        |         |              |--- 1 = _VERSION [SCALAR 46]
+         |                        |         |--- 3 = [] [ARRAY 47]
+         |                        |              |--- 0 = exp [SCALAR 48]
+         |                        |              |--- 1 = [] [ARRAY 49]
+         |                        |                   |--- 0 = String [SCALAR 50]
+         |                        |                   |--- 1 = [] [ARRAY 51]
+         |                        |                        |--- 0 = double quoted string [SCALAR 52]
+         |                        |                        |--- 1 = "!\n" [SCALAR 53]
+         |                        |--- 3 = ) [SCALAR 54]
+         |--- 2 = [] [ARRAY 55]
+              |--- 0 = optional laststat [SCALAR 56]
+  chunk
+   stat list
+    stat item
+     stat
+      functioncall
+       prefixexp
+        var
+         prefixexp
+          var
+           Name
+           io
+        .
+         Name
+         write
+       args
+       (
+        optional explist
+         explist
+          exp
+           String
+            double quoted string
+            "Hello world, from "
+          exp
+           var
+            Name
+            _VERSION
+          exp
+           String
+            double quoted string
+            "!\n"
+       )
+   optional laststat
