@@ -152,7 +152,7 @@ sub BUILD
 	);
 	$self -> renderer
 	(
-		Data::RenderAsTree -> new()
+		Data::RenderAsTree -> new(clean_nodes => 1)
 	);
 
 } # End of BUILD.
@@ -316,9 +316,9 @@ sub run
 	my($file_name)   = $args{input_file_name} || $self -> input_file_name;
 
 	$self -> value($self -> process($file_name) );
-	$self -> renderer -> render(${$self -> value});
-	$self -> log(debug => $_) for @{$self -> renderer -> root -> tree2string({no_attributes => 1 - $self -> attributes})};
-	$self -> render;
+	$self -> renderer -> run(${$self -> value});
+#	$self -> log(debug => $_) for @{$self -> renderer -> root -> tree2string({no_attributes => 1 - $self -> attributes})};
+#	$self -> render;
 
 #	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
 #
