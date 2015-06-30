@@ -17,7 +17,7 @@ use Moo;
 
 use Path::Tiny; # For path().
 
-use Types::Standard qw/Any ArrayRef Bool Str/;
+use Types::Standard qw/Any ArrayRef HashRef Bool Str/;
 
 has attributes =>
 (
@@ -113,6 +113,21 @@ has value =>
 	is       => 'rw',
 	isa      => Any,
 	required => 0,
+);
+
+has keywords =>
+(
+    default  => sub{return {
+                    map { $_ => 1 } qw{
+                        and       break     do        else      elseif
+                        end       false     for       function  if
+                        in        local     nil       not       or
+                        repeat    return    then      true      until     while
+                    }
+                }},
+    is       => 'ro',
+    isa      => Any,
+    required => 0,
 );
 
 our $VERSION = '1.00';
@@ -242,6 +257,32 @@ sub process
 
 				next EVENT;
 			}
+
+            if ($name eq 'Name')
+            {
+                # This is an event to check if a keyword is used as an identifier
+                # and die if it is.
+
+                my($start, $length) = $self -> recce -> pause_span;
+                my($line,  $column) = $self -> recce -> line_column($start);
+                my($literal)        = $self -> recce -> literal($start, $length);
+
+                if ( exists $self -> keywords -> { $literal } )
+                {
+                    $self -> recce -> lexeme_read(qq{keyword $literal}, $start, $length)
+                        // do {
+                                die $self->input_file_name .
+                                    qq{:$line:$column: keyword '$literal' used as <name>} };
+                }
+                else
+                {
+                    $self -> recce -> lexeme_read('Name', $start, $length);
+                }
+
+                $pos = $self -> recce -> pos();
+
+                next EVENT;
+            }
 
 			die "Unexpected event '$name'\n";
 
@@ -746,47 +787,26 @@ lexeme default = latm => 1 action => [name,values]
 <field> ::= <Name> '=' <exp>
 <field> ::= <exp>
 
-:lexeme ~ <keyword and> priority => 1
 <keyword and> ~ 'and'
-:lexeme ~ <keyword break> priority => 1
 <keyword break> ~ 'break'
-:lexeme ~ <keyword do> priority => 1
 <keyword do> ~ 'do'
-:lexeme ~ <keyword else> priority => 1
 <keyword else> ~ 'else'
-:lexeme ~ <keyword elseif> priority => 1
 <keyword elseif> ~ 'elseif'
-:lexeme ~ <keyword end> priority => 1
 <keyword end> ~ 'end'
-:lexeme ~ <keyword false> priority => 1
 <keyword false> ~ 'false'
-:lexeme ~ <keyword for> priority => 1
 <keyword for> ~ 'for'
-:lexeme ~ <keyword function> priority => 1
 <keyword function> ~ 'function'
-:lexeme ~ <keyword if> priority => 1
 <keyword if> ~ 'if'
-:lexeme ~ <keyword in> priority => 1
 <keyword in> ~ 'in'
-:lexeme ~ <keyword local> priority => 1
 <keyword local> ~ 'local'
-:lexeme ~ <keyword nil> priority => 1
 <keyword nil> ~ 'nil'
-:lexeme ~ <keyword not> priority => 1
 <keyword not> ~ 'not'
-:lexeme ~ <keyword or> priority => 1
 <keyword or> ~ 'or'
-:lexeme ~ <keyword repeat> priority => 1
 <keyword repeat> ~ 'repeat'
-:lexeme ~ <keyword return> priority => 1
 <keyword return> ~ 'return'
-:lexeme ~ <keyword then> priority => 1
 <keyword then> ~ 'then'
-:lexeme ~ <keyword true> priority => 1
 <keyword true> ~ 'true'
-:lexeme ~ <keyword until> priority => 1
 <keyword until> ~ 'until'
-:lexeme ~ <keyword while> priority => 1
 <keyword while> ~ 'while'
 
 # multiline comments are discarded.  The lexer only looks for
@@ -814,6 +834,7 @@ whitespace ~ [\s]+
 # and we enforce that, so all letters must be a-z or A-Z
 
 <Name> ~ <identifier start char> <optional identifier chars>
+:lexeme ~ Name pause => before event => 'Name'
 <identifier start char> ~ [a-zA-Z_]
 <optional identifier chars> ~ <identifier char>*
 <identifier char> ~ [a-zA-Z0-9_]
