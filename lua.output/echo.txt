@@ -1,0 +1,187 @@
+Root. Attributes: {type => "", uid => "0", value => ""}
+    |--- 0 = [] [ARRAY 1]. Attributes: {name => "0 = []", type => "ARRAY", uid => "1", use_value => "0", value => ""}
+         |--- 0 = chunk [SCALAR 2]. Attributes: {name => "0 = chunk", type => "SCALAR", uid => "2", use_value => "0", value => ""}
+         |--- 1 = [] [ARRAY 3]. Attributes: {name => "1 = []", type => "ARRAY", uid => "3", use_value => "0", value => ""}
+         |    |--- 0 = stat list [SCALAR 4]. Attributes: {name => "0 = stat list", type => "SCALAR", uid => "4", use_value => "0", value => ""}
+         |    |--- 1 = [] [ARRAY 5]. Attributes: {name => "1 = []", type => "ARRAY", uid => "5", use_value => "0", value => ""}
+         |         |--- 0 = stat item [SCALAR 6]. Attributes: {name => "0 = stat item", type => "SCALAR", uid => "6", use_value => "0", value => ""}
+         |         |--- 1 = [] [ARRAY 7]. Attributes: {name => "1 = []", type => "ARRAY", uid => "7", use_value => "0", value => ""}
+         |              |--- 0 = stat [SCALAR 8]. Attributes: {name => "0 = stat", type => "SCALAR", uid => "8", use_value => "0", value => ""}
+         |              |--- 1 = [] [ARRAY 9]. Attributes: {name => "1 = []", type => "ARRAY", uid => "9", use_value => "0", value => ""}
+         |              |    |--- 0 = keyword for [SCALAR 10]. Attributes: {name => "0 = keyword for", type => "SCALAR", uid => "10", use_value => "0", value => ""}
+         |              |    |--- 1 = for [SCALAR 11]. Attributes: {name => "1 = for", type => "SCALAR", uid => "11", use_value => "0", value => ""}
+         |              |--- 2 = [] [ARRAY 12]. Attributes: {name => "2 = []", type => "ARRAY", uid => "12", use_value => "0", value => ""}
+         |              |    |--- 0 = Name [SCALAR 13]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "13", use_value => "0", value => ""}
+         |              |    |--- 1 = i [SCALAR 14]. Attributes: {name => "1 = i", type => "SCALAR", uid => "14", use_value => "0", value => ""}
+         |              |--- 3 = = [SCALAR 15]. Attributes: {name => "3 = =", type => "SCALAR", uid => "15", use_value => "0", value => ""}
+         |              |--- 4 = [] [ARRAY 16]. Attributes: {name => "4 = []", type => "ARRAY", uid => "16", use_value => "0", value => ""}
+         |              |    |--- 0 = exp [SCALAR 17]. Attributes: {name => "0 = exp", type => "SCALAR", uid => "17", use_value => "0", value => ""}
+         |              |    |--- 1 = [] [ARRAY 18]. Attributes: {name => "1 = []", type => "ARRAY", uid => "18", use_value => "0", value => ""}
+         |              |         |--- 0 = Number [SCALAR 19]. Attributes: {name => "0 = Number", type => "SCALAR", uid => "19", use_value => "0", value => ""}
+         |              |         |--- 1 = 0 [SCALAR 20]. Attributes: {name => "1 = 0", type => "SCALAR", uid => "20", use_value => "0", value => ""}
+         |              |--- 5 = , [SCALAR 21]. Attributes: {name => "5 = ,", type => "SCALAR", uid => "21", use_value => "0", value => ""}
+         |              |--- 6 = [] [ARRAY 22]. Attributes: {name => "6 = []", type => "ARRAY", uid => "22", use_value => "0", value => ""}
+         |              |    |--- 0 = exp [SCALAR 23]. Attributes: {name => "0 = exp", type => "SCALAR", uid => "23", use_value => "0", value => ""}
+         |              |    |--- 1 = [] [ARRAY 24]. Attributes: {name => "1 = []", type => "ARRAY", uid => "24", use_value => "0", value => ""}
+         |              |    |    |--- 0 = exp [SCALAR 25]. Attributes: {name => "0 = exp", type => "SCALAR", uid => "25", use_value => "0", value => ""}
+         |              |    |    |--- 1 = [] [ARRAY 26]. Attributes: {name => "1 = []", type => "ARRAY", uid => "26", use_value => "0", value => ""}
+         |              |    |         |--- 0 = var [SCALAR 27]. Attributes: {name => "0 = var", type => "SCALAR", uid => "27", use_value => "0", value => ""}
+         |              |    |         |--- 1 = [] [ARRAY 28]. Attributes: {name => "1 = []", type => "ARRAY", uid => "28", use_value => "0", value => ""}
+         |              |    |         |    |--- 0 = prefixexp [SCALAR 29]. Attributes: {name => "0 = prefixexp", type => "SCALAR", uid => "29", use_value => "0", value => ""}
+         |              |    |         |    |--- 1 = [] [ARRAY 30]. Attributes: {name => "1 = []", type => "ARRAY", uid => "30", use_value => "0", value => ""}
+         |              |    |         |         |--- 0 = var [SCALAR 31]. Attributes: {name => "0 = var", type => "SCALAR", uid => "31", use_value => "0", value => ""}
+         |              |    |         |         |--- 1 = [] [ARRAY 32]. Attributes: {name => "1 = []", type => "ARRAY", uid => "32", use_value => "0", value => ""}
+         |              |    |         |              |--- 0 = Name [SCALAR 33]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "33", use_value => "0", value => ""}
+         |              |    |         |              |--- 1 = table [SCALAR 34]. Attributes: {name => "1 = table", type => "SCALAR", uid => "34", use_value => "0", value => ""}
+         |              |    |         |--- 2 = . [SCALAR 35]. Attributes: {name => "2 = .", type => "SCALAR", uid => "35", use_value => "0", value => ""}
+         |              |    |         |--- 3 = [] [ARRAY 36]. Attributes: {name => "3 = []", type => "ARRAY", uid => "36", use_value => "0", value => ""}
+         |              |    |              |--- 0 = Name [SCALAR 37]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "37", use_value => "0", value => ""}
+         |              |    |              |--- 1 = getn [SCALAR 38]. Attributes: {name => "1 = getn", type => "SCALAR", uid => "38", use_value => "0", value => ""}
+         |              |    |--- 2 = [] [ARRAY 39]. Attributes: {name => "2 = []", type => "ARRAY", uid => "39", use_value => "0", value => ""}
+         |              |         |--- 0 = args [SCALAR 40]. Attributes: {name => "0 = args", type => "SCALAR", uid => "40", use_value => "0", value => ""}
+         |              |         |--- 1 = ( [SCALAR 41]. Attributes: {name => "1 = (", type => "SCALAR", uid => "41", use_value => "0", value => ""}
+         |              |         |--- 2 = [] [ARRAY 42]. Attributes: {name => "2 = []", type => "ARRAY", uid => "42", use_value => "0", value => ""}
+         |              |         |    |--- 0 = optional explist [SCALAR 43]. Attributes: {name => "0 = optional explist", type => "SCALAR", uid => "43", use_value => "0", value => ""}
+         |              |         |    |--- 1 = [] [ARRAY 44]. Attributes: {name => "1 = []", type => "ARRAY", uid => "44", use_value => "0", value => ""}
+         |              |         |         |--- 0 = explist [SCALAR 45]. Attributes: {name => "0 = explist", type => "SCALAR", uid => "45", use_value => "0", value => ""}
+         |              |         |         |--- 1 = [] [ARRAY 46]. Attributes: {name => "1 = []", type => "ARRAY", uid => "46", use_value => "0", value => ""}
+         |              |         |              |--- 0 = exp [SCALAR 47]. Attributes: {name => "0 = exp", type => "SCALAR", uid => "47", use_value => "0", value => ""}
+         |              |         |              |--- 1 = [] [ARRAY 48]. Attributes: {name => "1 = []", type => "ARRAY", uid => "48", use_value => "0", value => ""}
+         |              |         |                   |--- 0 = var [SCALAR 49]. Attributes: {name => "0 = var", type => "SCALAR", uid => "49", use_value => "0", value => ""}
+         |              |         |                   |--- 1 = [] [ARRAY 50]. Attributes: {name => "1 = []", type => "ARRAY", uid => "50", use_value => "0", value => ""}
+         |              |         |                        |--- 0 = Name [SCALAR 51]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "51", use_value => "0", value => ""}
+         |              |         |                        |--- 1 = arg [SCALAR 52]. Attributes: {name => "1 = arg", type => "SCALAR", uid => "52", use_value => "0", value => ""}
+         |              |         |--- 3 = ) [SCALAR 53]. Attributes: {name => "3 = )", type => "SCALAR", uid => "53", use_value => "0", value => ""}
+         |              |--- 7 = [] [ARRAY 54]. Attributes: {name => "7 = []", type => "ARRAY", uid => "54", use_value => "0", value => ""}
+         |              |    |--- 0 = keyword do [SCALAR 55]. Attributes: {name => "0 = keyword do", type => "SCALAR", uid => "55", use_value => "0", value => ""}
+         |              |    |--- 1 = do [SCALAR 56]. Attributes: {name => "1 = do", type => "SCALAR", uid => "56", use_value => "0", value => ""}
+         |              |--- 8 = [] [ARRAY 57]. Attributes: {name => "8 = []", type => "ARRAY", uid => "57", use_value => "0", value => ""}
+         |              |    |--- 0 = block [SCALAR 58]. Attributes: {name => "0 = block", type => "SCALAR", uid => "58", use_value => "0", value => ""}
+         |              |    |--- 1 = [] [ARRAY 59]. Attributes: {name => "1 = []", type => "ARRAY", uid => "59", use_value => "0", value => ""}
+         |              |         |--- 0 = chunk [SCALAR 60]. Attributes: {name => "0 = chunk", type => "SCALAR", uid => "60", use_value => "0", value => ""}
+         |              |         |--- 1 = [] [ARRAY 61]. Attributes: {name => "1 = []", type => "ARRAY", uid => "61", use_value => "0", value => ""}
+         |              |         |    |--- 0 = stat list [SCALAR 62]. Attributes: {name => "0 = stat list", type => "SCALAR", uid => "62", use_value => "0", value => ""}
+         |              |         |    |--- 1 = [] [ARRAY 63]. Attributes: {name => "1 = []", type => "ARRAY", uid => "63", use_value => "0", value => ""}
+         |              |         |         |--- 0 = stat item [SCALAR 64]. Attributes: {name => "0 = stat item", type => "SCALAR", uid => "64", use_value => "0", value => ""}
+         |              |         |         |--- 1 = [] [ARRAY 65]. Attributes: {name => "1 = []", type => "ARRAY", uid => "65", use_value => "0", value => ""}
+         |              |         |              |--- 0 = stat [SCALAR 66]. Attributes: {name => "0 = stat", type => "SCALAR", uid => "66", use_value => "0", value => ""}
+         |              |         |              |--- 1 = [] [ARRAY 67]. Attributes: {name => "1 = []", type => "ARRAY", uid => "67", use_value => "0", value => ""}
+         |              |         |                   |--- 0 = functioncall [SCALAR 68]. Attributes: {name => "0 = functioncall", type => "SCALAR", uid => "68", use_value => "0", value => ""}
+         |              |         |                   |--- 1 = [] [ARRAY 69]. Attributes: {name => "1 = []", type => "ARRAY", uid => "69", use_value => "0", value => ""}
+         |              |         |                   |    |--- 0 = prefixexp [SCALAR 70]. Attributes: {name => "0 = prefixexp", type => "SCALAR", uid => "70", use_value => "0", value => ""}
+         |              |         |                   |    |--- 1 = [] [ARRAY 71]. Attributes: {name => "1 = []", type => "ARRAY", uid => "71", use_value => "0", value => ""}
+         |              |         |                   |         |--- 0 = var [SCALAR 72]. Attributes: {name => "0 = var", type => "SCALAR", uid => "72", use_value => "0", value => ""}
+         |              |         |                   |         |--- 1 = [] [ARRAY 73]. Attributes: {name => "1 = []", type => "ARRAY", uid => "73", use_value => "0", value => ""}
+         |              |         |                   |              |--- 0 = Name [SCALAR 74]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "74", use_value => "0", value => ""}
+         |              |         |                   |              |--- 1 = print [SCALAR 75]. Attributes: {name => "1 = print", type => "SCALAR", uid => "75", use_value => "0", value => ""}
+         |              |         |                   |--- 2 = [] [ARRAY 76]. Attributes: {name => "2 = []", type => "ARRAY", uid => "76", use_value => "0", value => ""}
+         |              |         |                        |--- 0 = args [SCALAR 77]. Attributes: {name => "0 = args", type => "SCALAR", uid => "77", use_value => "0", value => ""}
+         |              |         |                        |--- 1 = ( [SCALAR 78]. Attributes: {name => "1 = (", type => "SCALAR", uid => "78", use_value => "0", value => ""}
+         |              |         |                        |--- 2 = [] [ARRAY 79]. Attributes: {name => "2 = []", type => "ARRAY", uid => "79", use_value => "0", value => ""}
+         |              |         |                        |    |--- 0 = optional explist [SCALAR 80]. Attributes: {name => "0 = optional explist", type => "SCALAR", uid => "80", use_value => "0", value => ""}
+         |              |         |                        |    |--- 1 = [] [ARRAY 81]. Attributes: {name => "1 = []", type => "ARRAY", uid => "81", use_value => "0", value => ""}
+         |              |         |                        |         |--- 0 = explist [SCALAR 82]. Attributes: {name => "0 = explist", type => "SCALAR", uid => "82", use_value => "0", value => ""}
+         |              |         |                        |         |--- 1 = [] [ARRAY 83]. Attributes: {name => "1 = []", type => "ARRAY", uid => "83", use_value => "0", value => ""}
+         |              |         |                        |         |    |--- 0 = exp [SCALAR 84]. Attributes: {name => "0 = exp", type => "SCALAR", uid => "84", use_value => "0", value => ""}
+         |              |         |                        |         |    |--- 1 = [] [ARRAY 85]. Attributes: {name => "1 = []", type => "ARRAY", uid => "85", use_value => "0", value => ""}
+         |              |         |                        |         |         |--- 0 = var [SCALAR 86]. Attributes: {name => "0 = var", type => "SCALAR", uid => "86", use_value => "0", value => ""}
+         |              |         |                        |         |         |--- 1 = [] [ARRAY 87]. Attributes: {name => "1 = []", type => "ARRAY", uid => "87", use_value => "0", value => ""}
+         |              |         |                        |         |              |--- 0 = Name [SCALAR 88]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "88", use_value => "0", value => ""}
+         |              |         |                        |         |              |--- 1 = i [SCALAR 89]. Attributes: {name => "1 = i", type => "SCALAR", uid => "89", use_value => "0", value => ""}
+         |              |         |                        |         |--- 2 = [] [ARRAY 90]. Attributes: {name => "2 = []", type => "ARRAY", uid => "90", use_value => "0", value => ""}
+         |              |         |                        |              |--- 0 = exp [SCALAR 91]. Attributes: {name => "0 = exp", type => "SCALAR", uid => "91", use_value => "0", value => ""}
+         |              |         |                        |              |--- 1 = [] [ARRAY 92]. Attributes: {name => "1 = []", type => "ARRAY", uid => "92", use_value => "0", value => ""}
+         |              |         |                        |                   |--- 0 = var [SCALAR 93]. Attributes: {name => "0 = var", type => "SCALAR", uid => "93", use_value => "0", value => ""}
+         |              |         |                        |                   |--- 1 = [] [ARRAY 94]. Attributes: {name => "1 = []", type => "ARRAY", uid => "94", use_value => "0", value => ""}
+         |              |         |                        |                   |    |--- 0 = prefixexp [SCALAR 95]. Attributes: {name => "0 = prefixexp", type => "SCALAR", uid => "95", use_value => "0", value => ""}
+         |              |         |                        |                   |    |--- 1 = [] [ARRAY 96]. Attributes: {name => "1 = []", type => "ARRAY", uid => "96", use_value => "0", value => ""}
+         |              |         |                        |                   |         |--- 0 = var [SCALAR 97]. Attributes: {name => "0 = var", type => "SCALAR", uid => "97", use_value => "0", value => ""}
+         |              |         |                        |                   |         |--- 1 = [] [ARRAY 98]. Attributes: {name => "1 = []", type => "ARRAY", uid => "98", use_value => "0", value => ""}
+         |              |         |                        |                   |              |--- 0 = Name [SCALAR 99]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "99", use_value => "0", value => ""}
+         |              |         |                        |                   |              |--- 1 = arg [SCALAR 100]. Attributes: {name => "1 = arg", type => "SCALAR", uid => "100", use_value => "0", value => ""}
+         |              |         |                        |                   |--- 2 = [ [SCALAR 101]. Attributes: {name => "2 = [", type => "SCALAR", uid => "101", use_value => "0", value => ""}
+         |              |         |                        |                   |--- 3 = [] [ARRAY 102]. Attributes: {name => "3 = []", type => "ARRAY", uid => "102", use_value => "0", value => ""}
+         |              |         |                        |                   |    |--- 0 = exp [SCALAR 103]. Attributes: {name => "0 = exp", type => "SCALAR", uid => "103", use_value => "0", value => ""}
+         |              |         |                        |                   |    |--- 1 = [] [ARRAY 104]. Attributes: {name => "1 = []", type => "ARRAY", uid => "104", use_value => "0", value => ""}
+         |              |         |                        |                   |         |--- 0 = var [SCALAR 105]. Attributes: {name => "0 = var", type => "SCALAR", uid => "105", use_value => "0", value => ""}
+         |              |         |                        |                   |         |--- 1 = [] [ARRAY 106]. Attributes: {name => "1 = []", type => "ARRAY", uid => "106", use_value => "0", value => ""}
+         |              |         |                        |                   |              |--- 0 = Name [SCALAR 107]. Attributes: {name => "0 = Name", type => "SCALAR", uid => "107", use_value => "0", value => ""}
+         |              |         |                        |                   |              |--- 1 = i [SCALAR 108]. Attributes: {name => "1 = i", type => "SCALAR", uid => "108", use_value => "0", value => ""}
+         |              |         |                        |                   |--- 4 = ] [SCALAR 109]. Attributes: {name => "4 = ]", type => "SCALAR", uid => "109", use_value => "0", value => ""}
+         |              |         |                        |--- 3 = ) [SCALAR 110]. Attributes: {name => "3 = )", type => "SCALAR", uid => "110", use_value => "0", value => ""}
+         |              |         |--- 2 = [] [ARRAY 111]. Attributes: {name => "2 = []", type => "ARRAY", uid => "111", use_value => "0", value => ""}
+         |              |              |--- 0 = optional laststat [SCALAR 112]. Attributes: {name => "0 = optional laststat", type => "SCALAR", uid => "112", use_value => "0", value => ""}
+         |              |--- 9 = [] [ARRAY 113]. Attributes: {name => "9 = []", type => "ARRAY", uid => "113", use_value => "0", value => ""}
+         |                   |--- 0 = keyword end [SCALAR 114]. Attributes: {name => "0 = keyword end", type => "SCALAR", uid => "114", use_value => "0", value => ""}
+         |                   |--- 1 = end [SCALAR 115]. Attributes: {name => "1 = end", type => "SCALAR", uid => "115", use_value => "0", value => ""}
+         |--- 2 = [] [ARRAY 116]. Attributes: {name => "2 = []", type => "ARRAY", uid => "116", use_value => "0", value => ""}
+              |--- 0 = optional laststat [SCALAR 117]. Attributes: {name => "0 = optional laststat", type => "SCALAR", uid => "117", use_value => "0", value => ""}
+  chunk
+   stat list
+    stat item
+     stat
+      keyword for
+      for
+      Name
+      i
+     =
+      exp
+       Number
+       0
+     ,
+      exp
+       exp
+        var
+         prefixexp
+          var
+           Name
+           table
+        .
+         Name
+         getn
+       args
+       (
+        optional explist
+         explist
+          exp
+           var
+            Name
+            arg
+       )
+      keyword do
+      do
+      block
+       chunk
+        stat list
+         stat item
+          stat
+           functioncall
+            prefixexp
+             var
+              Name
+              print
+            args
+            (
+             optional explist
+              explist
+               exp
+                var
+                 Name
+                 i
+               exp
+                var
+                 prefixexp
+                  var
+                   Name
+                   arg
+                [
+                 exp
+                  var
+                   Name
+                   i
+                ]
+            )
+        optional laststat
+      keyword end
+      end
+   optional laststat

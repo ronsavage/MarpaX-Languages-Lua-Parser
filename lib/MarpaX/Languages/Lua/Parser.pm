@@ -317,8 +317,8 @@ sub run
 
 	$self -> value($self -> process($file_name) );
 	$self -> renderer -> run(${$self -> value});
-#	$self -> log(debug => $_) for @{$self -> renderer -> root -> tree2string({no_attributes => 1 - $self -> attributes})};
-#	$self -> render;
+	$self -> log(debug => $_) for @{$self -> renderer -> root -> tree2string({no_attributes => 1 - $self -> attributes})};
+	$self -> render;
 
 #	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
 #
