@@ -5,5 +5,5 @@
 for i in lua.sources/* ;
 do
 	BASE=`basename $i .lua`
-	perl -Ilib scripts/parse.file.pl -i lua.sources/$BASE.lua -max debug > lua.output/$BASE.txt
+	perl -Ilib scripts/parse.file.pl -i lua.sources/$BASE.lua -o lua.output/$BASE.txt
 done

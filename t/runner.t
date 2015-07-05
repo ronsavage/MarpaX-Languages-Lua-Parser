@@ -46,6 +46,13 @@ my($count) = 1;
 
 for (<"lua.sources/*">)
 {
+	if ($_ eq 'lua.sources/keyword.as.identifier.lua')
+	{
+		diag "Skipping $_. \n";
+
+		next;
+	}
+
 	$count += 1;
 
 	process($_);

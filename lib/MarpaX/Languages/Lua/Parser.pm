@@ -51,6 +51,27 @@ has input_text =>
 	required => 1,
 );
 
+has keywords =>
+(
+    default  => sub
+	{
+		return
+		{
+			map { $_ => 1 }
+			qw
+			{
+				and       break     do        else      elseif
+				end       false     for       function  if
+				in        local     nil       not       or
+				repeat    return    then      true      until     while
+			}
+		}
+	},
+    is       => 'ro',
+    isa      => HashRef,
+    required => 0,
+);
+
 has logger =>
 (
 	default  => sub{return undef},
@@ -113,21 +134,6 @@ has value =>
 	is       => 'rw',
 	isa      => Any,
 	required => 0,
-);
-
-has keywords =>
-(
-    default  => sub{return {
-                    map { $_ => 1 } qw{
-                        and       break     do        else      elseif
-                        end       false     for       function  if
-                        in        local     nil       not       or
-                        repeat    return    then      true      until     while
-                    }
-                }},
-    is       => 'ro',
-    isa      => Any,
-    required => 0,
 );
 
 our $VERSION = '1.00';
@@ -267,12 +273,10 @@ sub process
                 my($line,  $column) = $self -> recce -> line_column($start);
                 my($literal)        = $self -> recce -> literal($start, $length);
 
-                if ( exists $self -> keywords -> { $literal } )
-                {
-                    $self -> recce -> lexeme_read(qq{keyword $literal}, $start, $length)
-                        // do {
-                                die $self->input_file_name .
-                                    qq{:$line:$column: keyword '$literal' used as <name>} };
+				if ( exists $self -> keywords -> { $literal } )
+				{
+					$self -> recce -> lexeme_read(qq{keyword $literal}, $start, $length)
+					// die $self->input_file_name . qq{:$line:$column: keyword '$literal' used as <name>\n};
                 }
                 else
                 {
@@ -361,9 +365,12 @@ sub run
 	$self -> log(debug => $_) for @{$self -> renderer -> root -> tree2string({no_attributes => 1 - $self -> attributes})};
 	$self -> render;
 
-#	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
-#
-#	path($output_file_name) -> spew_utf8(map{"$_\n"} @$slim_tree) if ($output_file_name);
+	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
+
+	if ($output_file_name)
+	{
+		path($output_file_name) -> spew_utf8(map{"$_\n"} @{$self -> output_tokens});
+	}
 
 	# Return 0 for success and 1 for failure.
 
@@ -448,6 +455,12 @@ Key-value pairs accepted in the parameter list (see also the corresponding metho
 
 =over 4
 
+=item o attributes => $Boolean
+
+When set to 1, metadata attached to each tree node is included in the output.
+
+Default: 0.
+
 =item o input_file_name => $string
 
 The names the input file to be parsed.
@@ -489,15 +502,27 @@ No lower levels are used.
 
 =item o output_file_name => $string
 
-The names the text file to be written.
+The name  of the text file to be written.
 
 If not set, nothing is written.
+
+The items written, one per line, are as returned by L</output_tokens>.
 
 Default: ''.
 
 =back
 
 =head1 Methods
+
+=head2 attributes([$Boolean])
+
+Here, the [] indicate an optional parameter.
+
+Gets or sets the attributes option.
+
+Note: The value passed to L<Tree::DAG_Node>'s C<tree2string()> method is (1 - $Boolean).
+
+C<attributes> is a parameter to L</new()>.
 
 =head2 input_file_name([$string])
 
@@ -543,6 +568,8 @@ Get or set the value used by the logger object.
 
 This option is only used if an object of type L<Log::Handler> is created. See L<Log::Handler::Levels>.
 
+Typical values: 'info', 'debug'.
+
 Note: C<minlevel> is a parameter to new().
 
 =head2 new()
@@ -555,15 +582,29 @@ Here, the [] indicate an optional parameter.
 
 Get or set the name of the file to write.
 
+The tokens written are as returned from L</output_tokens>.
+
 Note: C<output_file_name> is a parameter to new().
 
 =head2 output_tokens()
 
-Returns an arrayref of tokens output by the parse, 1 per line.
+Returns an arrayref of tokens output by the parse, 1 per line. These tokens are pushed onto the
+stack by walking the tree returned by the renderer, which is an object of type
+L<Data::RenderAsTree>. The renderer is run by passing it the output from the call to Marpa's
+C<value()> method. See L</renderer()>.
+
+If you set the L</maxlevel()> to 'info', these tokens are printed to the log.
 
 See scripts/synopsis.pl for accessing this arrayref.
 
 See lua.output/*.txt for sample output.
+
+=head2 renderer()
+
+Returns the object of type L<Data::RenderAsTree>, which takes the output from the call to Marpa's
+C<value()> method and converts it into an object of type L</Tree::DAG_Node>.
+
+If you set the L</maxlevel()> to 'debug', this tree is printed to the log.
 
 =head2 run(%args)
 
@@ -592,12 +633,14 @@ Note: C<input_file_name> and C<output_file_name> are parameters to L</new()>.
 =head2 Why did you store Lua's BNF in a __DATA__ section?
 
 This avoids problems with single- and double-quotes in the BNF, and the allegedly unknown escape
-sequences \v etc there too.
+sequences \v etc too.
 
 =head2 How do I interpret the output?
 
-That, grammatically speaking, is a question. Its answer is unavailable to this author. Sorry.
-Try the IRC channel irc.freenode.net#marpa.
+For help with this, try the IRC channel irc.freenode.net#marpa.
+
+What that really means is that neither Jeffrey no anyone else imposes any kind of restriction on
+what you may do with the output, or with how you may interpret it.
 
 =head2 Where is Marpa's home page?
 
@@ -626,6 +669,8 @@ L<https://rt.cpan.org/Public/Dist/Display.html?Name=MarpaX::Languages::Lua::Pars
 Jeffrey Kegler wrote the code, and posted a link on the IRC chat channel mentioned above.
 
 See L<http://irclog.perlgeek.de/marpa/2015-06-13>.
+
+Ron Savage simply packaged his code, and devised the tests.
 
 =head1 Author
 

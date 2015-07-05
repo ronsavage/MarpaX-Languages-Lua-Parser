@@ -15,7 +15,7 @@ $lua_sources_dir = qq{../$lua_sources_dir} unless $ENV{HARNESS_ACTIVE};
 
 my($parser)             = MarpaX::Languages::Lua::Parser -> new
 (
-    input_file_name  => "$lua_sources_dir/keyword_as_identifier.lua",
+    input_file_name  => "$lua_sources_dir/keyword.as.identifier.lua",
     logger           => '',
 );
 
