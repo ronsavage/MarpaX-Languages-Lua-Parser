@@ -725,8 +725,6 @@ Jeffrey Kegler wrote the code, and posted a link on the IRC chat channel mention
 
 See L<http://irclog.perlgeek.de/marpa/2015-06-13>.
 
-Ron Savage simply packaged his code, and devised the tests.
-
 =head1 Author
 
 L<MarpaX::Languages::Lua::Parser> was packaged by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2015.
