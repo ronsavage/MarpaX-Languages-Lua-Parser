@@ -436,14 +436,7 @@ or run:
 
 	sudo cpan MarpaX::Languages::Lua::Parser
 
-or unpack the distro, and then either:
-
-	perl Build.PL
-	./Build
-	./Build test
-	sudo ./Build install
-
-or:
+or unpack the distro, and then:
 
 	perl Makefile.PL
 	make (or dmake or nmake)
