@@ -418,6 +418,12 @@ See also scripts/parse.file.pl for code which takes command line parameters. For
 
 C<MarpaX::Languages::Lua::Parser> parses Lua source code files.
 
+The result is stored in a tree managed by L<Tree::DAG_Node>.
+
+A list of scalar tokens from this tree is stored in an arrayref.
+
+See the FAQ question L</How do I get output from this module?> for details.
+
 =head1 Installation
 
 Install C<MarpaX::Languages::Lua::Parser> as you would for any C<Perl> module:
@@ -459,11 +465,13 @@ Key-value pairs accepted in the parameter list (see also the corresponding metho
 
 When set to 1, metadata attached to each tree node is included in the output.
 
+If you set the L</maxlevel()> to 'debug', this tree is printed to the log.
+
 Default: 0.
 
 =item o input_file_name => $string
 
-The names the input file to be parsed.
+The name the input file to be parsed.
 
 This option is mandatory.
 
@@ -485,6 +493,10 @@ Default: undef.
 This option affects L<Log::Handler> objects.
 
 See the L<Log::Handler::Levels> docs.
+
+Typical values: 'info', 'debug'.
+
+See the FAQ question L</How do I get output from this module?> for details.
 
 See also the help output by scripts/parse.file.pl -h.
 
@@ -522,6 +534,8 @@ Gets or sets the attributes option.
 
 Note: The value passed to L<Tree::DAG_Node>'s C<tree2string()> method is (1 - $Boolean).
 
+See the FAQ question L</How do I get output from this module?> for details.
+
 C<attributes> is a parameter to L</new()>.
 
 =head2 input_file_name([$string])
@@ -558,6 +572,10 @@ Get or set the value used by the logger object.
 
 This option is only used if an object of type L<Log::Handler> is created. See L<Log::Handler::Levels>.
 
+Typical values: 'info', 'debug'.
+
+See the FAQ question L</How do I get output from this module?> for details.
+
 Note: C<maxlevel> is a parameter to new().
 
 =head2 minlevel([$string])
@@ -567,8 +585,6 @@ Here, the [] indicate an optional parameter.
 Get or set the value used by the logger object.
 
 This option is only used if an object of type L<Log::Handler> is created. See L<Log::Handler::Levels>.
-
-Typical values: 'info', 'debug'.
 
 Note: C<minlevel> is a parameter to new().
 
@@ -588,7 +604,7 @@ Note: C<output_file_name> is a parameter to new().
 
 =head2 output_tokens()
 
-Returns an arrayref of tokens output by the parse, 1 per line. These tokens are pushed onto the
+Returns an arrayref of tokens output by the parse, one per line. These tokens are pushed onto the
 stack by walking the tree returned by the renderer, which is an object of type
 L<Data::RenderAsTree>. The renderer is run by passing it the output from the call to Marpa's
 C<value()> method. See L</renderer()>.
@@ -606,7 +622,7 @@ C<value()> method and converts it into an object of type L</Tree::DAG_Node>.
 
 If you set the L</maxlevel()> to 'debug', this tree is printed to the log.
 
-=head2 run(%args)
+=head2 run([%args])
 
 The method which does all the work.
 
@@ -634,6 +650,45 @@ Note: C<input_file_name> and C<output_file_name> are parameters to L</new()>.
 
 This avoids problems with single- and double-quotes in the BNF, and the allegedly unknown escape
 sequences \v etc too.
+
+=head2 How do I get output from this module?
+
+In various ways:
+
+=over 4
+
+=item o Call the L</output_tokens()> method
+
+Then, process the arrayref returned.
+
+=item o Call the L</renderer()> method
+
+This will return an object of type L<Data::RenderAsTree>, and from there you can call that object's
+C<root()> method, to get access to the tree itself. See this module's C<render()> method for sample
+code.
+
+=item o Set maxlevel to 'info'.
+
+This writes the output tokens to the log, one per line.
+
+See the C<render()> method for sample code.
+
+=item o Set maxlevel to 'debug'.
+
+This writes the output tokens to the log, one per line, and also writes to the log the tree
+returned by passing the return value of Marpa's C<value()> method to the renderer. The renderer
+is an object of type L<Data::RenderAsTree>, and outputs a tree managed by L<Tree::DAG_Node>.
+
+See the L</run([%args])> method for sample code.
+
+=item o Set the output_file_name to a non-empty string
+
+In this case the code will walk the tree just mentioned, and output the scalar items, one per line,
+to this file.
+
+=item o All of the above
+
+=back
 
 =head2 How do I interpret the output?
 

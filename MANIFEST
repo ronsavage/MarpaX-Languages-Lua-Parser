@@ -32,6 +32,7 @@ lua.sources/fib.lua
 lua.sources/fibfor.lua
 lua.sources/globals.lua
 lua.sources/hello.lua
+lua.sources/keyword.as.identifier.lua
 lua.sources/life.lua
 lua.sources/luac.lua
 lua.sources/printf.lua
@@ -52,5 +53,6 @@ scripts/parse.all.sources.sh
 scripts/parse.file.pl
 scripts/pod2html.sh
 scripts/synopsis.pl
+t/keyword.as.identifier.t
 t/runner.t
 xt/author/pod.t
