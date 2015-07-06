@@ -31,7 +31,7 @@ my(%params) =
 	PL_FILES  => {},
 	PREREQ_PM =>
 	{
-		'Data::RenderAsTree' => 1.01,
+		'Data::RenderAsTree' => 1.02,
 		'Data::Section::Simple' => 0.07,
 		'File::Spec' => 3.40,
 		'File::Temp' => 0.2304,

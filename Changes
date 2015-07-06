@@ -1,4 +1,7 @@
 Revision history for Perl extension MarpaX::Languages::Lua::Parser.
 
+1.01  Mon Jul  6 12:57:00 2015
+	- Bump pre-req for Data::RenderAsTree to V 1.02.
+
 1.00  Mon Jun 15 09:46:00 2015
 	  - Original version
