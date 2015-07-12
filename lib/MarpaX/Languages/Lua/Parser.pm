@@ -3,7 +3,6 @@ package MarpaX::Languages::Lua::Parser;
 use strict;
 use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
-use open     qw(:std :utf8); # Undeclared streams in UTF-8.
 
 use Data::RenderAsTree;
 
@@ -136,7 +135,7 @@ has value =>
 	required => 0,
 );
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 # ------------------------------------------------
 
