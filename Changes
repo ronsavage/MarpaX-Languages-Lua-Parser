@@ -1,5 +1,8 @@
 Revision history for Perl extension MarpaX::Languages::Lua::Parser.
 
+1.03  Sun Jul 12 17:07:00 2015
+	- Update pre-reqs to Data::RenderAsTree V 1.03.
+
 1.02  Sun Jul 12 14:52:00 2015
 	- Remove the line 'use open qw(:std :utf8);'. See RT#105798 (for Tree::DAG_Node actually).
 
