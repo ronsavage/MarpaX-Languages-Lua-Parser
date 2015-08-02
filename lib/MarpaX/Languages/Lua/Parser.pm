@@ -135,13 +135,19 @@ has value =>
 	required => 0,
 );
 
-our $VERSION = '1.03';
+# This flag is used to stop Perl issuing deep recursion warnings,
+# when Tree::DAG_Node's walk_down() traverses the parse tree.
+
+my($sig_warn_flag) = 1;
+
+our $VERSION = '1.04';
 
 # ------------------------------------------------
 
 sub BUILD
 {
-	my($self) = @_;
+	my($self)        = @_;
+	$SIG{'__WARN__'} = sub { warn $_[0] if $sig_warn_flag};
 
 	if (! defined $self -> logger)
 	{
@@ -315,6 +321,7 @@ sub render
 {
 	my($self)      = @_;
 	my($slim_list) = [];
+	$sig_warn_flag = 0;
 
 	my($attributes);
 	my($name);
@@ -359,11 +366,14 @@ sub run
 {
 	my($self, %args) = @_;
 	my($file_name)   = $args{input_file_name} || $self -> input_file_name;
+	$sig_warn_flag   = 0; # Turn off Perl's warnings for the duration of tree processing.
 
 	$self -> value($self -> process($file_name) );
 	$self -> renderer -> run(${$self -> value});
 	$self -> log(debug => $_) for @{$self -> renderer -> root -> tree2string({no_attributes => 1 - $self -> attributes})};
 	$self -> render;
+
+	$sig_warn_flag = 1; # Turn Perl's warnings back on.
 
 	my($output_file_name) = $args{output_file_name} || $self -> output_file_name;
 
@@ -749,21 +759,23 @@ lexeme default = latm => 1 action => [name,values]
 # Names which begin with "Lua" are taken directly from
 # the Lua reference manual grammar.
 
-<chunk> ::= <stat list> <optional laststat>
+<chunk> ::=
+<chunk> ::= <stat list>
+<chunk> ::= <stat list> laststat
+<chunk> ::= <stat list> laststat ';'
+<chunk> ::= laststat ';'
+<chunk> ::= laststat
 
-<stat list> ::= <stat item>*
-<stat item> ::= <stat> ';'
-<stat item> ::= <stat>
-
-<optional laststat> ::= <laststat> ';'
-<optional laststat> ::= <laststat>
-<optional laststat> ::=
+<stat list> ::= <stat>
+<stat list> ::= <stat> ';'
+<stat list> ::= <stat list> <stat> rank => -1
+<stat list> ::= <stat list> <stat> ';'
 
 <block> ::= <chunk>
 
 <stat> ::= <varlist> '=' <explist>
 
-<stat> ::= <functioncall>
+<stat> ::= <functioncall> rank => -1
 
 <stat> ::= <keyword do> <block> <keyword end>
 

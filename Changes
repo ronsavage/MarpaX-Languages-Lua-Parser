@@ -2,7 +2,10 @@ Revision history for Perl extension MarpaX::Languages::Lua::Parser.
 
 1.04  Sun Aug  2 11:33:00 2015
 	- Incorporate grammar changes discussed here:
-		https://github.com/ronsavage/MarpaX-Languages-Lua-Parser/issues/2
+		https://github.com/ronsavage/MarpaX-Languages-Lua-Parser/issues/2 and
+		https://github.com/ronsavage/MarpaX-Languages-Lua-Parser/issues/3.
+	- Add lua.sources/constructs.lua from MarpaX::Languages::Lua::AST.
+	- Add lua.output/constructs.txt. It's output from MarpaX::Languages::Lua::Parser.
 	- Reformat grammar slightly, by replacing 4 leading spaces with a "\t".
 
 1.03  Sun Jul 12 17:07:00 2015

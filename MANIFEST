@@ -4,6 +4,7 @@ lib/MarpaX/Languages/Lua/Parser.pm
 LICENSE
 lua.output/bisect.txt
 lua.output/cf.txt
+lua.output/constructs.txt
 lua.output/echo.txt
 lua.output/env.txt
 lua.output/factorial.txt
@@ -24,6 +25,7 @@ lua.output/trace-globals.txt
 lua.output/xd.txt
 lua.sources/bisect.lua
 lua.sources/cf.lua
+lua.sources/constructs.lua
 lua.sources/echo.lua
 lua.sources/env.lua
 lua.sources/factorial.lua
