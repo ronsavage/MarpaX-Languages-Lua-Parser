@@ -1,6 +1,23 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -19,7 +36,6 @@ io
 .
 Name
 write
-stat item
 stat
 varlist
 var
@@ -31,7 +47,6 @@ exp
 String
 double quoted string
 "¥"
-stat item
 stat
 varlist
 var
@@ -43,7 +58,6 @@ exp
 String
 double quoted string
 "þ"
-stat item
 stat
 varlist
 var
@@ -55,7 +69,6 @@ exp
 String
 double quoted string
 "O"
-stat item
 stat
 varlist
 var
@@ -67,7 +80,6 @@ exp
 String
 double quoted string
 "-"
-stat item
 stat
 keyword function
 function
@@ -83,7 +95,6 @@ optional parlist
 block
 chunk
 stat list
-stat item
 stat
 keyword for
 for
@@ -103,10 +114,8 @@ block
 undef
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -127,7 +136,7 @@ h
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword local
 local
@@ -158,7 +167,6 @@ var
 Name
 h
 }
-stat item
 stat
 keyword for
 for
@@ -178,7 +186,7 @@ do
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -198,7 +206,6 @@ exp
 tableconstructor
 {
 }
-stat item
 stat
 keyword for
 for
@@ -218,7 +225,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 varlist
 var
@@ -245,13 +251,10 @@ explist
 exp
 Number
 0
-optional laststat
 keyword end
 end
-optional laststat
 keyword end
 end
-optional laststat
 laststat
 keyword return
 return
@@ -263,7 +266,6 @@ Name
 t
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -275,7 +277,6 @@ exp
 tableconstructor
 {
 }
-stat item
 stat
 keyword function
 function
@@ -301,7 +302,6 @@ top
 block
 chunk
 stat list
-stat item
 stat
 keyword for
 for
@@ -331,7 +331,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 keyword for
 for
@@ -361,7 +360,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 varlist
 var
@@ -431,16 +429,12 @@ exp
 Number
 1
 ]
-optional laststat
 keyword end
 end
-optional laststat
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -462,7 +456,7 @@ next
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword local
 local
@@ -513,7 +507,6 @@ self
 .
 Name
 h
-stat item
 stat
 keyword while
 while
@@ -531,7 +524,8 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
 stat
 keyword local
 local
@@ -582,7 +576,6 @@ self
 .
 Name
 w
-stat item
 stat
 keyword while
 while
@@ -600,7 +593,8 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
 stat
 keyword local
 local
@@ -784,7 +778,6 @@ var
 Name
 xp1
 ]
-stat item
 stat
 varlist
 var
@@ -876,7 +869,6 @@ or
 exp
 Number
 0
-stat item
 stat
 varlist
 var
@@ -919,10 +911,8 @@ xi
 exp
 Number
 1
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -965,13 +955,10 @@ yi
 exp
 Number
 1
-optional laststat
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -990,7 +977,8 @@ optional parlist
 block
 chunk
 stat list
-stat item
+stat list
+stat list
 stat
 keyword local
 local
@@ -1004,7 +992,6 @@ exp
 String
 double quoted string
 ""
-stat item
 stat
 keyword for
 for
@@ -1029,7 +1016,7 @@ do
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword for
 for
@@ -1054,7 +1041,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 varlist
 var
@@ -1116,10 +1102,8 @@ var
 Name
 DEAD
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -1137,10 +1121,8 @@ exp
 String
 double quoted string
 "\n"
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -1156,10 +1138,8 @@ var
 Name
 out
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -1180,7 +1160,9 @@ h
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -1208,7 +1190,6 @@ var
 Name
 h
 )
-stat item
 stat
 varlist
 var
@@ -1230,7 +1211,6 @@ _CELLS
 .
 Name
 spawn
-stat item
 stat
 varlist
 var
@@ -1252,7 +1232,6 @@ _CELLS
 .
 Name
 evolve
-stat item
 stat
 varlist
 var
@@ -1274,7 +1253,6 @@ _CELLS
 .
 Name
 draw
-optional laststat
 laststat
 keyword return
 return
@@ -1286,7 +1264,6 @@ Name
 c
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -1349,7 +1326,6 @@ exp
 Number
 3
 }
-stat item
 stat
 varlist
 var
@@ -1412,7 +1388,6 @@ exp
 Number
 3
 }
-stat item
 stat
 varlist
 var
@@ -1487,7 +1462,6 @@ exp
 Number
 4
 }
-stat item
 stat
 varlist
 var
@@ -1594,7 +1568,6 @@ exp
 Number
 4
 }
-stat item
 stat
 varlist
 var
@@ -1721,7 +1694,6 @@ exp
 Number
 5
 }
-stat item
 stat
 keyword function
 function
@@ -1742,7 +1714,13 @@ h
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -1770,7 +1748,6 @@ var
 Name
 h
 )
-stat item
 stat
 keyword local
 local
@@ -1798,7 +1775,6 @@ var
 Name
 h
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1823,7 +1799,6 @@ exp
 Number
 4
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1848,7 +1823,6 @@ exp
 Number
 10
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1873,7 +1847,6 @@ exp
 Number
 12
 )
-stat item
 stat
 keyword local
 local
@@ -1886,7 +1859,6 @@ explist
 exp
 Number
 1
-stat item
 stat
 functioncall
 prefixexp
@@ -1902,7 +1874,6 @@ String
 double quoted string
 "\027[2J"
 )
-stat item
 stat
 keyword while
 while
@@ -1914,7 +1885,12 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 functioncall
 prefixexp
@@ -1933,7 +1909,6 @@ var
 Name
 nextgen
 )
-stat item
 stat
 varlist
 var
@@ -1952,7 +1927,6 @@ exp
 var
 Name
 thisgen
-stat item
 stat
 functioncall
 prefixexp
@@ -1968,7 +1942,6 @@ String
 double quoted string
 "\027[H"
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1982,7 +1955,6 @@ args
 (
 optional explist
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -2006,7 +1978,6 @@ String
 double quoted string
 "\n"
 )
-stat item
 stat
 varlist
 var
@@ -2023,7 +1994,6 @@ gen
 exp
 Number
 1
-stat item
 stat
 keyword if
 if
@@ -2040,8 +2010,6 @@ keyword then
 then
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword break
 break
@@ -2049,13 +2017,10 @@ elseif sequence
 optional else block
 keyword end
 end
-optional laststat
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -2073,4 +2038,3 @@ exp
 Number
 20
 )
-optional laststat

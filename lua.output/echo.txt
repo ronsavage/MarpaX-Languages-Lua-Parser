@@ -1,6 +1,5 @@
 chunk
 stat list
-stat item
 stat
 keyword for
 for
@@ -35,7 +34,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -63,7 +61,5 @@ Name
 i
 ]
 )
-optional laststat
 keyword end
 end
-optional laststat

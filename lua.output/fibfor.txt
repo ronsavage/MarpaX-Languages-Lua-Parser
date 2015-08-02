@@ -1,6 +1,6 @@
 chunk
 stat list
-stat item
+stat list
 stat
 keyword function
 function
@@ -18,8 +18,6 @@ n
 )
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -50,7 +48,7 @@ optional parlist
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword local
 local
@@ -68,7 +66,6 @@ Number
 exp
 Number
 1
-stat item
 stat
 keyword while
 while
@@ -87,7 +84,7 @@ do
 block
 chunk
 stat list
-stat item
+stat list
 stat
 functioncall
 prefixexp
@@ -108,7 +105,6 @@ var
 Name
 a
 )
-stat item
 stat
 varlist
 var
@@ -133,16 +129,13 @@ exp
 var
 Name
 b
-optional laststat
 keyword end
 end
-optional laststat
 keyword end
 end
 )
 keyword end
 end
-stat item
 stat
 keyword for
 for
@@ -170,7 +163,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -186,7 +178,5 @@ var
 Name
 i
 )
-optional laststat
 keyword end
 end
-optional laststat

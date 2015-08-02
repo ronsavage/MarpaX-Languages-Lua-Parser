@@ -1,6 +1,9 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
 stat
 varlist
 var
@@ -22,7 +25,6 @@ g
 block
 chunk
 stat list
-stat item
 stat
 keyword local
 local
@@ -45,8 +47,6 @@ f
 )
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -68,7 +68,6 @@ f
 )
 keyword end
 end
-optional laststat
 laststat
 keyword return
 return
@@ -96,8 +95,6 @@ f
 )
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -126,7 +123,6 @@ x
 block
 chunk
 stat list
-stat item
 stat
 keyword local
 local
@@ -150,7 +146,6 @@ var
 Name
 f
 )
-optional laststat
 laststat
 keyword return
 return
@@ -178,7 +173,6 @@ end
 )
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -199,8 +193,6 @@ f
 )
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -220,7 +212,6 @@ n
 block
 chunk
 stat list
-stat item
 stat
 keyword if
 if
@@ -237,8 +228,6 @@ keyword then
 then
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -253,8 +242,6 @@ keyword else
 else
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -287,12 +274,10 @@ Number
 )
 keyword end
 end
-optional laststat
 keyword end
 end
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -314,7 +299,6 @@ var
 Name
 F
 )
-stat item
 stat
 keyword function
 function
@@ -333,7 +317,6 @@ x
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -376,10 +359,8 @@ String
 double quoted string
 "\n"
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword for
 for
@@ -398,7 +379,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -414,7 +394,5 @@ var
 Name
 n
 )
-optional laststat
 keyword end
 end
-optional laststat

@@ -1,6 +1,7 @@
 chunk
 stat list
-stat item
+stat list
+stat list
 stat
 keyword local
 local
@@ -8,7 +9,6 @@ namelist
 Name
 A
 optional namelist initialization
-stat item
 stat
 keyword while
 while
@@ -20,7 +20,10 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -44,7 +47,6 @@ args
 (
 optional explist
 )
-stat item
 stat
 keyword if
 if
@@ -61,8 +63,6 @@ keyword then
 then
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword break
 break
@@ -70,7 +70,6 @@ elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 keyword local
 local
@@ -109,7 +108,6 @@ String
 single quoted string
 '"?([_%w]+)"?%s*(.*)$'
 )
-stat item
 stat
 keyword if
 if
@@ -128,7 +126,7 @@ then
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -140,7 +138,6 @@ exp
 var
 Name
 a
-stat item
 stat
 functioncall
 prefixexp
@@ -169,12 +166,10 @@ String
 double quoted string
 ":"
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -199,10 +194,8 @@ var
 Name
 b
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -223,4 +216,3 @@ String
 double quoted string
 "\n"
 )
-optional laststat

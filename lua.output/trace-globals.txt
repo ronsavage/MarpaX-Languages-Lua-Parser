@@ -1,13 +1,23 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword do
 do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -21,7 +31,6 @@ exp
 var
 Name
 tostring
-stat item
 stat
 keyword local
 local
@@ -45,7 +54,6 @@ a
 block
 chunk
 stat list
-stat item
 stat
 keyword if
 if
@@ -73,8 +81,6 @@ keyword then
 then
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -109,8 +115,6 @@ keyword else
 else
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -132,10 +136,8 @@ a
 )
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword local
 local
@@ -163,7 +165,10 @@ new
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -195,7 +200,6 @@ String
 double quoted string
 "Sl"
 )
-stat item
 stat
 keyword local
 local
@@ -214,7 +218,6 @@ t
 .
 Name
 currentline
-stat item
 stat
 functioncall
 prefixexp
@@ -240,7 +243,6 @@ t
 Name
 short_src
 )
-stat item
 stat
 keyword if
 if
@@ -258,7 +260,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -283,12 +284,10 @@ var
 Name
 line
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -357,10 +356,8 @@ String
 double quoted string
 "\n"
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword local
 local
@@ -374,7 +371,6 @@ exp
 tableconstructor
 {
 }
-stat item
 stat
 keyword local
 local
@@ -402,7 +398,7 @@ value
 block
 chunk
 stat list
-stat item
+stat list
 stat
 functioncall
 prefixexp
@@ -434,7 +430,6 @@ var
 Name
 value
 )
-stat item
 stat
 varlist
 var
@@ -454,10 +449,8 @@ exp
 var
 Name
 value
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -499,10 +492,8 @@ Name
 set
 }
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -513,7 +504,6 @@ explist
 exp
 Number
 1
-stat item
 stat
 varlist
 var
@@ -524,7 +514,6 @@ explist
 exp
 Number
 2
-stat item
 stat
 varlist
 var
@@ -535,7 +524,6 @@ explist
 exp
 Number
 10
-stat item
 stat
 varlist
 var
@@ -546,7 +534,6 @@ explist
 exp
 Number
 20
-stat item
 stat
 varlist
 var
@@ -557,7 +544,6 @@ explist
 exp
 keyword nil
 nil
-stat item
 stat
 varlist
 var
@@ -568,7 +554,6 @@ explist
 exp
 Number
 200
-stat item
 stat
 functioncall
 prefixexp
@@ -592,4 +577,3 @@ var
 Name
 c
 )
-optional laststat

@@ -1,6 +1,11 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -37,7 +42,6 @@ exp
 var
 Name
 rawget
-stat item
 stat
 keyword local
 local
@@ -61,7 +65,6 @@ var
 Name
 _G
 )
-stat item
 stat
 keyword if
 if
@@ -79,7 +82,7 @@ then
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -91,7 +94,6 @@ exp
 tableconstructor
 {
 }
-stat item
 stat
 functioncall
 prefixexp
@@ -111,12 +113,10 @@ var
 Name
 mt
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -133,7 +133,6 @@ exp
 tableconstructor
 {
 }
-stat item
 stat
 keyword local
 local
@@ -148,7 +147,6 @@ optional parlist
 block
 chunk
 stat list
-stat item
 stat
 keyword local
 local
@@ -175,7 +173,6 @@ String
 double quoted string
 "S"
 )
-optional laststat
 laststat
 keyword return
 return
@@ -206,7 +203,6 @@ double quoted string
 "C"
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -237,7 +233,7 @@ v
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword if
 if
@@ -266,7 +262,8 @@ then
 block
 chunk
 stat list
-stat item
+stat list
+stat list
 stat
 keyword local
 local
@@ -285,7 +282,6 @@ args
 (
 optional explist
 )
-stat item
 stat
 keyword if
 if
@@ -317,7 +313,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -348,12 +343,10 @@ exp
 Number
 2
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -377,12 +370,10 @@ explist
 exp
 keyword true
 true
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -406,10 +397,8 @@ var
 Name
 v
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -438,7 +427,6 @@ n
 block
 chunk
 stat list
-stat item
 stat
 keyword if
 if
@@ -485,7 +473,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -516,12 +503,10 @@ exp
 Number
 2
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-optional laststat
 laststat
 keyword return
 return
@@ -547,4 +532,3 @@ n
 )
 keyword end
 end
-optional laststat

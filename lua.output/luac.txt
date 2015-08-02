@@ -1,6 +1,8 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
 stat
 functioncall
 prefixexp
@@ -51,7 +53,6 @@ String
 double quoted string
 "usage: lua luac.lua file.lua"
 )
-stat item
 stat
 varlist
 var
@@ -92,7 +93,6 @@ double quoted string
 "wb"
 )
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -163,7 +163,6 @@ Number
 )
 )
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -187,4 +186,3 @@ args
 optional explist
 )
 )
-optional laststat

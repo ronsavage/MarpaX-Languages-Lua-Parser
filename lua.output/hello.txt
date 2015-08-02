@@ -1,6 +1,5 @@
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -29,4 +28,3 @@ String
 double quoted string
 "!\n"
 )
-optional laststat

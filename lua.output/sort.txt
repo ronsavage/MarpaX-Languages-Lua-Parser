@@ -1,6 +1,10 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword function
 function
@@ -25,7 +29,6 @@ f
 block
 chunk
 stat list
-stat item
 stat
 keyword if
 if
@@ -44,7 +47,14 @@ then
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -98,7 +108,6 @@ l
 exp
 Number
 1
-stat item
 stat
 varlist
 var
@@ -149,7 +158,6 @@ var
 Name
 l
 ]
-stat item
 stat
 keyword local
 local
@@ -171,7 +179,6 @@ var
 Name
 l
 ]
-stat item
 stat
 varlist
 var
@@ -183,7 +190,6 @@ exp
 var
 Name
 l
-stat item
 stat
 keyword local
 local
@@ -202,7 +208,6 @@ l
 exp
 Number
 1
-stat item
 stat
 keyword while
 while
@@ -221,7 +226,7 @@ do
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword if
 if
@@ -256,7 +261,7 @@ then
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -273,7 +278,6 @@ m
 exp
 Number
 1
-stat item
 stat
 varlist
 var
@@ -324,12 +328,10 @@ var
 Name
 m
 ]
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -346,10 +348,8 @@ i
 exp
 Number
 1
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -400,7 +400,6 @@ var
 Name
 l
 ]
-stat item
 stat
 functioncall
 prefixexp
@@ -433,7 +432,6 @@ var
 Name
 f
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -466,15 +464,12 @@ var
 Name
 f
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -497,7 +492,7 @@ f
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword local
 local
@@ -510,7 +505,6 @@ explist
 exp
 Number
 1
-stat item
 stat
 keyword while
 while
@@ -529,7 +523,9 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -554,7 +550,6 @@ i
 exp
 Number
 1
-stat item
 stat
 keyword while
 while
@@ -573,7 +568,7 @@ do
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword if
 if
@@ -616,7 +611,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 varlist
 var
@@ -628,12 +622,10 @@ exp
 var
 Name
 j
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -650,10 +642,8 @@ j
 exp
 Number
 1
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -704,7 +694,6 @@ var
 Name
 i
 ]
-stat item
 stat
 varlist
 var
@@ -721,13 +710,10 @@ i
 exp
 Number
 1
-optional laststat
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -748,7 +734,9 @@ x
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
 stat
 functioncall
 prefixexp
@@ -773,7 +761,6 @@ String
 double quoted string
 "\n\t"
 )
-stat item
 stat
 keyword local
 local
@@ -786,7 +773,6 @@ explist
 exp
 Number
 1
-stat item
 stat
 keyword while
 while
@@ -807,7 +793,8 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
 stat
 functioncall
 prefixexp
@@ -836,7 +823,6 @@ Name
 i
 ]
 )
-stat item
 stat
 varlist
 var
@@ -853,7 +839,6 @@ i
 exp
 Number
 1
-stat item
 stat
 keyword if
 if
@@ -874,7 +859,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -895,15 +879,12 @@ String
 double quoted string
 ","
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -924,10 +905,8 @@ String
 double quoted string
 "\n"
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -946,7 +925,15 @@ x
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -959,7 +946,6 @@ explist
 exp
 Number
 1
-stat item
 stat
 keyword while
 while
@@ -980,7 +966,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 varlist
 var
@@ -997,11 +982,9 @@ n
 exp
 Number
 1
-optional laststat
 keyword end
 end
 ;
-stat item
 stat
 varlist
 var
@@ -1018,7 +1001,6 @@ n
 exp
 Number
 1
-stat item
 stat
 functioncall
 prefixexp
@@ -1038,7 +1020,6 @@ var
 Name
 x
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1075,8 +1056,6 @@ y
 )
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -1095,7 +1074,6 @@ y
 keyword end
 end
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1115,7 +1093,6 @@ var
 Name
 x
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1149,8 +1126,6 @@ y
 )
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -1169,7 +1144,6 @@ y
 keyword end
 end
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1189,7 +1163,6 @@ var
 Name
 x
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1226,8 +1199,6 @@ y
 )
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -1246,7 +1217,6 @@ y
 keyword end
 end
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -1266,10 +1236,8 @@ var
 Name
 x
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -1342,7 +1310,6 @@ String
 double quoted string
 "Dec"
 }
-stat item
 stat
 functioncall
 prefixexp
@@ -1358,4 +1325,3 @@ var
 Name
 x
 )
-optional laststat

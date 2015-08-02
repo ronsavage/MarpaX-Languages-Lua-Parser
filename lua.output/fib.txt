@@ -1,6 +1,13 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword function
 function
@@ -19,7 +26,7 @@ n
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -36,7 +43,6 @@ N
 exp
 Number
 1
-stat item
 stat
 keyword if
 if
@@ -53,8 +59,6 @@ keyword then
 then
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -70,8 +74,6 @@ keyword else
 else
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -119,10 +121,8 @@ Number
 )
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -141,7 +141,6 @@ f
 block
 chunk
 stat list
-stat item
 stat
 keyword local
 local
@@ -155,7 +154,6 @@ exp
 tableconstructor
 {
 }
-optional laststat
 laststat
 keyword return
 return
@@ -175,7 +173,7 @@ x
 block
 chunk
 stat list
-stat item
+stat list
 stat
 keyword local
 local
@@ -197,7 +195,6 @@ var
 Name
 x
 ]
-stat item
 stat
 keyword if
 if
@@ -213,7 +210,7 @@ then
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -235,7 +232,6 @@ var
 Name
 x
 )
-stat item
 stat
 varlist
 var
@@ -255,12 +251,10 @@ exp
 var
 Name
 y
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-optional laststat
 laststat
 keyword return
 return
@@ -274,7 +268,6 @@ keyword end
 end
 keyword end
 end
-stat item
 stat
 keyword function
 function
@@ -295,7 +288,10 @@ f
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
 stat
 varlist
 var
@@ -306,7 +302,6 @@ explist
 exp
 Number
 0
-stat item
 stat
 keyword local
 local
@@ -330,7 +325,6 @@ args
 (
 optional explist
 )
-stat item
 stat
 keyword local
 local
@@ -354,7 +348,6 @@ var
 Name
 n
 )
-stat item
 stat
 keyword local
 local
@@ -384,7 +377,6 @@ exp
 var
 Name
 c
-stat item
 stat
 functioncall
 prefixexp
@@ -416,10 +408,8 @@ var
 Name
 N
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -444,7 +434,6 @@ or
 exp
 Number
 24
-stat item
 stat
 varlist
 var
@@ -466,7 +455,6 @@ var
 Name
 n
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -498,7 +486,6 @@ String
 double quoted string
 "evals"
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -518,7 +505,6 @@ var
 Name
 fib
 )
-stat item
 stat
 varlist
 var
@@ -540,7 +526,6 @@ var
 Name
 fib
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -560,4 +545,3 @@ var
 Name
 fib
 )
-optional laststat

@@ -1,6 +1,6 @@
 chunk
 stat list
-stat item
+stat list
 stat
 keyword local
 local
@@ -13,7 +13,6 @@ explist
 exp
 Number
 0
-stat item
 stat
 keyword while
 while
@@ -25,7 +24,12 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -53,7 +57,6 @@ exp
 Number
 16
 )
-stat item
 stat
 keyword if
 if
@@ -70,8 +73,6 @@ keyword then
 then
 block
 chunk
-stat list
-optional laststat
 laststat
 keyword return
 return
@@ -80,7 +81,6 @@ elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -120,7 +120,6 @@ Name
 offset
 )
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -158,7 +157,6 @@ c
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -213,11 +211,9 @@ c
 )
 )
 )
-optional laststat
 keyword end
 end
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -285,7 +281,6 @@ s
 )
 )
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -337,7 +332,6 @@ String
 double quoted string
 "\n"
 )
-stat item
 stat
 varlist
 var
@@ -354,7 +348,5 @@ offset
 exp
 Number
 16
-optional laststat
 keyword end
 end
-optional laststat

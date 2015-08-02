@@ -1,6 +1,5 @@
 chunk
 stat list
-stat item
 stat
 keyword for
 for
@@ -28,7 +27,11 @@ do
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 functioncall
 prefixexp
@@ -49,7 +52,6 @@ String
 double quoted string
 "C "
 )
-stat item
 stat
 keyword for
 for
@@ -80,7 +82,6 @@ do
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -120,10 +121,8 @@ Name
 c
 )
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -144,7 +143,6 @@ String
 double quoted string
 "\n"
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -165,7 +163,6 @@ String
 double quoted string
 "F "
 )
-stat item
 stat
 keyword for
 for
@@ -196,7 +193,7 @@ do
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -226,7 +223,6 @@ c
 exp
 Number
 32
-stat item
 stat
 functioncall
 prefixexp
@@ -266,10 +262,8 @@ Name
 f
 )
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -290,7 +284,5 @@ String
 double quoted string
 "\n\n"
 )
-optional laststat
 keyword end
 end
-optional laststat

@@ -1,6 +1,6 @@
 chunk
 stat list
-stat item
+stat list
 stat
 keyword function
 function
@@ -17,7 +17,6 @@ optional parlist
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -51,10 +50,8 @@ exp
 ...
 )
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -109,4 +106,3 @@ args
 optional explist
 )
 )
-optional laststat

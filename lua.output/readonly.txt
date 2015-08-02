@@ -1,6 +1,12 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -26,7 +32,6 @@ i
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -57,10 +62,8 @@ exp
 Number
 2
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword local
 local
@@ -74,7 +77,6 @@ exp
 tableconstructor
 {
 }
-stat item
 stat
 keyword local
 local
@@ -93,7 +95,6 @@ args
 (
 optional explist
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -130,7 +131,6 @@ Name
 f
 }
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -149,7 +149,6 @@ var
 Name
 g
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -172,7 +171,6 @@ exp
 Number
 3
 )
-stat item
 stat
 varlist
 var
@@ -183,7 +181,6 @@ explist
 exp
 Number
 2
-stat item
 stat
 varlist
 var
@@ -194,4 +191,3 @@ explist
 exp
 Number
 1
-optional laststat

@@ -1,6 +1,8 @@
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -13,7 +15,6 @@ explist
 exp
 Number
 0
-stat item
 stat
 keyword local
 local
@@ -31,7 +32,12 @@ event
 block
 chunk
 stat list
-stat item
+stat list
+stat list
+stat list
+stat list
+stat list
+stat list
 stat
 keyword local
 local
@@ -59,7 +65,6 @@ exp
 Number
 3
 )
-stat item
 stat
 functioncall
 prefixexp
@@ -107,7 +112,6 @@ Name
 level
 )
 )
-stat item
 stat
 keyword if
 if
@@ -142,7 +146,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -185,12 +188,10 @@ String
 double quoted string
 " "
 )
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-stat item
 stat
 varlist
 var
@@ -216,7 +217,6 @@ exp
 Number
 2
 )
-stat item
 stat
 keyword if
 if
@@ -235,7 +235,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 varlist
 var
@@ -252,7 +251,6 @@ level
 exp
 Number
 1
-optional laststat
 elseif sequence
 optional else block
 keyword else
@@ -260,7 +258,7 @@ else
 block
 chunk
 stat list
-stat item
+stat list
 stat
 varlist
 var
@@ -277,7 +275,6 @@ level
 exp
 Number
 1
-stat item
 stat
 keyword if
 if
@@ -295,7 +292,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 varlist
 var
@@ -306,15 +302,12 @@ explist
 exp
 Number
 0
-optional laststat
 elseif sequence
 optional else block
 keyword end
 end
-optional laststat
 keyword end
 end
-stat item
 stat
 keyword if
 if
@@ -338,7 +331,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 keyword if
 if
@@ -357,7 +349,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -387,7 +378,6 @@ t
 Name
 short_src
 )
-optional laststat
 elseif sequence
 optional else block
 keyword else
@@ -395,7 +385,6 @@ else
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -425,10 +414,8 @@ t
 Name
 short_src
 )
-optional laststat
 keyword end
 end
-optional laststat
 elseif sequence
 elseif sequence
 elseif block
@@ -454,7 +441,6 @@ then
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -525,14 +511,12 @@ String
 double quoted string
 ">"
 )
-optional laststat
 optional else block
 keyword else
 else
 block
 chunk
 stat list
-stat item
 stat
 functioncall
 prefixexp
@@ -590,10 +574,8 @@ String
 double quoted string
 "] "
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -614,10 +596,8 @@ String
 double quoted string
 "\n"
 )
-optional laststat
 keyword end
 end
-stat item
 stat
 functioncall
 prefixexp
@@ -642,7 +622,6 @@ String
 double quoted string
 "cr"
 )
-stat item
 stat
 varlist
 var
@@ -653,4 +632,3 @@ explist
 exp
 Number
 0
-optional laststat
