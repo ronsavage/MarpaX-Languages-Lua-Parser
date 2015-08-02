@@ -743,7 +743,7 @@ __DATA__
 
 lexeme default = latm => 1 action => [name,values]
 
-# I(JK)  attempt to follow the order of the Lua grammar in
+# I (JK)  attempt to follow the order of the Lua grammar in
 # section 8 of the Lua 5.1 reference manual.
 #
 # Names which begin with "Lua" are taken directly from
