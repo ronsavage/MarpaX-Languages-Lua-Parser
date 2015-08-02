@@ -1,5 +1,10 @@
 Revision history for Perl extension MarpaX::Languages::Lua::Parser.
 
+1.04  Sun Aug  2 11:33:00 2015
+	- Incorporate grammar changes discussed here:
+		https://github.com/ronsavage/MarpaX-Languages-Lua-Parser/issues/2
+	- Within grammar, replace /^\s{4,4}/ with "\t".
+
 1.03  Sun Jul 12 17:07:00 2015
 	- Update pre-reqs to Data::RenderAsTree V 1.03.
 

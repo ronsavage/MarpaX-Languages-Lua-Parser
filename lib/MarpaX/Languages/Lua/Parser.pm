@@ -167,7 +167,8 @@ sub BUILD
 	(
 		Marpa::R2::Scanless::R -> new
 		({
-			grammar => $self -> grammar,
+			grammar        => $self -> grammar,
+			ranking_method => 'high_rule_only',
 		})
 	);
 	$self -> renderer
@@ -749,9 +750,11 @@ lexeme default = latm => 1 action => [name,values]
 # the Lua reference manual grammar.
 
 <chunk> ::= <stat list> <optional laststat>
+
 <stat list> ::= <stat item>*
 <stat item> ::= <stat> ';'
 <stat item> ::= <stat>
+
 <optional laststat> ::= <laststat> ';'
 <optional laststat> ::= <laststat>
 <optional laststat> ::=
@@ -770,14 +773,17 @@ lexeme default = latm => 1 action => [name,values]
 
 <stat> ::= <keyword if> <exp> <keyword then> <block>
     <elseif sequence> <optional else block> <keyword end>
+
 <elseif sequence> ::= <elseif sequence> <elseif block>
 <elseif sequence> ::=
 <elseif block> ::= <keyword elseif> <exp> <keyword then> <block>
+
 <optional else block> ::= <keyword else> <block>
 <optional else block> ::=
 
 <stat> ::= <keyword for> <Name> '=' <exp> ',' <exp> ',' <exp>
     <keyword do> <block> <keyword end>
+
 <stat> ::= <keyword for> <Name> '=' <exp> ',' <exp> <keyword do> <block> <keyword end>
 
 <stat> ::= <keyword for> <namelist> <keyword in> <explist> <keyword do> <block> <keyword end>
@@ -798,7 +804,9 @@ lexeme default = latm => 1 action => [name,values]
 <optional explist> ::= <explist>
 
 <funcname> ::= <dotted name> <optional colon name element>
+
 <dotted name> ::= <Name>+ separator => [.] proper => 1
+
 <optional colon name element> ::=
 <optional colon name element> ::= ':' <Name>
 
@@ -813,36 +821,53 @@ lexeme default = latm => 1 action => [name,values]
 <explist> ::= <exp>+ separator => [,] proper => 1
 
 <exp> ::=
-       <var>
-     | '(' <exp> ')' assoc => group
-    || <exp> <args> assoc => right
-    || <exp> ':' <Name> <args> assoc => right
-     | <keyword nil>
-     | <keyword false>
-     | <keyword true>
-     | <Number>
-     | <String>
-     | '...'
-     | <tableconstructor>
-     | <function>
-    || <exp> '^' <exp> assoc => right
-    || <keyword not> <exp>
-     | '#' <exp>
-     | '-' <exp>
-    || <exp> '*' <exp>
-     | <exp> '/' <exp>
-     | <exp> '%' <exp>
-    || <exp> '+' <exp>
-     | <exp> '-' <exp>
-    || <exp> '..' <exp> assoc => right
-    || <exp> '<' <exp>
-     | <exp> '<=' <exp>
-     | <exp> '>' <exp>
-     | <exp> '>=' <exp>
-     | <exp> '==' <exp>
-     | <exp> '~=' <exp>
-    || <exp> <keyword and> <exp>
-    || <exp> <keyword or> <exp>
+		<var>
+	 | '(' <exp> ')' assoc => group
+	|| <exp> <args> assoc => right
+	|| <exp> ':' <Name> <args> assoc => right
+	 | <keyword nil>
+	 | <keyword false>
+	 | <keyword true>
+	 | <Number>
+	 | <String>
+	 | '...'
+	 | <tableconstructor>
+	 | <function>
+	|| <exp> '^' <exponent> assoc => right
+	|| '-' <exp>
+	 | <keyword not> <exp>
+	 | '#' <exp>
+	|| <exp> '*' <exp>
+	 | <exp> '/' <exp>
+	 | <exp> '%' <exp>
+	|| <exp> '+' <exp>
+	 | <exp> '-' <exp>
+	|| <exp> '..' <exp> assoc => right
+	|| <exp> '<' <exp>
+	 | <exp> '<=' <exp>
+	 | <exp> '>' <exp>
+	 | <exp> '>=' <exp>
+	 | <exp> '==' <exp> rank => 1
+	 | <exp> '~=' <exp>
+	|| <exp> <keyword and> <exp> rank => 1
+	|| <exp> <keyword or> <exp>
+
+<exponent> ::=
+		<var>
+	 | '(' <exp> ')'
+	|| <exponent> <args>
+	|| <exponent> ':' <Name> <args>
+	 | <keyword nil>
+	 | <keyword false>
+	 | <keyword true>
+	 | <Number>
+	 | <String>
+	 | '...'
+	 | <tableconstructor>
+	 | <function>
+	|| <keyword not> <exponent>
+	 | '#' <exponent>
+	 | '-' <exponent>
 
 <prefixexp> ::= <var>
 <prefixexp> ::= <functioncall>
@@ -871,6 +896,7 @@ lexeme default = latm => 1 action => [name,values]
 
 <tableconstructor> ::= '{' '}'
 <tableconstructor> ::= '{' <fieldlist> '}'
+
 <fieldlist> ::= <field>+ separator => [,;]
 
 <field> ::= '[' <exp> ']' '=' <exp>
@@ -904,10 +930,12 @@ lexeme default = latm => 1 action => [name,values]
 # of the comment
 
 :discard ~ <singleline comment> event => 'singleline comment'
+
 <singleline comment> ~ <singleline comment start>
 <singleline comment start> ~ '--'
 
 :discard ~ <multiline comment> event => 'multiline comment'
+
 <multiline comment> ~ '--[' <optional equal signs> '['
 
 <optional equal signs> ~ [=]*
@@ -924,13 +952,19 @@ whitespace ~ [\s]+
 # and we enforce that, so all letters must be a-z or A-Z
 
 <Name> ~ <identifier start char> <optional identifier chars>
+
 :lexeme ~ Name pause => before event => 'Name'
+
 <identifier start char> ~ [a-zA-Z_]
+
 <optional identifier chars> ~ <identifier char>*
+
 <identifier char> ~ [a-zA-Z0-9_]
 
 <String> ::= <single quoted string>
+
 <single quoted string> ~ ['] <optional single quoted chars> [']
+
 <optional single quoted chars> ~ <single quoted char>*
 
 # anything other than vertical space or a single quote
@@ -939,7 +973,9 @@ whitespace ~ [\s]+
 <single quoted char> ~ '\' [\d\D] # Also an escaped char. Another ' for uex.
 
 <String> ::= <double quoted string>
+
 <double quoted string> ~ ["] <optional double quoted chars> ["]
+
 <optional double quoted chars> ~ <double quoted char>*
 
 # anything other than vertical space or a double quote
@@ -948,7 +984,9 @@ whitespace ~ [\s]+
 <double quoted char> ~ '\' [\d\D] # also an escaped char. Another ' for uex.
 
 <String> ::= <multiline string>
+
 :lexeme ~ <multiline string> pause => before event => 'multiline string'
+
 <multiline string> ~ '[' <optional equal signs> '['
 
 <Number> ~ <hex number>
@@ -969,10 +1007,14 @@ whitespace ~ [\s]+
 <C90 strtod decimal> ~ <optional sign> '.' <decimal digits> <optional exponent>
 <C90 strtod decimal> ~
     <optional sign> <decimal digits> '.' <decimal digits> <optional exponent>
+
 <optional exponent> ~
 <optional exponent> ~ [eE] <optional sign> <decimal digits>
 <optional sign> ~
 <optional sign> ~ [-+]
+
 <C90 strtol hex> ~ [0] [xX] <hex digits>
+
 <decimal digits> ~ [0-9]+
+
 <hex digits> ~ [a-fA-F0-9]+
