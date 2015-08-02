@@ -282,7 +282,7 @@ sub process
 				if ( exists $self -> keywords -> { $literal } )
 				{
 					$self -> recce -> lexeme_read(qq{keyword $literal}, $start, $length)
-					// die $self->input_file_name . qq{:$line:$column: keyword '$literal' used as <name>\n};
+					// die $self->input_file_name . qq{ (line, column) = ($line, $column): keyword '$literal' used as <name>\n};
                 }
                 else
                 {
