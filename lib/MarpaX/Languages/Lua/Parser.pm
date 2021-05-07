@@ -240,15 +240,14 @@ sub process
 				my(undef, $start, $end) = @{$event};
 				my($length)             = $end - $start;
 				my($comment_terminator) = $self -> recce -> literal($start, $length);
-				$comment_terminator     =~ tr/-//;
-				$comment_terminator     =~ tr/\[/\]/;
+				$comment_terminator = ']' . ('=' x ($length - 4)) . ']';
 				my($terminator_pos)     = index( $$input_ref, $comment_terminator, $start);
 
 				die "Died looking for $comment_terminator. \n" if ($terminator_pos < 0);
 
 				# Don't read anything into G1 -- just throw the comment away.
 
-				$pos = $terminator_pos + $length;
+				$pos = $terminator_pos + length $comment_terminator;
 
 				next EVENT;
 			}
