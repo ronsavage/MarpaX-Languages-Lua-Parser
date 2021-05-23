@@ -237,11 +237,11 @@ sub process
 			{
 				# This is a discard event.
 
-				my(undef, $start, $end) = @{$event};
-				my($length)             = $end - $start;
-				my($comment_terminator) = $self -> recce -> literal($start, $length);
-				$comment_terminator = ']' . ('=' x ($length - 4)) . ']';
-				my($terminator_pos)     = index( $$input_ref, $comment_terminator, $start);
+				my(undef, $start, $end)	= @{$event};
+				my($length)				= $end - $start;
+				my($comment_terminator)	= $self -> recce -> literal($start, $length);
+				$comment_terminator		= ']' . ('=' x ($length - 4)) . ']';
+				my($terminator_pos)		= index( $$input_ref, $comment_terminator, $start);
 
 				die "Died looking for $comment_terminator. \n" if ($terminator_pos < 0);
 
