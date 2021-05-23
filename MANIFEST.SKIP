@@ -13,6 +13,7 @@
 \bMakefile$
 \bMakeMaker-\d
 ^MANIFEST\.SKIP$
+/MANIFEST$
 
 # Avoid Module::Build generated and utility files.
 \b_build
