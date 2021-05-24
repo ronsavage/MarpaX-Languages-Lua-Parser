@@ -4,6 +4,7 @@ Revision history for Perl extension MarpaX::Languages::Lua::Parser.
 	- Adopt patches from Jeffrey Kegler which allow the parser to handle multi-line comments.
 	- Change the format of the dates in this file.
 	- Change licence from Artistic to Perl.
+	- Reformat Makefile.PL. Add TEST_REQUIRES.
 
 1.04  2015-08-02T11:33:00
 	- Incorporate grammar changes discussed here:
