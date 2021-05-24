@@ -5,7 +5,7 @@ use warnings;
 
 # I tried 'require'-ing modules but that did not work.
 
-use MarpaX-Languages-Lua-Parser; # For the version #.
+use 'MarpaX::Languages::Lua::Parser'; # For the version #.
 
 use Test::More;
 
