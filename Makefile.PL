@@ -64,6 +64,10 @@ if ($ExtUtils::MakeMaker::VERSION ge '6.46')
 {
 	$params{META_MERGE} =
 	{
+		'meta-spec' =>
+		{
+			version => 2,
+		},
 		resources =>
 		{
 			bugtracker	=> 'https://rt.cpan.org/Public/Dist/Display.html?Name=MarpaX-Languages-Lua-Parser',
