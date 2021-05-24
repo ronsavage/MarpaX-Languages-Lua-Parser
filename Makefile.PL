@@ -41,7 +41,6 @@ my(%params) =
 		'Moo'					=> 2.000001,
 		'open'					=> 0,
 		'Path::Tiny'			=> 0.068,
-		'perl'					=> 0,
 		'Pod::Usage'			=> 1.63,
 		'strict'				=> 0,
 		'Types::Standard'		=> 1.000005,

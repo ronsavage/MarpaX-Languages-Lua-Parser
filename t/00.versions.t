@@ -18,7 +18,6 @@ use Log::Handler;
 use Marpa::R2;
 use Moo;
 use Path::Tiny;
-use perl;
 use Pod::Usage;
 use strict;
 use Types::Standard;
@@ -39,7 +38,6 @@ my(@modules) = qw
 	Marpa::R2
 	Moo
 	Path::Tiny
-	perl
 	Pod::Usage
 	strict
 	Types::Standard
