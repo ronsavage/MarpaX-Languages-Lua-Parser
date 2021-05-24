@@ -5,17 +5,23 @@ use warnings;
 
 # I tried 'require'-ing modules but that did not work.
 
-use DBIx::Tree; # For the version #.
+use MarpaX-Languages-Lua-Parser; # For the version #.
 
 use Test::More;
 
-use Carp;
-use DBD::SQLite;
-use DBI;
+use Data::RenderAsTree;
+use Data::Section::Simple;
 use File::Spec;
 use File::Temp;
+use Getopt::Long;
+use Log::Handler;
+use Marpa::R2;
+use Moo;
+use Path::Tiny;
+use perl;
+use Pod::Usage;
 use strict;
-use vars;
+use Types::Standard;
 use warnings;
 
 # ----------------------
@@ -24,17 +30,23 @@ pass('All external modules loaded');
 
 my(@modules) = qw
 /
-	Carp
-	DBD::SQLite
-	DBI
+	Data::RenderAsTree
+	Data::Section::Simple
 	File::Spec
 	File::Temp
+	Getopt::Long
+	Log::Handler
+	Marpa::R2
+	Moo
+	Path::Tiny
+	perl
+	Pod::Usage
 	strict
-	vars
+	Types::Standard
 	warnings
 /;
 
-diag "Testing DBIx::Tree V $DBIx::Tree::VERSION";
+diag "Testing MarpaX-Languages-Lua-Parser V $MarpaX-Languages-Lua-Parser::VERSION";
 
 for my $module (@modules)
 {
