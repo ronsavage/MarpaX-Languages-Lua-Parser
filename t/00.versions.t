@@ -5,7 +5,7 @@ use warnings;
 
 # I tried 'require'-ing modules but that did not work.
 
-use 'MarpaX::Languages::Lua::Parser'; # For the version #.
+use MarpaX::Languages::Lua::Parser; # For the version #.
 
 use Test::More;
 
@@ -46,7 +46,7 @@ my(@modules) = qw
 	warnings
 /;
 
-diag "Testing MarpaX-Languages-Lua-Parser V $MarpaX-Languages-Lua-Parser::VERSION";
+diag "Testing MarpaX::Languages::Lua::Parser V $MarpaX::Languages::Lua::Parser::VERSION";
 
 for my $module (@modules)
 {
