@@ -3,6 +3,7 @@ Revision history for Perl extension MarpaX::Languages::Lua::Parser.
 1.05  2021-05-23T18:54:00
 	- Adopt patches from Jeffrey Kegler which allow the parser to handle multi-line comments.
 	- Change the format of the dates in this file.
+	- Change licence from Artistic to Perl.
 
 1.04  2015-08-02T11:33:00
 	- Incorporate grammar changes discussed here:
