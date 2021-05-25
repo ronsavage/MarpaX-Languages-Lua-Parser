@@ -46,7 +46,7 @@ my($count) = 1;
 
 for (<"lua.sources/*">)
 {
-	if (/keyword.as.identifier.lua|multi.line.comment.lua/)
+	if (/keyword.as.identifier.lua/)
 	{
 		diag "Skipping $_. \n";
 
