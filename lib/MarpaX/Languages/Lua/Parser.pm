@@ -395,7 +395,7 @@ sub run
 
 =head1 NAME
 
-C<MarpaX::Languages::Lua::Parser> - A Lua source code parser
+MarpaX::Languages::Lua::Parser - A Lua source code parser
 
 =head1 Synopsis
 
